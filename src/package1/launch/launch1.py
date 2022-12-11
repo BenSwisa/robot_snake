@@ -1,5 +1,4 @@
 import os
-import os
 from ament_index_python.packages import get_package_share_directory
 from concurrent.futures import Executor
 from http.server import executable
@@ -17,7 +16,7 @@ def generate_launch_description():
     ld = LaunchDescription()
 
     config = os.path.join(
-        get_package_share_directory('ros2'),
+        get_package_share_directory('package1'),
         'config',
         'node1_con.yaml'
         )
