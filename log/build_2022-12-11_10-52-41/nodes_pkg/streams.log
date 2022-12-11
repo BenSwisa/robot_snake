@@ -1,0 +1,60 @@
+[0.015s] Invoking command in '/home/ben/robot_snake/build/nodes_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ben/robot_snake/src/package1 -DCMAKE_INSTALL_PREFIX=/home/ben/robot_snake/install/nodes_pkg
+[0.101s] -- The C compiler identification is GNU 11.3.0
+[0.183s] -- The CXX compiler identification is GNU 11.3.0
+[0.192s] -- Detecting C compiler ABI info
+[0.279s] -- Detecting C compiler ABI info - done
+[0.284s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.284s] -- Detecting C compile features
+[0.284s] -- Detecting C compile features - done
+[0.290s] -- Detecting CXX compiler ABI info
+[0.391s] -- Detecting CXX compiler ABI info - done
+[0.398s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.398s] -- Detecting CXX compile features
+[0.399s] -- Detecting CXX compile features - done
+[0.406s] -- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.616s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter 
+[0.748s] -- Found rclcpp: 16.0.1 (/opt/ros/humble/share/rclcpp/cmake)
+[0.839s] -- Found rosidl_generator_c: 3.1.3 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.853s] -- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.867s] -- Found rosidl_generator_cpp: 3.1.3 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.887s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.918s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.016s] -- Found rmw_implementation_cmake: 6.1.0 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.021s] -- Found rmw_fastrtps_cpp: 6.2.1 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.153s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.178s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.224s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.483s] -- Configuring done
+[1.503s] -- Generating done
+[1.505s] -- Build files have been written to: /home/ben/robot_snake/build/nodes_pkg
+[1.513s] Invoked command in '/home/ben/robot_snake/build/nodes_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ben/robot_snake/src/package1 -DCMAKE_INSTALL_PREFIX=/home/ben/robot_snake/install/nodes_pkg
+[1.514s] Invoking command in '/home/ben/robot_snake/build/nodes_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/nodes_pkg -- -j3 -l3
+[1.571s] [ 50%] [32mBuilding CXX object CMakeFiles/node2.dir/src/node2.cpp.o[0m
+[1.571s] [ 50%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[6.227s] [ 75%] [32m[1mLinking CXX executable node2[0m
+[6.512s] [ 75%] Built target node2
+[10.460s] [100%] [32m[1mLinking CXX executable node1[0m
+[10.859s] [100%] Built target node1
+[10.890s] Invoked command in '/home/ben/robot_snake/build/nodes_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/nodes_pkg -- -j3 -l3
+[10.972s] Invoking command in '/home/ben/robot_snake/build/nodes_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/nodes_pkg
+[10.979s] -- Install configuration: ""
+[10.979s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/lib/nodes_pkg/node1
+[10.983s] -- Set runtime path of "/home/ben/robot_snake/install/nodes_pkg/lib/nodes_pkg/node1" to ""
+[10.983s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/lib/nodes_pkg/node2
+[10.985s] -- Set runtime path of "/home/ben/robot_snake/install/nodes_pkg/lib/nodes_pkg/node2" to ""
+[10.985s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/ament_index/resource_index/package_run_dependencies/nodes_pkg
+[10.985s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/ament_index/resource_index/parent_prefix_path/nodes_pkg
+[10.986s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/ament_prefix_path.sh
+[10.986s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/ament_prefix_path.dsv
+[10.986s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/path.sh
+[10.987s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/path.dsv
+[10.989s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.bash
+[10.990s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.sh
+[10.995s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.zsh
+[10.995s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.dsv
+[10.995s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/package.dsv
+[10.995s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/ament_index/resource_index/packages/nodes_pkg
+[10.995s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/cmake/nodes_pkgConfig.cmake
+[10.995s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/cmake/nodes_pkgConfig-version.cmake
+[10.995s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/package.xml
+[11.006s] Invoked command in '/home/ben/robot_snake/build/nodes_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/nodes_pkg

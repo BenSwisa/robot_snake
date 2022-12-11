@@ -1,0 +1,17 @@
+/home/ben/robot_snake/install/nodes_pkg/lib/nodes_pkg/node1
+/home/ben/robot_snake/install/nodes_pkg/lib/nodes_pkg/node2
+/home/ben/robot_snake/install/nodes_pkg/share/ament_index/resource_index/package_run_dependencies/nodes_pkg
+/home/ben/robot_snake/install/nodes_pkg/share/ament_index/resource_index/parent_prefix_path/nodes_pkg
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/ament_prefix_path.sh
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/ament_prefix_path.dsv
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/path.sh
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/path.dsv
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.bash
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.sh
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.zsh
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.dsv
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/package.dsv
+/home/ben/robot_snake/install/nodes_pkg/share/ament_index/resource_index/packages/nodes_pkg
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/cmake/nodes_pkgConfig.cmake
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/cmake/nodes_pkgConfig-version.cmake
+/home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/package.xml
