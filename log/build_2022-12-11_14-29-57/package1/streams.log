@@ -1,0 +1,14 @@
+[0.080s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[0.393s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[0.415s] [35m[1mConsolidate compiler generated dependencies of target node2[0m
+[0.530s] [ 25%] [32mBuilding CXX object CMakeFiles/node2.dir/src/node2.cpp.o[0m
+[0.549s] [ 75%] Built target node1
+[5.714s] [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:[m[K In member function ‘[01m[Kvoid Node2::timer_callback()[m[K’:
+[5.714s] [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:37:62:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Parameter[m[K’ has no member named ‘[01m[Kas_int_array[m[K’; did you mean ‘[01m[Kas_byte_array[m[K’?
+[5.714s]    37 |       message.data = this->get_parameter("joint__angle_cmd").[01;31m[Kas_int_array[m[K();
+[5.714s]       |                                                              [01;31m[K^~~~~~~~~~~~[m[K
+[5.715s]       |                                                              [32m[Kas_byte_array[m[K
+[6.910s] gmake[2]: *** [CMakeFiles/node2.dir/build.make:76: CMakeFiles/node2.dir/src/node2.cpp.o] Error 1
+[6.910s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node2.dir/all] Error 2
+[6.917s] gmake: *** [Makefile:146: all] Error 2
+[6.917s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3

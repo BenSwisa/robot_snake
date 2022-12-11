@@ -1,0 +1,28 @@
+[ 50%] Built target node1
+[35m[1mConsolidate compiler generated dependencies of target node2[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/node2.dir/src/node2.cpp.o[0m
+[100%] [32m[1mLinking CXX executable node2[0m
+[100%] Built target node2
+-- Install configuration: ""
+-- Up-to-date: /home/ben/robot_snake/install/package1/lib/package1/node1
+-- Installing: /home/ben/robot_snake/install/package1/lib/package1/node2
+-- Set runtime path of "/home/ben/robot_snake/install/package1/lib/package1/node2" to ""
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1//launch
+-- Installing: /home/ben/robot_snake/install/package1/share/package1//launch/launch1.py
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1//config
+-- Installing: /home/ben/robot_snake/install/package1/share/package1//config/node1_con.yaml
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/package_run_dependencies/package1
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/parent_prefix_path/package1
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.sh
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/environment/path.sh
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/environment/path.dsv
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/local_setup.bash
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/local_setup.sh
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/local_setup.zsh
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/local_setup.dsv
+-- Installing: /home/ben/robot_snake/install/package1/share/package1/package.dsv
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/packages/package1
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config.cmake
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config-version.cmake
+-- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/package.xml

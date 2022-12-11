@@ -1,0 +1,16 @@
+[0.078s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[0.611s] [ 75%] [32mBuilding CXX object CMakeFiles/node2.dir/src/node2.cpp.o[0m
+[0.613s] [ 50%] Built target node1
+[6.070s] [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:[m[K In constructor ‘[01m[KNode2::Node2()[m[K’:
+[6.071s] [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:21:72:[m[K [01;31m[Kerror: [m[Knarrowing conversion of ‘[01m[K0.0[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kint[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+[6.071s]    21 |       this->declare_parameter("joint__angle_cmd",std::vector<int>({0.0}[01;31m[K)[m[K);
+[6.071s]       |                                                                        [01;31m[K^[m[K
+[6.086s] [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:[m[K In member function ‘[01m[Kvoid Node2::timer_callback()[m[K’:
+[6.087s] [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:36:62:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Parameter[m[K’ has no member named ‘[01m[Kas_int_array[m[K’; did you mean ‘[01m[Kas_byte_array[m[K’?
+[6.087s]    36 |       message.data = this->get_parameter("joint__angle_cmd").[01;31m[Kas_int_array[m[K();
+[6.087s]       |                                                              [01;31m[K^~~~~~~~~~~~[m[K
+[6.087s]       |                                                              [32m[Kas_byte_array[m[K
+[7.184s] gmake[2]: *** [CMakeFiles/node2.dir/build.make:76: CMakeFiles/node2.dir/src/node2.cpp.o] Error 1
+[7.184s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node2.dir/all] Error 2
+[7.185s] gmake: *** [Makefile:146: all] Error 2
+[7.191s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3

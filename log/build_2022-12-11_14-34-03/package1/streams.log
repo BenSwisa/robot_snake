@@ -1,0 +1,36 @@
+[0.071s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[0.772s] [35m[1mConsolidate compiler generated dependencies of target node2[0m
+[0.850s] [ 50%] Built target node1
+[0.968s] [ 75%] [32mBuilding CXX object CMakeFiles/node2.dir/src/node2.cpp.o[0m
+[6.175s] [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:[m[K In member function ‘[01m[Kvoid Node2::timer_callback()[m[K’:
+[6.175s] [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:37:78:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kstd_msgs::msg::Float32MultiArray_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kstd::vector<float>[m[K’} and ‘[01m[Kconst std::vector<double, std::allocator<double> >[m[K’)
+[6.176s]    37 |       message.data = this->get_parameter("joint__angle_cmd").as_double_array([01;31m[K)[m[K;
+[6.176s]       |                                                                              [01;31m[K^[m[K
+[6.176s] In file included from [01m[K/usr/include/c++/11/vector:72[m[K,
+[6.177s]                  from [01m[K/usr/include/c++/11/functional:62[m[K,
+[6.177s]                  from [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:2[m[K:
+[6.177s] [01m[K/usr/include/c++/11/bits/vector.tcc:198:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = float; _Alloc = std::allocator<float>][m[K’
+[6.177s]   198 |     [01;36m[Kvector<_Tp, _Alloc>[m[K::
+[6.177s]       |     [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[6.177s] [01m[K/usr/include/c++/11/bits/vector.tcc:199:42:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::vector<double, std::allocator<double> >[m[K’ to ‘[01m[Kconst std::vector<float>&[m[K’
+[6.178s]   199 |     operator=([01;36m[Kconst vector<_Tp, _Alloc>& __x[m[K)
+[6.178s]       |               [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[6.178s] In file included from [01m[K/usr/include/c++/11/vector:67[m[K,
+[6.179s]                  from [01m[K/usr/include/c++/11/functional:62[m[K,
+[6.179s]                  from [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:2[m[K:
+[6.179s] [01m[K/usr/include/c++/11/bits/stl_vector.h:709:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = float; _Alloc = std::allocator<float>][m[K’
+[6.179s]   709 |       [01;36m[Koperator[m[K=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+[6.179s]       |       [01;36m[K^~~~~~~~[m[K
+[6.179s] [01m[K/usr/include/c++/11/bits/stl_vector.h:709:26:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::vector<double, std::allocator<double> >[m[K’ to ‘[01m[Kstd::vector<float>&&[m[K’
+[6.180s]   709 |       operator=([01;36m[Kvector&& __x[m[K) noexcept(_Alloc_traits::_S_nothrow_move())
+[6.180s]       |                 [01;36m[K~~~~~~~~~^~~[m[K
+[6.180s] [01m[K/usr/include/c++/11/bits/stl_vector.h:730:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = float; _Alloc = std::allocator<float>][m[K’
+[6.180s]   730 |       [01;36m[Koperator[m[K=(initializer_list<value_type> __l)
+[6.180s]       |       [01;36m[K^~~~~~~~[m[K
+[6.180s] [01m[K/usr/include/c++/11/bits/stl_vector.h:730:46:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst std::vector<double, std::allocator<double> >[m[K’ to ‘[01m[Kstd::initializer_list<float>[m[K’
+[6.181s]   730 |       operator=([01;36m[Kinitializer_list<value_type> __l[m[K)
+[6.181s]       |                 [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[7.402s] gmake[2]: *** [CMakeFiles/node2.dir/build.make:76: CMakeFiles/node2.dir/src/node2.cpp.o] Error 1
+[7.403s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node2.dir/all] Error 2
+[7.403s] gmake: *** [Makefile:146: all] Error 2
+[7.409s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3

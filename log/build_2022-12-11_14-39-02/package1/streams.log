@@ -1,0 +1,12 @@
+[0.058s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[0.296s] [35m[1mConsolidate compiler generated dependencies of target node2[0m
+[0.375s] [ 50%] Built target node1
+[0.396s] [ 75%] [32mBuilding CXX object CMakeFiles/node2.dir/src/node2.cpp.o[0m
+[4.645s] [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:[m[K In member function ‘[01m[Kvoid Node2::timer_callback()[m[K’:
+[4.645s] [01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:37:12:[m[K [01;31m[Kerror: [m[K‘[01m[Ki[m[K’ was not declared in this scope
+[4.645s]    37 |       for ([01;31m[Ki[m[K=0;i<6;i++){
+[4.645s]       |            [01;31m[K^[m[K
+[5.926s] gmake[2]: *** [CMakeFiles/node2.dir/build.make:76: CMakeFiles/node2.dir/src/node2.cpp.o] Error 1
+[5.926s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node2.dir/all] Error 2
+[5.927s] gmake: *** [Makefile:146: all] Error 2
+[5.935s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3

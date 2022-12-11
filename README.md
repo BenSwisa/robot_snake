@@ -5,7 +5,8 @@ code for masters in micro_ros
 
 make sure to launch the program in the SNAKE/SOURCE/ros2 when you record
 
-make sure to source : source install/local_setup.bash
+make sure to source for ros2 and for microros : source install/local_setup.bash
+either source or add in ~/.bashrc : source ~/microros_ws/install/local_setup.bash 
 
 Launching micro_ros** checking available ports : ls -l /dev/ttyA* running: ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
 

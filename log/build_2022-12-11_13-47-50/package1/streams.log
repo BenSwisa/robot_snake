@@ -1,0 +1,31 @@
+[0.042s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[0.228s] [ 25%] [32mBuilding CXX object CMakeFiles/node2.dir/src/node2.cpp.o[0m
+[0.231s] [ 75%] Built target node1
+[7.717s] [100%] [32m[1mLinking CXX executable node2[0m
+[8.256s] [100%] Built target node2
+[8.290s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[8.442s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/package1
+[8.464s] -- Install configuration: ""
+[8.468s] -- Up-to-date: /home/ben/robot_snake/install/package1/lib/package1/node1
+[8.470s] -- Installing: /home/ben/robot_snake/install/package1/lib/package1/node2
+[8.478s] -- Set runtime path of "/home/ben/robot_snake/install/package1/lib/package1/node2" to ""
+[8.478s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1//launch
+[8.479s] -- Installing: /home/ben/robot_snake/install/package1/share/package1//launch/launch1.py
+[8.479s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1//config
+[8.479s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1//config/node1_con.yaml
+[8.480s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/package_run_dependencies/package1
+[8.480s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/parent_prefix_path/package1
+[8.480s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.sh
+[8.482s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.dsv
+[8.484s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/environment/path.sh
+[8.485s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/environment/path.dsv
+[8.485s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/local_setup.bash
+[8.485s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/local_setup.sh
+[8.486s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/local_setup.zsh
+[8.486s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/local_setup.dsv
+[8.486s] -- Installing: /home/ben/robot_snake/install/package1/share/package1/package.dsv
+[8.486s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/packages/package1
+[8.488s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config.cmake
+[8.492s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config-version.cmake
+[8.493s] -- Up-to-date: /home/ben/robot_snake/install/package1/share/package1/package.xml
+[8.493s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/package1

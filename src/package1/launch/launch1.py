@@ -10,7 +10,6 @@ from launch.substitutions import LaunchConfiguration, PythonExpression
 from datetime import datetime
 
 
-
 def generate_launch_description():
     record = LaunchConfiguration('record')
     ld = LaunchDescription()
@@ -22,11 +21,19 @@ def generate_launch_description():
         )
 
     node1 = Node(
-        package="nodes_pkg",
+        package="package1",
         executable="node1",
         parameters=[config]
  
     )
+
+    node2 = Node(
+        package="package1",
+        executable="node2" ,
+        parameters=[config]
+    )
+
+
 
 # ////////////////////////////////////////////////////////////////////////
     now = datetime.now()
@@ -49,7 +56,30 @@ def generate_launch_description():
         default_value='False'
     )
 
+
+
+    micro_ros_ex1 =launch.actions.ExecuteProcess(
+            cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/ttyACM0'],
+            output='screen'
+        )
+
+    micro_ros_ex2 =launch.actions.ExecuteProcess(
+            cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/ttyACM1'],
+            output='screen'
+        )
+    
+    micro_ros_ex3 =launch.actions.ExecuteProcess(
+            cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/ttyACM2'],
+            output='screen'
+        )
+    
+
+
+    ld.add_action(micro_ros_ex1)
+    ld.add_action(micro_ros_ex2)
+    ld.add_action(micro_ros_ex3)
     ld.add_action(node1)
+    ld.add_action(node2)
     ld.add_action(bag_ex_launch_arg)
     ld.add_action(bag_ex)
 

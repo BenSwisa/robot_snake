@@ -1,0 +1,18 @@
+[35m[1mConsolidate compiler generated dependencies of target node2[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/node2.dir/src/node2.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:[m[K In constructor ‘[01m[KNode2::Node2()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:22:72:[m[K [01;31m[Kerror: [m[Knarrowing conversion of ‘[01m[K0.0[m[K’ from ‘[01m[Kdouble[m[K’ to ‘[01m[Kint[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnarrowing-Wnarrowing]8;;[m[K]
+   22 |       this->declare_parameter("joint__angle_cmd",std::vector<int>({0.0}[01;31m[K)[m[K);
+      |                                                                        [01;31m[K^[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:[m[K In member function ‘[01m[Kvoid Node2::timer_callback()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:37:62:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass rclcpp::Parameter[m[K’ has no member named ‘[01m[Kas_int_array[m[K’; did you mean ‘[01m[Kas_byte_array[m[K’?
+   37 |       message.data = this->get_parameter("joint__angle_cmd").[01;31m[Kas_int_array[m[K();
+      |                                                              [01;31m[K^~~~~~~~~~~~[m[K
+      |                                                              [32m[Kas_byte_array[m[K
+gmake[2]: *** [CMakeFiles/node2.dir/build.make:76: CMakeFiles/node2.dir/src/node2.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node2.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 75%] [32m[1mLinking CXX executable node1[0m
+[ 75%] Built target node1
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,5 @@
+[35m[1mConsolidate compiler generated dependencies of target node2[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/node2.dir/src/node2.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable node1[0m
+[ 75%] Built target node1
