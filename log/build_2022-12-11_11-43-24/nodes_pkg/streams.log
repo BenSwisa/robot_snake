@@ -1,0 +1,24 @@
+[0.013s] Invoking command in '/home/ben/robot_snake/build/nodes_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/nodes_pkg -- -j3 -l3
+[0.071s] [ 75%] Built target node1
+[0.071s] [100%] Built target node2
+[0.081s] Invoked command in '/home/ben/robot_snake/build/nodes_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/nodes_pkg -- -j3 -l3
+[0.137s] Invoking command in '/home/ben/robot_snake/build/nodes_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/nodes_pkg
+[0.146s] -- Install configuration: ""
+[0.146s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/lib/nodes_pkg/node1
+[0.146s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/lib/nodes_pkg/node2
+[0.146s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/ament_index/resource_index/package_run_dependencies/nodes_pkg
+[0.146s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/ament_index/resource_index/parent_prefix_path/nodes_pkg
+[0.147s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/ament_prefix_path.sh
+[0.147s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/ament_prefix_path.dsv
+[0.147s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/path.sh
+[0.147s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/environment/path.dsv
+[0.147s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.bash
+[0.147s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.sh
+[0.147s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.zsh
+[0.147s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/local_setup.dsv
+[0.147s] -- Installing: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/package.dsv
+[0.148s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/ament_index/resource_index/packages/nodes_pkg
+[0.148s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/cmake/nodes_pkgConfig.cmake
+[0.148s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/cmake/nodes_pkgConfig-version.cmake
+[0.148s] -- Up-to-date: /home/ben/robot_snake/install/nodes_pkg/share/nodes_pkg/package.xml
+[0.150s] Invoked command in '/home/ben/robot_snake/build/nodes_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/nodes_pkg

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(nodes_pkg)
+project(package1)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -28,8 +28,13 @@ ament_target_dependencies(node2 rclcpp std_msgs)
 install(TARGETS
   node1
   node2
-  
   DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY
+  launch
+  config
+  DESTINATION share/${PROJECT_NAME}/
 )
 
 ament_package()
