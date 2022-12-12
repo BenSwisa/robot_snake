@@ -62,16 +62,59 @@ private:
 
   // =====================[CONTROLLER]===========================
     void controller(){
-      motor_cmd_val[0]=(50*(joint_cmd_val[1]-current_enc_val[1]));
+      // -----TENSION CHECK-------
+      for(int i=0;i<3;i++)
+        if(current_tension_val[i]>4){
+          RCLCPP_ERROR(this->get_logger(), " TENSION TOO HIGH  \n");
+          for(int j=0;j<3;j++)
+            motor_cmd_val[j]=0;
+          break;
+        }
+      //--------string 1 -------------
+      error_sum_[0]+=joint_cmd_val[enc_z_]-current_enc_val[enc_z_];
+      // RCLCPP_INFO(this->get_logger(), "eror_sum: %f  \n",error_sum_[0]);
+      last_enc_val[enc_z_]=current_enc_val[enc_z_];
+      // RCLCPP_INFO(this->get_logger(), "eror_deriv: %f  \n",current_enc_val[enc_z_]-last_enc_val[enc_z_]);
+      motor_cmd_val[0]=kp_[0]*(joint_cmd_val[enc_z_]-current_enc_val[enc_z_])+
+                       kd_[0]*(current_enc_val[enc_z_]-last_enc_val[enc_z_])+
+                       ki_[0]*error_sum_[0];
       //  RCLCPP_INFO(this->get_logger(), " %f  \n",motor_cmd_val[0]);
        if(motor_cmd_val[0]>100)
         motor_cmd_val[0]=100;
        else
         if(motor_cmd_val[0]<-100)
         motor_cmd_val[0]=-100;
+      //--------string 2 -------------
+      error_sum_[1]+=0.4-current_tension_val[1];
+      last_tension_val[1]=current_tension_val[1];
+      motor_cmd_val[1]=kp_[1]*(0.4-current_tension_val[1])+
+                       kd_[1]*(current_tension_val[1]-last_tension_val[1])+
+                       ki_[1]*error_sum_[1];  //  control for constant 0.4g on string 2 
+      //  RCLCPP_INFO(this->get_logger(), " %f  \n",motor_cmd_val[0]);
+       if(motor_cmd_val[1]>100)
+        motor_cmd_val[1]=100;
+       else
+        if(motor_cmd_val[1]<-100)
+        motor_cmd_val[1]=-100;
+            //--------string 3 -------------
+      error_sum_[2]+=joint_cmd_val[enc_y_]-current_enc_val[enc_y_];
+      // RCLCPP_INFO(this->get_logger(), "eror_sum: %f  \n",error_sum_[0]);
+      last_enc_val[enc_y_]=current_enc_val[enc_y_];
+      // RCLCPP_INFO(this->get_logger(), "eror_deriv: %f  \n",current_enc_val[enc_y_]-last_enc_val[enc_y_]);
+      motor_cmd_val[2]=kp_[2]*(joint_cmd_val[enc_y_]-current_enc_val[enc_y_])+
+                       kd_[2]*(current_enc_val[enc_y_]-last_enc_val[enc_y_])+
+                       ki_[2]*error_sum_[2];
+      //  RCLCPP_INFO(this->get_logger(), " %f  \n",motor_cmd_val[0]);
+       if(motor_cmd_val[2]>100)
+        motor_cmd_val[2]=100;
+       else
+        if(motor_cmd_val[2]<-100)
+        motor_cmd_val[2]=-100;
+
       auto message = std_msgs::msg::Int32MultiArray();
         message.data={0,0,0,0,0,0,0,0,0,0,0,0};  
-        message.data[0]=(int32_t)motor_cmd_val[0];
+        for(int i=0;i<3;i++)
+          message.data[i]=(int32_t)motor_cmd_val[i];
         motor_cmd_publisher_->publish(message);
 
     }
@@ -81,8 +124,7 @@ private:
       for(int i=0;i<12;i++){
         current_tension_val[i]=msg.data[i];
         }
-    }
-    
+    } 
   // =====================[SET PARAMETERS]===========================
     void get_parameters(){ 
 
@@ -113,16 +155,16 @@ private:
     // int  linked_joints_=2;
     // int  strings_per_joint_=2;
     int controller_freq_,max_pwm_,enc_z_,enc_y_;
-    float joint_cmd_val[enc_per_joint_*linked_joints_]={0}; // [joint*enc_linked] ******* positive val in the direction of pulling the string 
+    float joint_cmd_val[enc_per_joint_*linked_joints_]={0}; // [joint*enc_linked] ******* if looking at the arm from the front positive enc val is up and right
     float current_enc_val[enc_per_joint_*linked_joints_]={0};
     float last_enc_val[enc_per_joint_*linked_joints_]={0};
     float current_tension_val[strings_per_joint_*(linked_joints_+1)]={0}; // adding 1 for now need to be corrected
     float last_tension_val[strings_per_joint_*(linked_joints_+1)]={0};// adding 1 for now need to be corrected
     float motor_cmd_val[strings_per_joint_*(linked_joints_+1)]={0};// adding 1 for now need to be corrected
+    float error_sum_[strings_per_joint_*(linked_joints_+1)]={0};
     std::vector<double>  kp_;
     std::vector<double>  ki_;
     std::vector<double> kd_;
-    
 
 };
  

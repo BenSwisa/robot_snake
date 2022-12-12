@@ -1,0 +1,11 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid Node1::controller()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:65:12:[m[K [01;31m[Kerror: [m[K‘[01m[KTENSION[m[K’ was not declared in this scope; did you mean ‘[01m[KENXIO[m[K’?
+   65 |       -----[01;31m[KTENSION[m[K CHECK-------
+      |            [01;31m[K^~~~~~~[m[K
+      |            [32m[KENXIO[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:66:19:[m[K [01;31m[Kerror: [m[K‘[01m[Ki[m[K’ was not declared in this scope
+   66 |       for(int i=0;[01;31m[Ki[m[K<3;i++)
+      |                   [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -36,7 +36,7 @@ class Node2 : public rclcpp::Node
       for (int i=0;i<6;i++){
         message.data[i]=(float)(joint_angle_cmd_[i]);
       }
-      RCLCPP_INFO(this->get_logger(), "Publishing: '%f'", message.data[0]);
+      RCLCPP_INFO(this->get_logger(), "Publishing: '%f'", message.data[1]);
       publisher_->publish(message);
     }
     rclcpp::TimerBase::SharedPtr timer_;

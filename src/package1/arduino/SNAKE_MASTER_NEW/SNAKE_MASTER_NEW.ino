@@ -170,7 +170,7 @@ void Request_Event(){
   enc.get_pos2(); // manually takes self position from encoders
   arr[0] = enc.AllowAccess_Y(); //placing it at the begining of the array
   arr[1] = enc.AllowAccess_Z();
-  arr[0] = joint_offset[0]-arr[0]; //manually decreceasing the offset values
+  arr[0] = wrapTo180(joint_offset[0]-arr[0]); //manually decreceasing the offset values
   arr[1] = joint_offset[1]-arr[1]; 
   //---------- getting data from slaves ----------
   for (int joint_i = 1; joint_i < N_links; joint_i++) {

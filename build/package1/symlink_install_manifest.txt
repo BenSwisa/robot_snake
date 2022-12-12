@@ -1,6 +1,7 @@
 /home/ben/robot_snake/install/package1/lib/package1/node1
 /home/ben/robot_snake/install/package1/lib/package1/node2
 /home/ben/robot_snake/install/package1/share/package1//launch/launch1.py
+/home/ben/robot_snake/install/package1/share/package1//launch/m_r_launch.py
 /home/ben/robot_snake/install/package1/share/package1//config/node1_con.yaml
 /home/ben/robot_snake/install/package1/share/ament_index/resource_index/package_run_dependencies/package1
 /home/ben/robot_snake/install/package1/share/ament_index/resource_index/parent_prefix_path/package1
