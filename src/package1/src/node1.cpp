@@ -63,13 +63,7 @@ private:
   // =====================[CONTROLLER]===========================
     void controller(){
       // -----TENSION CHECK-------
-      for(int i=0;i<3;i++)
-        if(current_tension_val[i]>4){
-          RCLCPP_ERROR(this->get_logger(), " TENSION TOO HIGH  \n");
-          for(int j=0;j<3;j++)
-            motor_cmd_val[j]=0;
-          break;
-        }
+
       //--------string 1 -------------
       error_sum_[0]+=joint_cmd_val[enc_z_]-current_enc_val[enc_z_];
       // RCLCPP_INFO(this->get_logger(), "eror_sum: %f  \n",error_sum_[0]);
@@ -96,6 +90,7 @@ private:
        else
         if(motor_cmd_val[1]<-100)
         motor_cmd_val[1]=-100;
+        
             //--------string 3 -------------
       error_sum_[2]+=joint_cmd_val[enc_y_]-current_enc_val[enc_y_];
       // RCLCPP_INFO(this->get_logger(), "eror_sum: %f  \n",error_sum_[0]);
@@ -115,6 +110,14 @@ private:
         message.data={0,0,0,0,0,0,0,0,0,0,0,0};  
         for(int i=0;i<3;i++)
           message.data[i]=(int32_t)motor_cmd_val[i];
+
+        for(int i=0;i<3;i++)
+         if(current_tension_val[i]>4){
+          RCLCPP_ERROR(this->get_logger(), " TENSION TOO HIGH  \n");
+          for(int j=0;j<3;j++)
+            message.data[j]=-50;
+          break;
+        }
         motor_cmd_publisher_->publish(message);
 
     }
