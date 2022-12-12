@@ -20,6 +20,7 @@ def generate_launch_description():
         'node1_con.yaml'
         )
 
+
     node1 = Node(
         package="package1",
         executable="node1",

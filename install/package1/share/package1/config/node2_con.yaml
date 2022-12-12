@@ -1,0 +1,7 @@
+
+# Author : BEN SWISA
+
+node2:
+  ros__parameters:
+    joint_angle_cmd : [0.000000,112.000000,0.0000000,
+                        0.0000000,0.0000000,0.0000000]

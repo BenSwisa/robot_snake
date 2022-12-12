@@ -1,0 +1,47 @@
+[0.056s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake /home/ben/robot_snake/src/package1 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ben/robot_snake/install/package1
+[0.143s] -- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.585s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.654s] -- Found rclcpp: 16.0.1 (/opt/ros/humble/share/rclcpp/cmake)
+[0.821s] -- Found rosidl_generator_c: 3.1.3 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.831s] -- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.856s] -- Found rosidl_generator_cpp: 3.1.3 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.909s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_microxrcedds_c;rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.042s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_microxrcedds_cpp;rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.225s] -- Found rmw_implementation_cmake: 6.1.0 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.234s] -- Found rmw_fastrtps_cpp: 6.2.1 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.679s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.193s] -- Configuring done
+[2.246s] -- Generating done
+[2.254s] -- Build files have been written to: /home/ben/robot_snake/build/package1
+[2.270s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake /home/ben/robot_snake/src/package1 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ben/robot_snake/install/package1
+[2.273s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[2.508s] [35m[1mConsolidate compiler generated dependencies of target node2[0m
+[2.518s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[2.636s] [ 25%] [32m[1mLinking CXX executable node2[0m
+[2.642s] [ 50%] [32m[1mLinking CXX executable node1[0m
+[3.565s] [ 75%] Built target node2
+[3.934s] [100%] Built target node1
+[4.000s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[4.315s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/package1
+[4.354s] -- Install configuration: ""
+[4.354s] -- Execute custom install script
+[4.355s] -- Symlinking: /home/ben/robot_snake/install/package1/lib/package1/node1
+[4.399s] -- Symlinking: /home/ben/robot_snake/install/package1/lib/package1/node2
+[4.445s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1//launch/launch1.py
+[4.487s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1//config/node1_con.yaml
+[4.532s] -- Symlinking: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/package_run_dependencies/package1
+[4.577s] -- Symlinking: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/parent_prefix_path/package1
+[4.619s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.sh
+[4.659s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.dsv
+[4.701s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/environment/path.sh
+[4.743s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/environment/path.dsv
+[4.787s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/local_setup.bash
+[4.828s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/local_setup.sh
+[4.870s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/local_setup.zsh
+[4.916s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/local_setup.dsv
+[4.956s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/package.dsv
+[5.000s] -- Symlinking: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/packages/package1
+[5.041s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config.cmake
+[5.083s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config-version.cmake
+[5.125s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/package.xml
+[5.199s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/package1

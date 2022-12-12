@@ -1,2 +1,1 @@
-source;share/package1/environment/ament_prefix_path.sh
-source;share/package1/environment/path.sh
+/home/ben/robot_snake/build/package1/ament_cmake_environment_hooks/local_setup.dsv

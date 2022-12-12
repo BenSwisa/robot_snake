@@ -10,6 +10,6 @@ either source or add in ~/.bashrc : source ~/microros_ws/install/local_setup.bas
 
 Launching micro_ros** checking available ports : ls -l /dev/ttyA* running: ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
 
-github* Starting the ssh-agent: eval "$(ssh-agent -s)" ssh-add ~/.ssh/SNAKE_WS
+github* Starting the ssh-agent: eval "$(ssh-agent -s)" ssh-add ~/.ssh/robot_snake
 
 libraries needed : RLSencoder2, teensy4_i2c, micro_ros_arduino

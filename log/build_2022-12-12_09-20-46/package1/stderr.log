@@ -1,0 +1,7 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:[m[K In member function ‘[01m[Kvoid Node2::timer_callback()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node2.cpp:40:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kto_float[m[K’ is not a member of ‘[01m[Kstd[m[K’
+   40 |         message.data[i]=std::[01;31m[Kto_float[m[K(joint__angle_cmd_[i]);
+      |                              [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node2.dir/build.make:76: CMakeFiles/node2.dir/src/node2.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/node2.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
