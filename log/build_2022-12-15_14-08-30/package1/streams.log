@@ -1,0 +1,29 @@
+[0.087s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[0.439s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[0.599s] [ 50%] Built target node1
+[0.787s] [100%] Built target node2
+[0.899s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[1.371s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/package1
+[1.459s] -- Install configuration: ""
+[1.461s] -- Execute custom install script
+[1.462s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/lib/package1/node1
+[1.463s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/lib/package1/node2
+[1.466s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1//launch/launch1.py
+[1.467s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1//launch/m_r_launch.py
+[1.469s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1//config/node1_con.yaml
+[1.472s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/package_run_dependencies/package1
+[1.474s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/parent_prefix_path/package1
+[1.475s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.sh
+[1.476s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.dsv
+[1.477s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/path.sh
+[1.479s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/path.dsv
+[1.480s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.bash
+[1.482s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.sh
+[1.484s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.zsh
+[1.485s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.dsv
+[1.486s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/package.dsv
+[1.564s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/packages/package1
+[1.565s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config.cmake
+[1.567s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config-version.cmake
+[1.568s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/package.xml
+[1.580s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/package1

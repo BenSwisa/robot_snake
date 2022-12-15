@@ -64,47 +64,75 @@ private:
     void controller(){
       // -----TENSION CHECK-------
 
-      //--------string 1 -------------
-      error_sum_[0]+=joint_cmd_val[enc_z_]-current_enc_val[enc_z_];
-      // RCLCPP_INFO(this->get_logger(), "eror_sum: %f  \n",error_sum_[0]);
-      last_enc_val[enc_z_]=current_enc_val[enc_z_];
-      // RCLCPP_INFO(this->get_logger(), "eror_deriv: %f  \n",current_enc_val[enc_z_]-last_enc_val[enc_z_]);
-      motor_cmd_val[0]=kp_[0]*(joint_cmd_val[enc_z_]-current_enc_val[enc_z_])+
-                       kd_[0]*(current_enc_val[enc_z_]-last_enc_val[enc_z_])+
-                       ki_[0]*error_sum_[0];
-      //  RCLCPP_INFO(this->get_logger(), " %f  \n",motor_cmd_val[0]);
-       if(motor_cmd_val[0]>100)
-        motor_cmd_val[0]=100;
-       else
-        if(motor_cmd_val[0]<-100)
-        motor_cmd_val[0]=-100;
+      //--------string 1,2 -------------
+      for(int i=0;i<3;i+=2){ //loop for motor 1 & 3
+        if(i==0) 
+         enc_axis=enc_z_;
+        else 
+          enc_axis=enc_y_;
+        last_error[i]=error[i];
+        error[i]=joint_cmd_val[enc_axis]-current_enc_val[enc_axis];
+        if(isErrorSameSign(error[i],last_error[i])==false) //if error changed sign integrator should be 0 so we wont get windup
+          error_sum_[i]=0;
+        if(saturation_flag[i]==false) //while we are in saturation dont sum the integrator so we wont get windup
+          error_sum_[i]+=error[i];
+        last_enc_val[enc_axis]=current_enc_val[enc_axis];
+        motor_cmd_val[i]=kp_[i]*(error[i])+ // pid controll to publish the right motor cmd
+                        kd_[i]*(current_enc_val[enc_axis]-last_enc_val[enc_axis])+
+                        ki_[i]*error_sum_[i];
+        if(motor_cmd_val[i]>max_pwm_){ //motor command limitation
+          motor_cmd_val[i]=max_pwm_;
+          saturation_flag[i]=1;
+        }
+        else
+          if(motor_cmd_val[i]<-max_pwm_){
+            motor_cmd_val[i]=-max_pwm_;
+            saturation_flag[i]=1;
+          }
+          else // we are not saturated
+            saturation_flag[i]=0;
+      }
+
+        
       //--------string 2 -------------
       error_sum_[1]+=0.4-current_tension_val[1];
       last_tension_val[1]=current_tension_val[1];
       motor_cmd_val[1]=kp_[1]*(0.4-current_tension_val[1])+
                        kd_[1]*(current_tension_val[1]-last_tension_val[1])+
-                       ki_[1]*error_sum_[1];  //  control for constant 0.4g on string 2 
+                       ki_[1]*error_sum_[1];  //  control for constant 0.4gram on string 2 
       //  RCLCPP_INFO(this->get_logger(), " %f  \n",motor_cmd_val[0]);
-       if(motor_cmd_val[1]>100)
-        motor_cmd_val[1]=100;
+       if(motor_cmd_val[1]>max_pwm_)
+        motor_cmd_val[1]=max_pwm_;
        else
-        if(motor_cmd_val[1]<-100)
-        motor_cmd_val[1]=-100;
-        
+        if(motor_cmd_val[1]<-max_pwm_)
+        motor_cmd_val[1]=-max_pwm_;
+
             //--------string 3 -------------
-      error_sum_[2]+=joint_cmd_val[enc_y_]-current_enc_val[enc_y_];
-      // RCLCPP_INFO(this->get_logger(), "eror_sum: %f  \n",error_sum_[0]);
-      last_enc_val[enc_y_]=current_enc_val[enc_y_];
-      // RCLCPP_INFO(this->get_logger(), "eror_deriv: %f  \n",current_enc_val[enc_y_]-last_enc_val[enc_y_]);
-      motor_cmd_val[2]=kp_[2]*(joint_cmd_val[enc_y_]-current_enc_val[enc_y_])+
-                       kd_[2]*(current_enc_val[enc_y_]-last_enc_val[enc_y_])+
-                       ki_[2]*error_sum_[2];
-      //  RCLCPP_INFO(this->get_logger(), " %f  \n",motor_cmd_val[0]);
-       if(motor_cmd_val[2]>100)
-        motor_cmd_val[2]=100;
-       else
-        if(motor_cmd_val[2]<-100)
-        motor_cmd_val[2]=-100;
+      // last_error=error;
+      // error=joint_cmd_val[enc_y_]-current_enc_val[enc_y_];
+      // if(isErrorSameSign(error,last_error)==false)
+      //   error_sum_[2]=0;
+      // if(saturation_flag[2]==false)
+      //   error_sum_[2]+=error;
+      // // RCLCPP_INFO(this->get_logger(), "eror_sum: %f  \n",error_sum_[0]);
+      // last_enc_val[enc_y_]=current_enc_val[enc_y_];
+      // // RCLCPP_INFO(this->get_logger(), "eror_deriv: %f  \n",current_enc_val[enc_y_]-last_enc_val[enc_y_]);
+      // motor_cmd_val[2]=kp_[2]*error+
+      //                  kd_[2]*(current_enc_val[enc_y_]-last_enc_val[enc_y_])+
+      //                  ki_[2]*error_sum_[2];
+      // //  RCLCPP_INFO(this->get_logger(), " %f  \n",motor_cmd_val[0]);
+      // if(motor_cmd_val[2]>max_pwm_){
+      //   motor_cmd_val[2]=max_pwm_;
+      //   saturation_flag[2]=1;
+      //  }
+      //  else
+      //   if(motor_cmd_val[2]<-max_pwm_){
+      //     motor_cmd_val[2]=-max_pwm_;
+      //     saturation_flag[2]=1;
+      //   }
+      //   else
+      //    saturation_flag[2]=0;
+      
 
       auto message = std_msgs::msg::Int32MultiArray();
         message.data={0,0,0,0,0,0,0,0,0,0,0,0};  
@@ -112,15 +140,24 @@ private:
           message.data[i]=(int32_t)motor_cmd_val[i];
 
         for(int i=0;i<3;i++)
-         if(current_tension_val[i]>4){
+         if(current_tension_val[i]>5){
           RCLCPP_ERROR(this->get_logger(), " TENSION TOO HIGH  \n");
           for(int j=0;j<3;j++)
             message.data[j]=-50;
-          break;
         }
         motor_cmd_publisher_->publish(message);
 
     }
+
+    int isErrorSameSign(float error,float last_error){
+     if(error>0 && last_error>0)
+      return 1;
+     if(error<0 && last_error<0)
+      return 1;
+    return 0;
+    }
+
+     
     
     void tension_val_callback(const std_msgs::msg::Float32MultiArray msg){
     //  RCLCPP_INFO(this->get_logger(), " %f , %f \n",msg.data[0],msg.data[1]);
@@ -130,7 +167,7 @@ private:
     } 
   // =====================[SET PARAMETERS]===========================
     void get_parameters(){ 
-
+      // todo
       this->declare_parameter("max_pwm",0);
       this->declare_parameter("enc_y",0); 
       this->declare_parameter("enc_z",1);  
@@ -157,7 +194,9 @@ private:
     // int  enc_per_joint_=2;
     // int  linked_joints_=2;
     // int  strings_per_joint_=2;
-    int controller_freq_,max_pwm_,enc_z_,enc_y_;
+    int controller_freq_,max_pwm_,enc_z_,enc_y_,enc_axis;
+    float error[strings_per_joint_*(linked_joints_+1)]={0};
+    float last_error[strings_per_joint_*(linked_joints_+1)]={0};
     float joint_cmd_val[enc_per_joint_*linked_joints_]={0}; // [joint*enc_linked] ******* if looking at the arm from the front positive enc val is up and right
     float current_enc_val[enc_per_joint_*linked_joints_]={0};
     float last_enc_val[enc_per_joint_*linked_joints_]={0};
@@ -165,6 +204,7 @@ private:
     float last_tension_val[strings_per_joint_*(linked_joints_+1)]={0};// adding 1 for now need to be corrected
     float motor_cmd_val[strings_per_joint_*(linked_joints_+1)]={0};// adding 1 for now need to be corrected
     float error_sum_[strings_per_joint_*(linked_joints_+1)]={0};
+    int saturation_flag[strings_per_joint_*(linked_joints_+1)]={0};
     std::vector<double>  kp_;
     std::vector<double>  ki_;
     std::vector<double> kd_;

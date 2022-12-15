@@ -1,0 +1,7 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid Node1::controller()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:90:8:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kelse[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+   90 |        [01;35m[Kelse[m[K
+      |        [01;35m[K^~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:94:9:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kelse[m[K’
+   94 |         [01;36m[Kmotor_cmd_val[m[K[1]=-100;
+      |         [01;36m[K^~~~~~~~~~~~~[m[K
