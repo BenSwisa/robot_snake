@@ -1,0 +1,173 @@
+[0.000000] (-) TimerEvent: {}
+[0.000260] (package1) JobQueued: {'identifier': 'package1', 'dependencies': OrderedDict()}
+[0.000727] (package1) JobStarted: {'identifier': 'package1'}
+[0.025330] (package1) JobProgress: {'identifier': 'package1', 'progress': 'cmake'}
+[0.026070] (package1) JobProgress: {'identifier': 'package1', 'progress': 'build'}
+[0.026650] (package1) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ben/robot_snake/build/package1', '--', '-j3', '-l3'], 'cwd': '/home/ben/robot_snake/build/package1', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IL:en'), ('USER', 'ben'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ben/ros2_ws/install/tutorial_interfaces/lib:/home/ben/ros2_ws/install/message_filters/lib:/home/ben/ros2_ws/install/cv_bridge/lib:/home/ben/microros_ws/install/visualization_msgs/lib:/home/ben/microros_ws/install/test_msgs/lib:/home/ben/microros_ws/install/example_interfaces/lib:/home/ben/microros_ws/install/action_msgs/lib:/home/ben/microros_ws/install/unique_identifier_msgs/lib:/home/ben/microros_ws/install/trajectory_msgs/lib:/home/ben/microros_ws/install/stereo_msgs/lib:/home/ben/microros_ws/install/std_srvs/lib:/home/ben/microros_ws/install/shape_msgs/lib:/home/ben/microros_ws/install/sensor_msgs/lib:/home/ben/microros_ws/install/nav_msgs/lib:/home/ben/microros_ws/install/diagnostic_msgs/lib:/home/ben/microros_ws/install/geometry_msgs/lib:/home/ben/microros_ws/install/actionlib_msgs/lib:/home/ben/microros_ws/install/std_msgs/lib:/home/ben/microros_ws/install/statistics_msgs/lib:/home/ben/microros_ws/install/rmw_microxrcedds/lib:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/lib:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c/lib:/home/ben/microros_ws/install/rosgraph_msgs/lib:/home/ben/microros_ws/install/rclc_parameter/lib:/home/ben/microros_ws/install/rclc/lib:/home/ben/microros_ws/install/composition_interfaces/lib:/home/ben/microros_ws/install/rcl_interfaces/lib:/home/ben/microros_ws/install/microxrcedds_client/lib:/home/ben/microros_ws/install/microcdr/lib:/home/ben/microros_ws/install/micro_ros_utilities/lib:/home/ben/microros_ws/install/micro_ros_agent/lib:/home/ben/microros_ws/install/micro_ros_msgs/lib:/home/ben/microros_ws/install/lifecycle_msgs/lib:/home/ben/microros_ws/install/complex_msgs/lib:/home/ben/microros_ws/install/builtin_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ben'), ('OLDPWD', '/home/ben/robot_snake/src/.vscode'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1896'), ('SYSTEMD_EXEC_PID', '2116'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7321'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ben/robot_snake/install:/home/ben/microros_ws/install:/home/ben/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ben'), ('JOURNAL_STREAM', '8:50834'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ben'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ben/ros2_ws/install/rqt_gui/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ben-virtual-machine:@/tmp/.ICE-unix/2066,unix/ben-virtual-machine:/tmp/.ICE-unix/2066'), ('INVOCATION_ID', '1a4a076dd3f5401f8d25d3b6285814b7'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.P1FDX1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ben/ros2_ws/install/my_robot_bringup:/home/ben/ros2_ws/install/my_cpp_pkg:/home/ben/ros2_ws/install/tutorial_interfaces:/home/ben/ros2_ws/install/spot_micro:/home/ben/ros2_ws/install/rqt_msg:/home/ben/ros2_ws/install/rqt_py_common:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/ros2_ws/install/qt_gui_py_common:/home/ben/ros2_ws/install/qt_gui:/home/ben/ros2_ws/install/python_qt_binding:/home/ben/ros2_ws/install/message_filters:/home/ben/ros2_ws/install/cv_bridge:/home/ben/robot_snake/install/package1:/home/ben/robot_snake/install/nodes_pkg:/home/ben/microros_ws/install/micro_ros_demos_rclc:/home/ben/microros_ws/install/common_interfaces:/home/ben/microros_ws/install/visualization_msgs:/home/ben/microros_ws/install/test_msgs:/home/ben/microros_ws/install/example_interfaces:/home/ben/microros_ws/install/action_msgs:/home/ben/microros_ws/install/unique_identifier_msgs:/home/ben/microros_ws/install/trajectory_msgs:/home/ben/microros_ws/install/stereo_msgs:/home/ben/microros_ws/install/std_srvs:/home/ben/microros_ws/install/shape_msgs:/home/ben/microros_ws/install/sensor_msgs_py:/home/ben/microros_ws/install/sensor_msgs:/home/ben/microros_ws/install/nav_msgs:/home/ben/microros_ws/install/diagnostic_msgs:/home/ben/microros_ws/install/geometry_msgs:/home/ben/microros_ws/install/actionlib_msgs:/home/ben/microros_ws/install/std_msgs:/home/ben/microros_ws/install/statistics_msgs:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/ben/microros_ws/install/rmw_microxrcedds:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/ben/microros_ws/install/rosgraph_msgs:/home/ben/microros_ws/install/rclc_parameter:/home/ben/microros_ws/install/rclc:/home/ben/microros_ws/install/composition_interfaces:/home/ben/microros_ws/install/rcl_interfaces:/home/ben/microros_ws/install/micro_ros_utilities:/home/ben/microros_ws/install/micro_ros_setup:/home/ben/microros_ws/install/micro_ros_agent:/home/ben/microros_ws/install/micro_ros_msgs:/home/ben/microros_ws/install/lifecycle_msgs:/home/ben/microros_ws/install/complex_msgs:/home/ben/microros_ws/install/builtin_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:5f56e6b8-4c37-41b4-822a-97409039b22f'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ben/robot_snake/build/package1'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ben/ros2_ws/install/tutorial_interfaces/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/rqt_msg/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/rqt_py_common/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/rqt_gui_py/lib/python3.10/site-packages:/home/ben/ros2_ws/install/rqt_gui/lib/python3.10/site-packages:/home/ben/ros2_ws/install/qt_gui_py_common/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/qt_gui/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/python_qt_binding/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/message_filters/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/cv_bridge/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/visualization_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/test_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/example_interfaces/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/action_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/unique_identifier_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/trajectory_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/stereo_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/std_srvs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/shape_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/sensor_msgs_py/lib/python3.10/site-packages:/home/ben/microros_ws/install/sensor_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/nav_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/diagnostic_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/geometry_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/actionlib_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/std_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/statistics_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rosgraph_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/composition_interfaces/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rcl_interfaces/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/lifecycle_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/complex_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/builtin_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ben/ros2_ws/install/my_robot_bringup:/home/ben/ros2_ws/install/my_cpp_pkg:/home/ben/ros2_ws/install/tutorial_interfaces:/home/ben/ros2_ws/install/spot_micro:/home/ben/ros2_ws/install/rqt_msg:/home/ben/ros2_ws/install/rqt_py_common:/home/ben/ros2_ws/install/qt_gui_py_common:/home/ben/ros2_ws/install/qt_gui:/home/ben/ros2_ws/install/python_qt_binding:/home/ben/ros2_ws/install/message_filters:/home/ben/ros2_ws/install/cv_bridge:/home/ben/robot_snake/install/package1:/home/ben/robot_snake/install/nodes_pkg:/home/ben/microros_ws/install/micro_ros_demos_rclc:/home/ben/microros_ws/install/common_interfaces:/home/ben/microros_ws/install/visualization_msgs:/home/ben/microros_ws/install/test_msgs:/home/ben/microros_ws/install/example_interfaces:/home/ben/microros_ws/install/action_msgs:/home/ben/microros_ws/install/unique_identifier_msgs:/home/ben/microros_ws/install/trajectory_msgs:/home/ben/microros_ws/install/stereo_msgs:/home/ben/microros_ws/install/std_srvs:/home/ben/microros_ws/install/shape_msgs:/home/ben/microros_ws/install/sensor_msgs:/home/ben/microros_ws/install/nav_msgs:/home/ben/microros_ws/install/diagnostic_msgs:/home/ben/microros_ws/install/geometry_msgs:/home/ben/microros_ws/install/actionlib_msgs:/home/ben/microros_ws/install/std_msgs:/home/ben/microros_ws/install/statistics_msgs:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/ben/microros_ws/install/rmw_microxrcedds:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/ben/microros_ws/install/rosgraph_msgs:/home/ben/microros_ws/install/rclc_parameter:/home/ben/microros_ws/install/rclc:/home/ben/microros_ws/install/composition_interfaces:/home/ben/microros_ws/install/rcl_interfaces:/home/ben/microros_ws/install/microxrcedds_client:/home/ben/microros_ws/install/microcdr:/home/ben/microros_ws/install/micro_ros_utilities:/home/ben/microros_ws/install/micro_ros_setup:/home/ben/microros_ws/install/micro_ros_agent:/home/ben/microros_ws/install/micro_ros_msgs:/home/ben/microros_ws/install/lifecycle_msgs:/home/ben/microros_ws/install/complex_msgs:/home/ben/microros_ws/install/builtin_interfaces:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble')]), 'shell': False}
+[0.099565] (-) TimerEvent: {}
+[0.114260] (package1) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target node1\x1b[0m\n'}
+[0.149144] (package1) StdoutLine: {'line': b'[ 50%] Built target node2\n'}
+[0.154911] (package1) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o\x1b[0m\n'}
+[0.199728] (-) TimerEvent: {}
+[0.300415] (-) TimerEvent: {}
+[0.400859] (-) TimerEvent: {}
+[0.501301] (-) TimerEvent: {}
+[0.551610] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:294:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kunterminated argument list invoking macro "RCLCPP_ERROR"\n'}
+[0.552026] (package1) StderrLine: {'line': b'  294 | \n'}
+[0.552188] (package1) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[0.601499] (-) TimerEvent: {}
+[0.702067] (-) TimerEvent: {}
+[0.808893] (-) TimerEvent: {}
+[0.910239] (-) TimerEvent: {}
+[1.010656] (-) TimerEvent: {}
+[1.110970] (-) TimerEvent: {}
+[1.211319] (-) TimerEvent: {}
+[1.311861] (-) TimerEvent: {}
+[1.412234] (-) TimerEvent: {}
+[1.512618] (-) TimerEvent: {}
+[1.613047] (-) TimerEvent: {}
+[1.713573] (-) TimerEvent: {}
+[1.813884] (-) TimerEvent: {}
+[1.914221] (-) TimerEvent: {}
+[2.014520] (-) TimerEvent: {}
+[2.114876] (-) TimerEvent: {}
+[2.215275] (-) TimerEvent: {}
+[2.315751] (-) TimerEvent: {}
+[2.416109] (-) TimerEvent: {}
+[2.516504] (-) TimerEvent: {}
+[2.616878] (-) TimerEvent: {}
+[2.717167] (-) TimerEvent: {}
+[2.817467] (-) TimerEvent: {}
+[2.917918] (-) TimerEvent: {}
+[3.018297] (-) TimerEvent: {}
+[3.026771] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:91:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 at end of input\n'}
+[3.027022] (package1) StderrLine: {'line': b'   91 |         RCLCPP_ERROR\x1b[01;31m\x1b[K(\x1b[m\x1b[Kthis->get_logger(), "NO REPONSE joint_time: %d",MAX_TIME_BETWEEN_CALLBACKS*(1/controller_freq_);\n'}
+[3.027115] (package1) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.027177] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:31:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.027245] (package1) StderrLine: {'line': b'   31 | \x1b[01;36m\x1b[K{\x1b[m\x1b[K\n'}
+[3.027306] (package1) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.027600] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KNode1::Node1()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.027777] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:35:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KNode1::get_parameters()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.027927] (package1) StderrLine: {'line': b'   35 |       \x1b[01;31m\x1b[Kget_parameters()\x1b[m\x1b[K; // set and get the parameters\n'}
+[3.028033] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[3.028393] (package1) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[3.028574] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[3.028730] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[3.028882] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:15\x1b[m\x1b[K:\n'}
+[3.029233] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:786:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class ParameterT> bool rclcpp::Node::get_parameters(const string&, std::map<std::__cxx11::basic_string<char>, ParameterT>&) const\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.029414] (package1) StderrLine: {'line': b'  786 |   \x1b[01;36m\x1b[Kget_parameters\x1b[m\x1b[K(\n'}
+[3.029742] (package1) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.029808] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:786:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[3.029874] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:35:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[3.029934] (package1) StderrLine: {'line': b'   35 |       \x1b[01;36m\x1b[Kget_parameters()\x1b[m\x1b[K; // set and get the parameters\n'}
+[3.030010] (package1) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[3.030235] (package1) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[3.030383] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[3.030450] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[3.030515] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:15\x1b[m\x1b[K:\n'}
+[3.030570] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:745:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<rclcpp::Parameter> rclcpp::Node::get_parameters(const std::vector<std::__cxx11::basic_string<char> >&) const\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.030646] (package1) StderrLine: {'line': b'  745 |   \x1b[01;36m\x1b[Kget_parameters\x1b[m\x1b[K(const std::vector<std::string> & names) const;\n'}
+[3.030701] (package1) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.030764] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:745:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[3.039757] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:38:6:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_val_subscriber_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcount_subscribers\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.039945] (package1) StderrLine: {'line': b'   38 |      \x1b[01;31m\x1b[Kjoint_val_subscriber_\x1b[m\x1b[K = this->create_subscription<std_msgs::msg::Float32MultiArray>(\n'}
+[3.040025] (package1) StderrLine: {'line': b'      |      \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.040096] (package1) StderrLine: {'line': b'      |      \x1b[32m\x1b[Kcount_subscribers\x1b[m\x1b[K\n'}
+[3.102005] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:41:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktension_val_subscriber_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.102187] (package1) StderrLine: {'line': b'   41 |     \x1b[01;31m\x1b[Ktension_val_subscriber_\x1b[m\x1b[K = this->create_subscription<std_msgs::msg::Float32MultiArray>(\n'}
+[3.102258] (package1) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.102349] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:42:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktension_val_callback\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[KNode1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.102520] (package1) StderrLine: {'line': b'   42 |       "tension_val_topic", 10, std::bind(&Node1::\x1b[01;31m\x1b[Ktension_val_callback\x1b[m\x1b[K, this, _1));\n'}
+[3.102587] (package1) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.109976] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:44:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_cmd_subscriber_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcount_subscribers\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.110114] (package1) StderrLine: {'line': b'   44 |     \x1b[01;31m\x1b[Kjoint_cmd_subscriber_\x1b[m\x1b[K = this->create_subscription<std_msgs::msg::Float32MultiArray>(\n'}
+[3.110182] (package1) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.110246] (package1) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kcount_subscribers\x1b[m\x1b[K\n'}
+[3.118242] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:47:6:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmotor_cmd_publisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.118371] (-) TimerEvent: {}
+[3.118462] (package1) StderrLine: {'line': b'   47 |      \x1b[01;31m\x1b[Kmotor_cmd_publisher_\x1b[m\x1b[K = this->create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10);\n'}
+[3.118541] (package1) StderrLine: {'line': b'      |      \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.125174] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:48:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcontroller_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcontroller\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.125490] (package1) StderrLine: {'line': b'   48 |     \x1b[01;31m\x1b[Kcontroller_\x1b[m\x1b[K = this->create_wall_timer(std::chrono::milliseconds((int)(1/controller_freq_*1000)), std::bind(&Node1::controller, this)); //publish motor cmd every second\n'}
+[3.125574] (package1) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.125642] (package1) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kcontroller\x1b[m\x1b[K\n'}
+[3.131548] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:48:77:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcontroller_freq_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcontroller\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.131678] (package1) StderrLine: {'line': b'   48 |     controller_ = this->create_wall_timer(std::chrono::milliseconds((int)(1/\x1b[01;31m\x1b[Kcontroller_freq_\x1b[m\x1b[K*1000)), std::bind(&Node1::controller, this)); //publish motor cmd every second\n'}
+[3.131742] (package1) StderrLine: {'line': b'      |                                                                             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.131809] (package1) StderrLine: {'line': b'      |                                                                             \x1b[32m\x1b[Kcontroller\x1b[m\x1b[K\n'}
+[3.141780] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Node1::joint_val_callback(std_msgs::msg::Float32MultiArray)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.142047] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:63:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_enc_val\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.142122] (package1) StderrLine: {'line': b'   63 |         \x1b[01;31m\x1b[Kcurrent_enc_val\x1b[m\x1b[K[i]=msg.data[i];\n'}
+[3.142187] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.155695] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:65:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_time_between_callbacks\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.156395] (package1) StderrLine: {'line': b'   65 |         \x1b[01;31m\x1b[Kjoint_time_between_callbacks\x1b[m\x1b[K=0;\n'}
+[3.156627] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.162985] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Node1::joint_cmd_callback(std_msgs::msg::Float32MultiArray)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.163151] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:75:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_cmd_val\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kjoint_cmd_callback\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.163278] (package1) StderrLine: {'line': b'   75 |         \x1b[01;31m\x1b[Kjoint_cmd_val\x1b[m\x1b[K[i]=msg.data[i];\n'}
+[3.163366] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.163453] (package1) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kjoint_cmd_callback\x1b[m\x1b[K\n'}
+[3.173603] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Node1::controller()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.173778] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:86:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_time_between_callbacks\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.173860] (package1) StderrLine: {'line': b'   86 |         if(\x1b[01;31m\x1b[Kjoint_time_between_callbacks\x1b[m\x1b[K>MAX_TIME_BETWEEN_CALLBACKS*(1/controller_freq_)||\n'}
+[3.173924] (package1) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.180085] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:86:71:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcontroller_freq_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcontroller\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.180262] (package1) StderrLine: {'line': b'   86 |         if(joint_time_between_callbacks>MAX_TIME_BETWEEN_CALLBACKS*(1/\x1b[01;31m\x1b[Kcontroller_freq_\x1b[m\x1b[K)||\n'}
+[3.180347] (package1) StderrLine: {'line': b'      |                                                                       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.180414] (package1) StderrLine: {'line': b'      |                                                                       \x1b[32m\x1b[Kcontroller\x1b[m\x1b[K\n'}
+[3.189903] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:87:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktension_time_between_callbacks\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.190052] (package1) StderrLine: {'line': b'   87 |            \x1b[01;31m\x1b[Ktension_time_between_callbacks\x1b[m\x1b[K>MAX_TIME_BETWEEN_CALLBACKS*(1/controller_freq_)){\n'}
+[3.190119] (package1) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.195932] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:91:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.196153] (package1) StderrLine: {'line': b'   91 |         \x1b[01;31m\x1b[KRCLCPP_ERROR\x1b[m\x1b[K(this->get_logger(), "NO REPONSE joint_time: %d",MAX_TIME_BETWEEN_CALLBACKS*(1/controller_freq_);\n'}
+[3.196276] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.196474] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:91:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 at end of input\n'}
+[3.196571] (package1) StderrLine: {'line': b'   91 |         RCLCPP_ERROR\x1b[01;31m\x1b[K(\x1b[m\x1b[Kthis->get_logger(), "NO REPONSE joint_time: %d",MAX_TIME_BETWEEN_CALLBACKS*(1/controller_freq_);\n'}
+[3.196629] (package1) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.196692] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:84:22:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.196751] (package1) StderrLine: {'line': b'   84 |     void controller()\x1b[01;36m\x1b[K{\x1b[m\x1b[K\n'}
+[3.196815] (package1) StderrLine: {'line': b'      |                      \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[3.196869] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K At global scope:\n'}
+[3.197005] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:91:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id at end of input\n'}
+[3.197093] (package1) StderrLine: {'line': b'   91 |         RCLCPP_ERROR\x1b[01;31m\x1b[K(\x1b[m\x1b[Kthis->get_logger(), "NO REPONSE joint_time: %d",MAX_TIME_BETWEEN_CALLBACKS*(1/controller_freq_);\n'}
+[3.197155] (package1) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.218500] (-) TimerEvent: {}
+[3.318852] (-) TimerEvent: {}
+[3.419209] (-) TimerEvent: {}
+[3.519617] (-) TimerEvent: {}
+[3.620149] (-) TimerEvent: {}
+[3.720530] (-) TimerEvent: {}
+[3.820962] (-) TimerEvent: {}
+[3.921507] (-) TimerEvent: {}
+[4.021806] (-) TimerEvent: {}
+[4.122105] (-) TimerEvent: {}
+[4.222453] (-) TimerEvent: {}
+[4.322728] (-) TimerEvent: {}
+[4.423149] (-) TimerEvent: {}
+[4.523626] (-) TimerEvent: {}
+[4.624285] (-) TimerEvent: {}
+[4.724745] (-) TimerEvent: {}
+[4.825235] (-) TimerEvent: {}
+[4.925734] (-) TimerEvent: {}
+[5.026505] (-) TimerEvent: {}
+[5.127220] (-) TimerEvent: {}
+[5.228088] (-) TimerEvent: {}
+[5.328639] (-) TimerEvent: {}
+[5.429167] (-) TimerEvent: {}
+[5.529655] (-) TimerEvent: {}
+[5.630231] (-) TimerEvent: {}
+[5.730726] (-) TimerEvent: {}
+[5.831217] (-) TimerEvent: {}
+[5.931779] (-) TimerEvent: {}
+[6.032312] (-) TimerEvent: {}
+[6.132742] (-) TimerEvent: {}
+[6.233139] (-) TimerEvent: {}
+[6.333817] (-) TimerEvent: {}
+[6.430741] (package1) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1\n'}
+[6.431033] (package1) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2\n'}
+[6.431242] (package1) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[6.433981] (-) TimerEvent: {}
+[6.436052] (package1) CommandEnded: {'returncode': 2}
+[6.534092] (-) TimerEvent: {}
+[6.557874] (package1) JobEnded: {'identifier': 'package1', 'rc': 2}
+[6.569027] (-) EventReactorShutdown: {}

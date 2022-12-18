@@ -3,8 +3,8 @@
 //bensw@post.bgu.ac.il
 //==============================================================================
 /*TODO:
-[ ]check if mirco ros nodes are stiil running , if not ,shut dwom with output
-
+[ ]check if mirco ros nodes are stiil running , if not ,shut dowm with output
+[ ]check the new motor micro_controller node
 */
 #include <chrono>
 #include <functional>
@@ -23,6 +23,8 @@ using namespace std::chrono_literals;
 #define enc_per_joint_ 2 
 #define strings_per_joint_ 3
 #define linked_joints_ 3
+#define LINKED_MOTORS 3 //TODO change to parameters
+#define MAX_TIME_BETWEEN_CALLBACKS 5 // in seconds
  
 
 class Node1 : public rclcpp::Node 
@@ -47,7 +49,6 @@ public:
      
     }
 
-      rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher_;
 
 
  
@@ -58,9 +59,10 @@ private:
     array current_enc_val[]
   */
     void joint_val_callback(const std_msgs::msg::Float32MultiArray msg){
-      for(int i=0;i<6;i++){
+      for(int i=0;i<enc_per_joint_*linked_joints_;i++){
         current_enc_val[i]=msg.data[i];
         }
+        joint_time_between_callbacks=0;
     }
   
   /*=====================[JOINT CMD CALLBACK]===========================
@@ -80,8 +82,18 @@ private:
      
   */
     void controller(){
+      
+      // checking for response from encoder values and tension values if no response for some time than stop the node
+        if(joint_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_||
+           tension_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_){
+            RCLCPP_ERROR(this->get_logger(), "NO REPONSE FROM MICRO CONTROLLERS");
+            rclcpp::shutdown();
+        }    
+        joint_time_between_callbacks++;
+        tension_time_between_callbacks++;     
+
       //--------  string 1,2 -------------
-      for(int i=0;i<3;i+=2){ //loop for motor 1 & 3
+      for(int i=0;i<LINKED_MOTORS;i+=2){ //loop for motor 1 & 3
         if(i==0) 
          enc_axis=enc_z_;
         else 
@@ -92,9 +104,9 @@ private:
           error_sum_[i]=0;
         if(saturation_flag[i]==false) //while we are in saturation dont sum the integrator so we wont get windup
           error_sum_[i]+=error[i];
-        last_enc_val[enc_axis]=current_enc_val[enc_axis];
+        //last_enc_val[enc_axis]=current_enc_val[enc_axis]; //[ ]is this relevant?
         motor_cmd_val[i]=kp_[i]*(error[i])+ // pid controll to publish the right motor cmd
-                        kd_[i]*(current_enc_val[enc_axis]-last_enc_val[enc_axis])+
+                        kd_[i]*(error[i]-last_error[i])+ //[ ]check if eror diferential is working
                         ki_[i]*error_sum_[i];
         if(motor_cmd_val[i]>max_pwm_){ //motor command limitation
           motor_cmd_val[i]=max_pwm_;
@@ -109,10 +121,11 @@ private:
             saturation_flag[i]=0;
       }
 
+       
         
       //--------string 2 -------------
       error_sum_[1]+=0.4-current_tension_val[1];
-      last_tension_val[1]=current_tension_val[1];
+      last_tension_val[1]=current_tension_val[1]; //FIXME current tension same as last tension? mabe error differential
       motor_cmd_val[1]=kp_[1]*(0.4-current_tension_val[1])+
                        kd_[1]*(current_tension_val[1]-last_tension_val[1])+
                        ki_[1]*error_sum_[1];  //  control for constant 0.4gram on string 2 
@@ -122,32 +135,6 @@ private:
        else
         if(motor_cmd_val[1]<-max_pwm_)
         motor_cmd_val[1]=-max_pwm_;
-
-            //--------string 3 -------------
-      // last_error=error;
-      // error=joint_cmd_val[enc_y_]-current_enc_val[enc_y_];
-      // if(isErrorSameSign(error,last_error)==false)
-      //   error_sum_[2]=0;
-      // if(saturation_flag[2]==false)
-      //   error_sum_[2]+=error;
-      // // RCLCPP_INFO(this->get_logger(), "eror_sum: %f  \n",error_sum_[0]);
-      // last_enc_val[enc_y_]=current_enc_val[enc_y_];
-      // // RCLCPP_INFO(this->get_logger(), "eror_deriv: %f  \n",current_enc_val[enc_y_]-last_enc_val[enc_y_]);
-      // motor_cmd_val[2]=kp_[2]*error+
-      //                  kd_[2]*(current_enc_val[enc_y_]-last_enc_val[enc_y_])+
-      //                  ki_[2]*error_sum_[2];
-      // //  RCLCPP_INFO(this->get_logger(), " %f  \n",motor_cmd_val[0]);
-      // if(motor_cmd_val[2]>max_pwm_){
-      //   motor_cmd_val[2]=max_pwm_;
-      //   saturation_flag[2]=1;
-      //  }
-      //  else
-      //   if(motor_cmd_val[2]<-max_pwm_){
-      //     motor_cmd_val[2]=-max_pwm_;
-      //     saturation_flag[2]=1;
-      //   }
-      //   else
-      //    saturation_flag[2]=0;
       
       //----- INITIALIZE MSG ------
       auto message = std_msgs::msg::Int32MultiArray(); 
@@ -175,17 +162,17 @@ private:
       return 1;
     return 0;
     }
-
-     
+  
   /*=====================[TENSION CALLBACK]===========================
     this function gets the tension from the tension_val_topic and inserting them into the
     array current_tension_val[]
   */
     void tension_val_callback(const std_msgs::msg::Float32MultiArray msg){ 
     //  RCLCPP_INFO(this->get_logger(), " %f , %f \n",msg.data[0],msg.data[1]);
-      for(int i=0;i<12;i++){
+      for(int i=0;i<strings_per_joint_*(linked_joints_+1);i++){
         current_tension_val[i]=msg.data[i];
         }
+        tension_time_between_callbacks=0;
     } // TODO set the new tension constants to get better values
   
   /* =====================[GET PARAMETERS]===========================
@@ -232,11 +219,14 @@ saturation_flag: when saturated we need to stop summing the error
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr joint_val_subscriber_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr tension_val_subscriber_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr joint_cmd_subscriber_;
+    rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher_;
     rclcpp::TimerBase::SharedPtr controller_;
     // int  enc_per_joint_=2;
     // int  linked_joints_=2;
     // int  strings_per_joint_=2;
     int controller_freq_,max_pwm_,enc_z_,enc_y_,enc_axis;
+    int joint_time_between_callbacks=0;
+    int tension_time_between_callbacks=0;
     float error[strings_per_joint_*(linked_joints_+1)]={0}; 
     float last_error[strings_per_joint_*(linked_joints_+1)]={0};
     float joint_cmd_val[enc_per_joint_*linked_joints_]={0}; // [joint*enc_linked] ******* if looking at the arm from the front positive enc val is up and right
@@ -254,52 +244,20 @@ saturation_flag: when saturated we need to stop summing the error
 };
  
 
-// void shutdown_callback(const std::shared_ptr<Node1> node)
-// {
-//        RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
-//         // rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher1;
-//         // motor_cmd_publisher1 = node->create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10);
-//         // auto message = std_msgs::msg::Int32MultiArray(); 
-//         // message.data={100,10,10,10,0,0,0,0,0,0,0,0};  
-//         // motor_cmd_publisher1->publish(message);
-//         RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
-// } 
+void shutdown_callback()
+{
+       RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
+} 
+
 //==========================[MAIN]===========================
 int main(int argc, char **argv)
 {
-
-    // rclcpp::init(argc, argv, rclcpp::InitOptions::do_not_prune_arguments);
+    rclcpp::on_shutdown(shutdown_callback);
+    rclcpp::init(argc, argv);
     auto node = std::make_shared<Node1>(); 
     rclcpp::spin(node);
-    // // if(!rclcpp::ok()){
-    // //   rclcpp::init(argc, argv);
-    // //   auto node = std::make_shared<Node1>(); 
-    // //   shutdown_callback(node);
-    // // }
-    // while (rclcpp::ok())
-    // {
-    //   rclcpp::spin(node);
-    // }
-    auto node1 = std::make_shared<Node1>(); 
-    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
-        rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher1;
-        motor_cmd_publisher1 = node1->create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10);
-        auto message = std_msgs::msg::Int32MultiArray(); 
-        message.data={100,10,10,10,0,0,0,0,0,0,0,0};  
-        motor_cmd_publisher1->publish(message);
-        RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
-    rclcpp::shutdown(); //TODO check for on-shutdown function
+    rclcpp::shutdown(); 
 
-    // rclcpp::init(argc, argv, rclcpp::init::do_not_prune_arguments);
-    // auto node1 = std::make_shared<Node1>(); 
-    // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
-    //     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher1;
-    //     motor_cmd_publisher1 = node1->create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10);
-    //     auto message = std_msgs::msg::Int32MultiArray(); 
-    //     message.data={100,10,10,10,0,0,0,0,0,0,0,0};  
-    //     motor_cmd_publisher1->publish(message);
-    //     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
-    // rclcpp::shutdown();
  
     return 0;
 }

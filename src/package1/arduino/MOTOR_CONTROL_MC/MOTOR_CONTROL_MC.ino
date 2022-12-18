@@ -1,4 +1,7 @@
-
+//==============================================================================
+//Ben Swisa
+//bensw@post.bgu.ac.il
+//==============================================================================
 
 //================[INCLUDES]================
 
@@ -12,23 +15,18 @@
 
 #include <std_msgs/msg/int32_multi_array.h>
 //================[DEFINE]================
-
+#define MAX_TIME_BETWEEN_CALLBACKS 10
 #define N_links 4
 #define PRINT 0
 #define Direction 0  //  0 for pull or 1 for release
-
 #define LED_PIN 13
-
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
-
-
 
 //================[FUNC DECLARTIONS]================
 
 void set_motor_pwm(const void * msgin);
 void error_loop();
-
 
 //================[PARAM DECLARTIONS]================
 //-------ROS----------
@@ -42,8 +40,7 @@ rcl_timer_t timer;
 //--------------------
 byte motors_PWM_pin[N_links*3] = {2,3,4,5,6,7,8,9,10,29,30,35};    
 byte motors_DIR_pin[N_links*3] = {0,1,11,12,24,25,26,27,28,31,32,33};
-
-
+int time_from_last_callback=0;
 
 //===========[SETUP]================================================
 
@@ -91,7 +88,11 @@ void setup() {
 
 //===========[LOOP]==========================
 void loop() {
-   
+  if(time_from_last_callback>MAX_TIME_BETWEEN_CALLBACKS){ 
+    for (int i=0; i<N_links*3; i++)
+      analogWrite(motors_PWM_pin[i],0);
+  }//if nothing was published to the topic for 1 sec than the controller isnt working->stop motors from spinning
+  time_from_last_callback++; 
   delay(100);
   RCCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
 }
@@ -100,6 +101,7 @@ void loop() {
 //===================[FUNCTIONS]===============
 
 void set_motor_pwm(const void * msgin){ //topic callback function
+  time_from_last_callback=0;
   const std_msgs__msg__Int32MultiArray * msg = (const std_msgs__msg__Int32MultiArray *)msgin;
   int motor_pwm = 0;
   bool motor_dir = 0;

@@ -1,0 +1,187 @@
+[0.000000] (-) TimerEvent: {}
+[0.001153] (package1) JobQueued: {'identifier': 'package1', 'dependencies': OrderedDict()}
+[0.001412] (package1) JobStarted: {'identifier': 'package1'}
+[0.038285] (package1) JobProgress: {'identifier': 'package1', 'progress': 'cmake'}
+[0.039167] (package1) JobProgress: {'identifier': 'package1', 'progress': 'build'}
+[0.040218] (package1) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ben/robot_snake/build/package1', '--', '-j3', '-l3'], 'cwd': '/home/ben/robot_snake/build/package1', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IL:en'), ('USER', 'ben'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ben/ros2_ws/install/tutorial_interfaces/lib:/home/ben/ros2_ws/install/message_filters/lib:/home/ben/ros2_ws/install/cv_bridge/lib:/home/ben/microros_ws/install/visualization_msgs/lib:/home/ben/microros_ws/install/test_msgs/lib:/home/ben/microros_ws/install/example_interfaces/lib:/home/ben/microros_ws/install/action_msgs/lib:/home/ben/microros_ws/install/unique_identifier_msgs/lib:/home/ben/microros_ws/install/trajectory_msgs/lib:/home/ben/microros_ws/install/stereo_msgs/lib:/home/ben/microros_ws/install/std_srvs/lib:/home/ben/microros_ws/install/shape_msgs/lib:/home/ben/microros_ws/install/sensor_msgs/lib:/home/ben/microros_ws/install/nav_msgs/lib:/home/ben/microros_ws/install/diagnostic_msgs/lib:/home/ben/microros_ws/install/geometry_msgs/lib:/home/ben/microros_ws/install/actionlib_msgs/lib:/home/ben/microros_ws/install/std_msgs/lib:/home/ben/microros_ws/install/statistics_msgs/lib:/home/ben/microros_ws/install/rmw_microxrcedds/lib:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/lib:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c/lib:/home/ben/microros_ws/install/rosgraph_msgs/lib:/home/ben/microros_ws/install/rclc_parameter/lib:/home/ben/microros_ws/install/rclc/lib:/home/ben/microros_ws/install/composition_interfaces/lib:/home/ben/microros_ws/install/rcl_interfaces/lib:/home/ben/microros_ws/install/microxrcedds_client/lib:/home/ben/microros_ws/install/microcdr/lib:/home/ben/microros_ws/install/micro_ros_utilities/lib:/home/ben/microros_ws/install/micro_ros_agent/lib:/home/ben/microros_ws/install/micro_ros_msgs/lib:/home/ben/microros_ws/install/lifecycle_msgs/lib:/home/ben/microros_ws/install/complex_msgs/lib:/home/ben/microros_ws/install/builtin_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ben'), ('OLDPWD', '/home/ben/robot_snake/src/.vscode'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1896'), ('SYSTEMD_EXEC_PID', '2116'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7321'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ben/robot_snake/install:/home/ben/microros_ws/install:/home/ben/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ben'), ('JOURNAL_STREAM', '8:50834'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ben'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ben/ros2_ws/install/rqt_gui/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ben-virtual-machine:@/tmp/.ICE-unix/2066,unix/ben-virtual-machine:/tmp/.ICE-unix/2066'), ('INVOCATION_ID', '1a4a076dd3f5401f8d25d3b6285814b7'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.P1FDX1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ben/ros2_ws/install/my_robot_bringup:/home/ben/ros2_ws/install/my_cpp_pkg:/home/ben/ros2_ws/install/tutorial_interfaces:/home/ben/ros2_ws/install/spot_micro:/home/ben/ros2_ws/install/rqt_msg:/home/ben/ros2_ws/install/rqt_py_common:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/ros2_ws/install/qt_gui_py_common:/home/ben/ros2_ws/install/qt_gui:/home/ben/ros2_ws/install/python_qt_binding:/home/ben/ros2_ws/install/message_filters:/home/ben/ros2_ws/install/cv_bridge:/home/ben/robot_snake/install/package1:/home/ben/robot_snake/install/nodes_pkg:/home/ben/microros_ws/install/micro_ros_demos_rclc:/home/ben/microros_ws/install/common_interfaces:/home/ben/microros_ws/install/visualization_msgs:/home/ben/microros_ws/install/test_msgs:/home/ben/microros_ws/install/example_interfaces:/home/ben/microros_ws/install/action_msgs:/home/ben/microros_ws/install/unique_identifier_msgs:/home/ben/microros_ws/install/trajectory_msgs:/home/ben/microros_ws/install/stereo_msgs:/home/ben/microros_ws/install/std_srvs:/home/ben/microros_ws/install/shape_msgs:/home/ben/microros_ws/install/sensor_msgs_py:/home/ben/microros_ws/install/sensor_msgs:/home/ben/microros_ws/install/nav_msgs:/home/ben/microros_ws/install/diagnostic_msgs:/home/ben/microros_ws/install/geometry_msgs:/home/ben/microros_ws/install/actionlib_msgs:/home/ben/microros_ws/install/std_msgs:/home/ben/microros_ws/install/statistics_msgs:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/ben/microros_ws/install/rmw_microxrcedds:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/ben/microros_ws/install/rosgraph_msgs:/home/ben/microros_ws/install/rclc_parameter:/home/ben/microros_ws/install/rclc:/home/ben/microros_ws/install/composition_interfaces:/home/ben/microros_ws/install/rcl_interfaces:/home/ben/microros_ws/install/micro_ros_utilities:/home/ben/microros_ws/install/micro_ros_setup:/home/ben/microros_ws/install/micro_ros_agent:/home/ben/microros_ws/install/micro_ros_msgs:/home/ben/microros_ws/install/lifecycle_msgs:/home/ben/microros_ws/install/complex_msgs:/home/ben/microros_ws/install/builtin_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:5f56e6b8-4c37-41b4-822a-97409039b22f'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ben/robot_snake/build/package1'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ben/ros2_ws/install/tutorial_interfaces/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/rqt_msg/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/rqt_py_common/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/rqt_gui_py/lib/python3.10/site-packages:/home/ben/ros2_ws/install/rqt_gui/lib/python3.10/site-packages:/home/ben/ros2_ws/install/qt_gui_py_common/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/qt_gui/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/python_qt_binding/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/message_filters/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/cv_bridge/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/visualization_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/test_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/example_interfaces/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/action_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/unique_identifier_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/trajectory_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/stereo_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/std_srvs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/shape_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/sensor_msgs_py/lib/python3.10/site-packages:/home/ben/microros_ws/install/sensor_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/nav_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/diagnostic_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/geometry_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/actionlib_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/std_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/statistics_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rosgraph_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/composition_interfaces/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rcl_interfaces/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/lifecycle_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/complex_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/builtin_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ben/ros2_ws/install/my_robot_bringup:/home/ben/ros2_ws/install/my_cpp_pkg:/home/ben/ros2_ws/install/tutorial_interfaces:/home/ben/ros2_ws/install/spot_micro:/home/ben/ros2_ws/install/rqt_msg:/home/ben/ros2_ws/install/rqt_py_common:/home/ben/ros2_ws/install/qt_gui_py_common:/home/ben/ros2_ws/install/qt_gui:/home/ben/ros2_ws/install/python_qt_binding:/home/ben/ros2_ws/install/message_filters:/home/ben/ros2_ws/install/cv_bridge:/home/ben/robot_snake/install/package1:/home/ben/robot_snake/install/nodes_pkg:/home/ben/microros_ws/install/micro_ros_demos_rclc:/home/ben/microros_ws/install/common_interfaces:/home/ben/microros_ws/install/visualization_msgs:/home/ben/microros_ws/install/test_msgs:/home/ben/microros_ws/install/example_interfaces:/home/ben/microros_ws/install/action_msgs:/home/ben/microros_ws/install/unique_identifier_msgs:/home/ben/microros_ws/install/trajectory_msgs:/home/ben/microros_ws/install/stereo_msgs:/home/ben/microros_ws/install/std_srvs:/home/ben/microros_ws/install/shape_msgs:/home/ben/microros_ws/install/sensor_msgs:/home/ben/microros_ws/install/nav_msgs:/home/ben/microros_ws/install/diagnostic_msgs:/home/ben/microros_ws/install/geometry_msgs:/home/ben/microros_ws/install/actionlib_msgs:/home/ben/microros_ws/install/std_msgs:/home/ben/microros_ws/install/statistics_msgs:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/ben/microros_ws/install/rmw_microxrcedds:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/ben/microros_ws/install/rosgraph_msgs:/home/ben/microros_ws/install/rclc_parameter:/home/ben/microros_ws/install/rclc:/home/ben/microros_ws/install/composition_interfaces:/home/ben/microros_ws/install/rcl_interfaces:/home/ben/microros_ws/install/microxrcedds_client:/home/ben/microros_ws/install/microcdr:/home/ben/microros_ws/install/micro_ros_utilities:/home/ben/microros_ws/install/micro_ros_setup:/home/ben/microros_ws/install/micro_ros_agent:/home/ben/microros_ws/install/micro_ros_msgs:/home/ben/microros_ws/install/lifecycle_msgs:/home/ben/microros_ws/install/complex_msgs:/home/ben/microros_ws/install/builtin_interfaces:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble')]), 'shell': False}
+[0.100264] (-) TimerEvent: {}
+[0.127063] (package1) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target node1\x1b[0m\n'}
+[0.164997] (package1) StdoutLine: {'line': b'[ 50%] Built target node2\n'}
+[0.183073] (package1) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o\x1b[0m\n'}
+[0.200394] (-) TimerEvent: {}
+[0.300959] (-) TimerEvent: {}
+[0.401612] (-) TimerEvent: {}
+[0.502338] (-) TimerEvent: {}
+[0.602692] (-) TimerEvent: {}
+[0.703036] (-) TimerEvent: {}
+[0.803390] (-) TimerEvent: {}
+[0.903736] (-) TimerEvent: {}
+[1.004158] (-) TimerEvent: {}
+[1.104513] (-) TimerEvent: {}
+[1.204813] (-) TimerEvent: {}
+[1.307757] (-) TimerEvent: {}
+[1.408172] (-) TimerEvent: {}
+[1.509156] (-) TimerEvent: {}
+[1.613917] (-) TimerEvent: {}
+[1.714256] (-) TimerEvent: {}
+[1.814755] (-) TimerEvent: {}
+[1.915204] (-) TimerEvent: {}
+[2.015510] (-) TimerEvent: {}
+[2.115803] (-) TimerEvent: {}
+[2.216394] (-) TimerEvent: {}
+[2.316934] (-) TimerEvent: {}
+[2.417252] (-) TimerEvent: {}
+[2.518298] (-) TimerEvent: {}
+[2.618671] (-) TimerEvent: {}
+[2.719078] (-) TimerEvent: {}
+[2.819442] (-) TimerEvent: {}
+[2.919759] (-) TimerEvent: {}
+[3.020302] (-) TimerEvent: {}
+[3.125860] (-) TimerEvent: {}
+[3.226315] (-) TimerEvent: {}
+[3.326992] (-) TimerEvent: {}
+[3.427467] (-) TimerEvent: {}
+[3.528324] (-) TimerEvent: {}
+[3.628686] (-) TimerEvent: {}
+[3.729215] (-) TimerEvent: {}
+[3.829663] (-) TimerEvent: {}
+[3.930406] (-) TimerEvent: {}
+[4.030743] (-) TimerEvent: {}
+[4.131037] (-) TimerEvent: {}
+[4.231568] (-) TimerEvent: {}
+[4.332077] (-) TimerEvent: {}
+[4.432675] (-) TimerEvent: {}
+[4.533255] (-) TimerEvent: {}
+[4.633683] (-) TimerEvent: {}
+[4.734005] (-) TimerEvent: {}
+[4.834340] (-) TimerEvent: {}
+[4.934631] (-) TimerEvent: {}
+[5.034921] (-) TimerEvent: {}
+[5.135243] (-) TimerEvent: {}
+[5.235684] (-) TimerEvent: {}
+[5.335991] (-) TimerEvent: {}
+[5.436345] (-) TimerEvent: {}
+[5.536824] (-) TimerEvent: {}
+[5.637321] (-) TimerEvent: {}
+[5.737761] (-) TimerEvent: {}
+[5.838284] (-) TimerEvent: {}
+[5.938862] (-) TimerEvent: {}
+[6.039412] (-) TimerEvent: {}
+[6.140170] (-) TimerEvent: {}
+[6.240695] (-) TimerEvent: {}
+[6.341683] (-) TimerEvent: {}
+[6.442746] (-) TimerEvent: {}
+[6.546197] (-) TimerEvent: {}
+[6.647847] (-) TimerEvent: {}
+[6.748946] (-) TimerEvent: {}
+[6.849264] (-) TimerEvent: {}
+[6.949651] (-) TimerEvent: {}
+[7.050013] (-) TimerEvent: {}
+[7.150390] (-) TimerEvent: {}
+[7.250685] (-) TimerEvent: {}
+[7.351013] (-) TimerEvent: {}
+[7.451360] (-) TimerEvent: {}
+[7.551660] (-) TimerEvent: {}
+[7.651970] (-) TimerEvent: {}
+[7.752292] (-) TimerEvent: {}
+[7.852583] (-) TimerEvent: {}
+[7.952908] (-) TimerEvent: {}
+[8.053243] (-) TimerEvent: {}
+[8.153575] (-) TimerEvent: {}
+[8.253876] (-) TimerEvent: {}
+[8.354172] (-) TimerEvent: {}
+[8.454523] (-) TimerEvent: {}
+[8.554930] (-) TimerEvent: {}
+[8.655392] (-) TimerEvent: {}
+[8.755730] (-) TimerEvent: {}
+[8.856108] (-) TimerEvent: {}
+[8.956441] (-) TimerEvent: {}
+[9.056749] (-) TimerEvent: {}
+[9.157053] (-) TimerEvent: {}
+[9.257388] (-) TimerEvent: {}
+[9.357671] (-) TimerEvent: {}
+[9.457981] (-) TimerEvent: {}
+[9.558293] (-) TimerEvent: {}
+[9.658581] (-) TimerEvent: {}
+[9.758910] (-) TimerEvent: {}
+[9.859243] (-) TimerEvent: {}
+[9.959604] (-) TimerEvent: {}
+[10.059899] (-) TimerEvent: {}
+[10.160220] (-) TimerEvent: {}
+[10.260640] (-) TimerEvent: {}
+[10.360948] (-) TimerEvent: {}
+[10.461231] (-) TimerEvent: {}
+[10.561528] (-) TimerEvent: {}
+[10.661809] (-) TimerEvent: {}
+[10.762101] (-) TimerEvent: {}
+[10.862390] (-) TimerEvent: {}
+[10.962675] (-) TimerEvent: {}
+[11.062990] (-) TimerEvent: {}
+[11.163282] (-) TimerEvent: {}
+[11.263739] (-) TimerEvent: {}
+[11.364025] (-) TimerEvent: {}
+[11.464335] (-) TimerEvent: {}
+[11.564629] (-) TimerEvent: {}
+[11.665074] (-) TimerEvent: {}
+[11.765379] (-) TimerEvent: {}
+[11.865674] (-) TimerEvent: {}
+[11.965995] (-) TimerEvent: {}
+[12.066260] (-) TimerEvent: {}
+[12.166554] (-) TimerEvent: {}
+[12.266903] (-) TimerEvent: {}
+[12.367250] (-) TimerEvent: {}
+[12.467605] (-) TimerEvent: {}
+[12.567890] (-) TimerEvent: {}
+[12.668177] (-) TimerEvent: {}
+[12.768536] (-) TimerEvent: {}
+[12.868821] (-) TimerEvent: {}
+[12.969110] (-) TimerEvent: {}
+[13.069393] (-) TimerEvent: {}
+[13.169682] (-) TimerEvent: {}
+[13.270006] (-) TimerEvent: {}
+[13.370324] (-) TimerEvent: {}
+[13.470830] (-) TimerEvent: {}
+[13.571440] (-) TimerEvent: {}
+[13.672000] (-) TimerEvent: {}
+[13.772438] (-) TimerEvent: {}
+[13.872928] (-) TimerEvent: {}
+[13.973385] (-) TimerEvent: {}
+[14.040930] (package1) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable node1\x1b[0m\n'}
+[14.073524] (-) TimerEvent: {}
+[14.174070] (-) TimerEvent: {}
+[14.274519] (-) TimerEvent: {}
+[14.374838] (-) TimerEvent: {}
+[14.475234] (-) TimerEvent: {}
+[14.575622] (-) TimerEvent: {}
+[14.600528] (package1) StdoutLine: {'line': b'[100%] Built target node1\n'}
+[14.624572] (package1) CommandEnded: {'returncode': 0}
+[14.675800] (-) TimerEvent: {}
+[14.707367] (package1) JobProgress: {'identifier': 'package1', 'progress': 'install'}
+[14.734958] (package1) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ben/robot_snake/build/package1'], 'cwd': '/home/ben/robot_snake/build/package1', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IL:en'), ('USER', 'ben'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ben/ros2_ws/install/tutorial_interfaces/lib:/home/ben/ros2_ws/install/message_filters/lib:/home/ben/ros2_ws/install/cv_bridge/lib:/home/ben/microros_ws/install/visualization_msgs/lib:/home/ben/microros_ws/install/test_msgs/lib:/home/ben/microros_ws/install/example_interfaces/lib:/home/ben/microros_ws/install/action_msgs/lib:/home/ben/microros_ws/install/unique_identifier_msgs/lib:/home/ben/microros_ws/install/trajectory_msgs/lib:/home/ben/microros_ws/install/stereo_msgs/lib:/home/ben/microros_ws/install/std_srvs/lib:/home/ben/microros_ws/install/shape_msgs/lib:/home/ben/microros_ws/install/sensor_msgs/lib:/home/ben/microros_ws/install/nav_msgs/lib:/home/ben/microros_ws/install/diagnostic_msgs/lib:/home/ben/microros_ws/install/geometry_msgs/lib:/home/ben/microros_ws/install/actionlib_msgs/lib:/home/ben/microros_ws/install/std_msgs/lib:/home/ben/microros_ws/install/statistics_msgs/lib:/home/ben/microros_ws/install/rmw_microxrcedds/lib:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/lib:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c/lib:/home/ben/microros_ws/install/rosgraph_msgs/lib:/home/ben/microros_ws/install/rclc_parameter/lib:/home/ben/microros_ws/install/rclc/lib:/home/ben/microros_ws/install/composition_interfaces/lib:/home/ben/microros_ws/install/rcl_interfaces/lib:/home/ben/microros_ws/install/microxrcedds_client/lib:/home/ben/microros_ws/install/microcdr/lib:/home/ben/microros_ws/install/micro_ros_utilities/lib:/home/ben/microros_ws/install/micro_ros_agent/lib:/home/ben/microros_ws/install/micro_ros_msgs/lib:/home/ben/microros_ws/install/lifecycle_msgs/lib:/home/ben/microros_ws/install/complex_msgs/lib:/home/ben/microros_ws/install/builtin_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ben'), ('OLDPWD', '/home/ben/robot_snake/src/.vscode'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1896'), ('SYSTEMD_EXEC_PID', '2116'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7321'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ben/robot_snake/install:/home/ben/microros_ws/install:/home/ben/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ben'), ('JOURNAL_STREAM', '8:50834'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ben'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/ben/ros2_ws/install/rqt_gui/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ben-virtual-machine:@/tmp/.ICE-unix/2066,unix/ben-virtual-machine:/tmp/.ICE-unix/2066'), ('INVOCATION_ID', '1a4a076dd3f5401f8d25d3b6285814b7'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.P1FDX1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ben/ros2_ws/install/my_robot_bringup:/home/ben/ros2_ws/install/my_cpp_pkg:/home/ben/ros2_ws/install/tutorial_interfaces:/home/ben/ros2_ws/install/spot_micro:/home/ben/ros2_ws/install/rqt_msg:/home/ben/ros2_ws/install/rqt_py_common:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/ros2_ws/install/qt_gui_py_common:/home/ben/ros2_ws/install/qt_gui:/home/ben/ros2_ws/install/python_qt_binding:/home/ben/ros2_ws/install/message_filters:/home/ben/ros2_ws/install/cv_bridge:/home/ben/robot_snake/install/package1:/home/ben/robot_snake/install/nodes_pkg:/home/ben/microros_ws/install/micro_ros_demos_rclc:/home/ben/microros_ws/install/common_interfaces:/home/ben/microros_ws/install/visualization_msgs:/home/ben/microros_ws/install/test_msgs:/home/ben/microros_ws/install/example_interfaces:/home/ben/microros_ws/install/action_msgs:/home/ben/microros_ws/install/unique_identifier_msgs:/home/ben/microros_ws/install/trajectory_msgs:/home/ben/microros_ws/install/stereo_msgs:/home/ben/microros_ws/install/std_srvs:/home/ben/microros_ws/install/shape_msgs:/home/ben/microros_ws/install/sensor_msgs_py:/home/ben/microros_ws/install/sensor_msgs:/home/ben/microros_ws/install/nav_msgs:/home/ben/microros_ws/install/diagnostic_msgs:/home/ben/microros_ws/install/geometry_msgs:/home/ben/microros_ws/install/actionlib_msgs:/home/ben/microros_ws/install/std_msgs:/home/ben/microros_ws/install/statistics_msgs:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/ben/microros_ws/install/rmw_microxrcedds:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/ben/microros_ws/install/rosgraph_msgs:/home/ben/microros_ws/install/rclc_parameter:/home/ben/microros_ws/install/rclc:/home/ben/microros_ws/install/composition_interfaces:/home/ben/microros_ws/install/rcl_interfaces:/home/ben/microros_ws/install/micro_ros_utilities:/home/ben/microros_ws/install/micro_ros_setup:/home/ben/microros_ws/install/micro_ros_agent:/home/ben/microros_ws/install/micro_ros_msgs:/home/ben/microros_ws/install/lifecycle_msgs:/home/ben/microros_ws/install/complex_msgs:/home/ben/microros_ws/install/builtin_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:5f56e6b8-4c37-41b4-822a-97409039b22f'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ben/robot_snake/build/package1'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ben/ros2_ws/install/tutorial_interfaces/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/rqt_msg/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/rqt_py_common/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/rqt_gui_py/lib/python3.10/site-packages:/home/ben/ros2_ws/install/rqt_gui/lib/python3.10/site-packages:/home/ben/ros2_ws/install/qt_gui_py_common/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/qt_gui/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/python_qt_binding/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/message_filters/local/lib/python3.10/dist-packages:/home/ben/ros2_ws/install/cv_bridge/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/visualization_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/test_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/example_interfaces/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/action_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/unique_identifier_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/trajectory_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/stereo_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/std_srvs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/shape_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/sensor_msgs_py/lib/python3.10/site-packages:/home/ben/microros_ws/install/sensor_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/nav_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/diagnostic_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/geometry_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/actionlib_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/std_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/statistics_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rosgraph_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/composition_interfaces/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/rcl_interfaces/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/lifecycle_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/complex_msgs/local/lib/python3.10/dist-packages:/home/ben/microros_ws/install/builtin_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ben/ros2_ws/install/my_robot_bringup:/home/ben/ros2_ws/install/my_cpp_pkg:/home/ben/ros2_ws/install/tutorial_interfaces:/home/ben/ros2_ws/install/spot_micro:/home/ben/ros2_ws/install/rqt_msg:/home/ben/ros2_ws/install/rqt_py_common:/home/ben/ros2_ws/install/qt_gui_py_common:/home/ben/ros2_ws/install/qt_gui:/home/ben/ros2_ws/install/python_qt_binding:/home/ben/ros2_ws/install/message_filters:/home/ben/ros2_ws/install/cv_bridge:/home/ben/robot_snake/install/package1:/home/ben/robot_snake/install/nodes_pkg:/home/ben/microros_ws/install/micro_ros_demos_rclc:/home/ben/microros_ws/install/common_interfaces:/home/ben/microros_ws/install/visualization_msgs:/home/ben/microros_ws/install/test_msgs:/home/ben/microros_ws/install/example_interfaces:/home/ben/microros_ws/install/action_msgs:/home/ben/microros_ws/install/unique_identifier_msgs:/home/ben/microros_ws/install/trajectory_msgs:/home/ben/microros_ws/install/stereo_msgs:/home/ben/microros_ws/install/std_srvs:/home/ben/microros_ws/install/shape_msgs:/home/ben/microros_ws/install/sensor_msgs:/home/ben/microros_ws/install/nav_msgs:/home/ben/microros_ws/install/diagnostic_msgs:/home/ben/microros_ws/install/geometry_msgs:/home/ben/microros_ws/install/actionlib_msgs:/home/ben/microros_ws/install/std_msgs:/home/ben/microros_ws/install/statistics_msgs:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_test_msg:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp_tests:/home/ben/microros_ws/install/rmw_microxrcedds:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_cpp:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c_tests:/home/ben/microros_ws/install/rosidl_typesupport_microxrcedds_c:/home/ben/microros_ws/install/rosgraph_msgs:/home/ben/microros_ws/install/rclc_parameter:/home/ben/microros_ws/install/rclc:/home/ben/microros_ws/install/composition_interfaces:/home/ben/microros_ws/install/rcl_interfaces:/home/ben/microros_ws/install/microxrcedds_client:/home/ben/microros_ws/install/microcdr:/home/ben/microros_ws/install/micro_ros_utilities:/home/ben/microros_ws/install/micro_ros_setup:/home/ben/microros_ws/install/micro_ros_agent:/home/ben/microros_ws/install/micro_ros_msgs:/home/ben/microros_ws/install/lifecycle_msgs:/home/ben/microros_ws/install/complex_msgs:/home/ben/microros_ws/install/builtin_interfaces:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble')]), 'shell': False}
+[14.757260] (package1) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[14.758551] (package1) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[14.759138] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/lib/package1/node1\n'}
+[14.759625] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/lib/package1/node2\n'}
+[14.760433] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1//launch/launch1.py\n'}
+[14.760776] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1//launch/m_r_launch.py\n'}
+[14.761391] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1//config/node1_con.yaml\n'}
+[14.761925] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/package_run_dependencies/package1\n'}
+[14.762368] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/parent_prefix_path/package1\n'}
+[14.762863] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.sh\n'}
+[14.763303] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.dsv\n'}
+[14.763887] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/path.sh\n'}
+[14.764168] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/path.dsv\n'}
+[14.764445] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.bash\n'}
+[14.764722] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.sh\n'}
+[14.765008] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.zsh\n'}
+[14.765283] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.dsv\n'}
+[14.765436] (package1) StdoutLine: {'line': b'-- Symlinking: /home/ben/robot_snake/install/package1/share/package1/package.dsv\n'}
+[14.775821] (-) TimerEvent: {}
+[14.777923] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/packages/package1\n'}
+[14.778279] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config.cmake\n'}
+[14.778656] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config-version.cmake\n'}
+[14.778901] (package1) StdoutLine: {'line': b'-- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/package.xml\n'}
+[14.781488] (package1) CommandEnded: {'returncode': 0}
+[14.875914] (-) TimerEvent: {}
+[14.891898] (package1) JobEnded: {'identifier': 'package1', 'rc': 0}
+[14.893036] (-) EventReactorShutdown: {}
