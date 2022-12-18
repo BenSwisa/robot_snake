@@ -1,0 +1,13 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid shutdown_callback()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:259:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kstd::Node[m[K’ has not been declared
+  259 |          auto node = std::[01;31m[KNode[m[K::make_shared("aja");
+      |                           [01;31m[K^~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:262:85:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+  262 |         motor_cmd_publisher1 = node->create_publisher<std_msgs::msg::Int32MultiArray[01;31m[K>[m[K("motor_cmd_topic",10);
+      |                                                                                     [01;31m[K^[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:262:87:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+  262 |         motor_cmd_publisher1 = node->create_publisher<std_msgs::msg::Int32MultiArray>([01;35m[K"motor_cmd_topic"[m[K,10);
+      |                                                                                       [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,16 @@
+[0.026s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[0.119s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[0.153s] [ 75%] Built target node2
+[0.153s] [ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[2.464s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid shutdown_callback(std::shared_ptr<Node1>)[m[K’:
+[2.465s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:257:53:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.465s]   257 | void shutdown_callback([01;35m[Kconst std::shared_ptr<Node1> node[m[K)
+[2.465s]       |                        [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[2.467s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[2.467s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:270:43:[m[K [01;31m[Kerror: [m[K‘[01m[Knode[m[K’ was not declared in this scope
+[2.467s]   270 |     rclcpp::on_shutdown(shutdown_callback([01;31m[Knode[m[K));
+[2.467s]       |                                           [01;31m[K^~~~[m[K
+[4.772s] gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+[4.772s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+[4.773s] gmake: *** [Makefile:146: all] Error 2
+[4.776s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3

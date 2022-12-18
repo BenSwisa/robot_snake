@@ -1,0 +1,93 @@
+[0.028s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake /home/ben/robot_snake/src/package1 -DCMAKE_INSTALL_PREFIX=/home/ben/robot_snake/install/package1
+[0.074s] -- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.311s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.359s] -- Found rclcpp: 16.0.1 (/opt/ros/humble/share/rclcpp/cmake)
+[0.465s] -- Found rosidl_generator_c: 3.1.3 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.473s] -- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.487s] -- Found rosidl_generator_cpp: 3.1.3 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.511s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_microxrcedds_c;rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.556s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_microxrcedds_cpp;rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.664s] -- Found rmw_implementation_cmake: 6.1.0 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.670s] -- Found rmw_fastrtps_cpp: 6.2.1 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.856s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.159s] -- Configuring done
+[1.185s] -- Generating done
+[1.187s] -- Build files have been written to: /home/ben/robot_snake/build/package1
+[1.195s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake /home/ben/robot_snake/src/package1 -DCMAKE_INSTALL_PREFIX=/home/ben/robot_snake/install/package1
+[1.195s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[1.263s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[1.263s] [35m[1mConsolidate compiler generated dependencies of target node2[0m
+[1.291s] [ 50%] Built target node2
+[1.301s] [ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[4.946s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[4.955s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:23[m[K,
+[4.955s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[4.955s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[4.955s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[4.955s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[4.955s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[4.955s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[4.955s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[4.955s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[4.955s]                  from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:15[m[K:
+[4.955s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid shutdown_callback()[m[K’:
+[4.955s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:15:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[4.955s]    29 |   RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Node1 has been stopped.");
+[4.955s]       |               [01;31m[K^~~~[m[K
+[4.955s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:15:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[4.955s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[4.955s]    29 |   [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Node1 has been stopped.");
+[4.956s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[4.956s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:3:[m[K [01;31m[Kerror: [m[K‘[01m[K<declaration error>[m[K’ is not a template [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[4.956s]    29 |   [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Node1 has been stopped.");
+[4.956s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[4.956s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[4.956s]    29 |   [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Node1 has been stopped.");
+[4.956s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[4.956s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:3:[m[K [01;31m[Kerror: [m[K‘[01m[K<declaration error>[m[K’ is not a template [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[4.956s]    29 |   [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Node1 has been stopped.");
+[4.956s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[4.956s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[4.956s]    29 |   [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Node1 has been stopped.");
+[4.956s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[4.956s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[4.956s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[4.956s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:23[m[K,
+[4.956s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[4.956s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[4.957s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[4.957s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[4.957s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[4.957s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[4.957s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[4.957s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[4.957s]                  from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:15[m[K:
+[4.957s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:15:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[4.957s]    29 |   RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Node1 has been stopped.");
+[4.957s]       |               [01;31m[K^~~~[m[K
+[4.957s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:15:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[4.957s]    29 |   RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), "Node1 has been stopped.");
+[4.957s]       |               [01;31m[K^~~~[m[K
+[5.104s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[5.104s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:264:24:[m[K [01;31m[Kerror: [m[Ktoo few arguments to function ‘[01m[Kvoid rclcpp::on_shutdown(std::function<void()>, rclcpp::Context::SharedPtr)[m[K’
+[5.105s]   264 |     [01;31m[Krclcpp::on_shutdown()[m[K
+[5.105s]       |     [01;31m[K~~~~~~~~~~~~~~~~~~~^~[m[K
+[5.108s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:25[m[K,
+[5.109s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[5.109s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:23[m[K,
+[5.109s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[5.109s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[5.109s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[5.109s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[5.109s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[5.110s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[5.110s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[5.110s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[5.110s]                  from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:15[m[K:
+[5.110s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/utilities.hpp:215:1:[m[K [01;36m[Knote: [m[Kdeclared here
+[5.110s]   215 | [01;36m[Kon_shutdown[m[K(std::function<void()> callback, rclcpp::Context::SharedPtr context = nullptr);
+[5.110s]       | [01;36m[K^~~~~~~~~~~[m[K
+[7.959s] gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+[7.959s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+[7.961s] gmake: *** [Makefile:146: all] Error 2
+[7.962s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3

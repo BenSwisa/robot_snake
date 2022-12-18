@@ -1,0 +1,13 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid shutdown_callback()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:31:26:[m[K [01;31m[Kerror: [m[K‘[01m[Knode[m[K’ was not declared in this scope
+   31 |   motor_cmd_publisher_ = [01;31m[Knode[m[K->create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10);
+      |                          [01;31m[K^~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:31:79:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   31 |   motor_cmd_publisher_ = node->create_publisher<std_msgs::msg::Int32MultiArray[01;31m[K>[m[K("motor_cmd_topic",10);
+      |                                                                               [01;31m[K^[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:31:81:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+   31 |   motor_cmd_publisher_ = node->create_publisher<std_msgs::msg::Int32MultiArray>([01;35m[K"motor_cmd_topic"[m[K,10);
+      |                                                                                 [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

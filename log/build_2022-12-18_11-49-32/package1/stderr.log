@@ -1,0 +1,4 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid shutdown_callback(std::shared_ptr<Node1>)[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:257:53:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  257 | void shutdown_callback([01;35m[Kconst std::shared_ptr<Node1> node[m[K)
+      |                        [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K

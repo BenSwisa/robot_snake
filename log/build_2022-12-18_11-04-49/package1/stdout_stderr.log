@@ -1,0 +1,36 @@
+[35m[1mConsolidate compiler generated dependencies of target node1[0m
+[ 50%] Built target node2
+[ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:23[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:15[m[K:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid shutdown_callback()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:15:[m[K [01;31m[Kerror: [m[K‘[01m[KNode1[m[K’ was not declared in this scope
+   29 |   RCLCPP_INFO([01;31m[KNode1[m[K->get_logger(), "Node1 has been stopped.");
+      |               [01;31m[K^~~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   29 |   [01;31m[KRCLCPP_INFO[m[K(Node1->get_logger(), "Node1 has been stopped.");
+      |   [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:3:[m[K [01;31m[Kerror: [m[K‘[01m[K<declaration error>[m[K’ is not a template [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+   29 |   [01;31m[KRCLCPP_INFO[m[K(Node1->get_logger(), "Node1 has been stopped.");
+      |   [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   29 |   [01;31m[KRCLCPP_INFO[m[K(Node1->get_logger(), "Node1 has been stopped.");
+      |   [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:3:[m[K [01;31m[Kerror: [m[K‘[01m[K<declaration error>[m[K’ is not a template [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+   29 |   [01;31m[KRCLCPP_INFO[m[K(Node1->get_logger(), "Node1 has been stopped.");
+      |   [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:29:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   29 |   [01;31m[KRCLCPP_INFO[m[K(Node1->get_logger(), "Node1 has been stopped.");
+      |   [01;31m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

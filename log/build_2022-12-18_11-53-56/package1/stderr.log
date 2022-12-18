@@ -1,0 +1,11 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid shutdown_callback(std::shared_ptr<Node1>)[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:257:53:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Knode[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  257 | void shutdown_callback([01;35m[Kconst std::shared_ptr<Node1> node[m[K)
+      |                        [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:282:42:[m[K [01;31m[Kerror: [m[Kinvalid use of void expression
+  282 |     rclcpp::on_shutdown([01;31m[Kshutdown_callback(node)[m[K);
+      |                         [01;31m[K~~~~~~~~~~~~~~~~~^~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

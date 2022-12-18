@@ -1,0 +1,10 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:272:38:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::init[m[K’ is not a class, namespace, or enumeration
+  272 |     rclcpp::init(argc, argv, rclcpp::[01;31m[Kinit[m[K::do_not_prune_arguments);
+      |                                      [01;31m[K^~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:287:38:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::init[m[K’ is not a class, namespace, or enumeration
+  287 |     rclcpp::init(argc, argv, rclcpp::[01;31m[Kinit[m[K::do_not_prune_arguments);
+      |                                      [01;31m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

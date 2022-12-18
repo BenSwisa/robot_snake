@@ -1,0 +1,17 @@
+[35m[1mConsolidate compiler generated dependencies of target node1[0m
+[ 50%] Built target node2
+[ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:271:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kon_shutdowm[m[K’ is not a member of ‘[01m[Krclcpp[m[K’; did you mean ‘[01m[Kon_shutdown[m[K’?
+  271 |     rclcpp::[01;31m[Kon_shutdowm[m[K(shutdown_callback)
+      |             [01;31m[K^~~~~~~~~~~[m[K
+      |             [32m[Kon_shutdown[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:269:14:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargc[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  269 | int main([01;35m[Kint argc[m[K, char **argv)
+      |          [01;35m[K~~~~^~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:269:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargv[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  269 | int main(int argc, [01;35m[Kchar **argv[m[K)
+      |                    [01;35m[K~~~~~~~^~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

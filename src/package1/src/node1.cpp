@@ -2,7 +2,10 @@
 //Ben Swisa
 //bensw@post.bgu.ac.il
 //==============================================================================
+/*TODO:
+[ ]check if mirco ros nodes are stiil running , if not ,shut dwom with output
 
+*/
 #include <chrono>
 #include <functional>
 #include <memory>
@@ -21,6 +24,7 @@ using namespace std::chrono_literals;
 #define strings_per_joint_ 3
 #define linked_joints_ 3
  
+
 class Node1 : public rclcpp::Node 
 {
 public:
@@ -43,15 +47,26 @@ public:
      
     }
 
+      rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher_;
+
+
  
 private:
 
+  /*=====================[JOINT VAL CALLBACK]===========================
+    this function gets the current angles from the joint_val_topic and inserting them into the
+    array current_enc_val[]
+  */
     void joint_val_callback(const std_msgs::msg::Float32MultiArray msg){
       for(int i=0;i<6;i++){
         current_enc_val[i]=msg.data[i];
         }
     }
-
+  
+  /*=====================[JOINT CMD CALLBACK]===========================
+    this function gets the wanted angles from the joint_cmd_topic and inserting them into the
+    array joint_cmd_val[]
+  */
     void joint_cmd_callback(const std_msgs::msg::Float32MultiArray msg){ 
 
         for(int i=0;i<6;i++){
@@ -60,11 +75,12 @@ private:
         
     }
 
-  // =====================[CONTROLLER]===========================
+  /* =====================[CONTROLLER]===========================
+    ***** this function is the pid controller *****
+     
+  */
     void controller(){
-      // -----TENSION CHECK-------
-
-      //--------string 1,2 -------------
+      //--------  string 1,2 -------------
       for(int i=0;i<3;i+=2){ //loop for motor 1 & 3
         if(i==0) 
          enc_axis=enc_z_;
@@ -133,21 +149,24 @@ private:
       //   else
       //    saturation_flag[2]=0;
       
+      //----- INITIALIZE MSG ------
+      auto message = std_msgs::msg::Int32MultiArray(); 
+      message.data={0,0,0,0,0,0,0,0,0,0,0,0};  
+      for(int i=0;i<3;i++)
+       message.data[i]=(int32_t)motor_cmd_val[i];
 
-      auto message = std_msgs::msg::Int32MultiArray();
-        message.data={0,0,0,0,0,0,0,0,0,0,0,0};  
-        for(int i=0;i<3;i++)
-          message.data[i]=(int32_t)motor_cmd_val[i];
-
-        for(int i=0;i<3;i++)
+       // -----TENSION CHECK-------
+      for(int i=0;i<3;i++) //FIXME still getting maximum tension
          if(current_tension_val[i]>5){
           RCLCPP_ERROR(this->get_logger(), " TENSION TOO HIGH  \n");
           for(int j=0;j<3;j++)
             message.data[j]=-50;
         }
-        motor_cmd_publisher_->publish(message);
+        
+        motor_cmd_publisher_->publish(message); //publish pwm output to motors
 
     }
+
 
     int isErrorSameSign(float error,float last_error){
      if(error>0 && last_error>0)
@@ -158,16 +177,30 @@ private:
     }
 
      
-    
-    void tension_val_callback(const std_msgs::msg::Float32MultiArray msg){
+  /*=====================[TENSION CALLBACK]===========================
+    this function gets the tension from the tension_val_topic and inserting them into the
+    array current_tension_val[]
+  */
+    void tension_val_callback(const std_msgs::msg::Float32MultiArray msg){ 
     //  RCLCPP_INFO(this->get_logger(), " %f , %f \n",msg.data[0],msg.data[1]);
       for(int i=0;i<12;i++){
         current_tension_val[i]=msg.data[i];
         }
-    } 
-  // =====================[SET PARAMETERS]===========================
+    } // TODO set the new tension constants to get better values
+  
+  /* =====================[GET PARAMETERS]===========================
+  this function declares the parameters and then taking their value from a yaml file
+  - max pwm: is the pwm limit to send to the motors
+  - enc_y/z: spot in the array that represents enc values rotating around y/z axis 
+  --   axes are :
+          y
+          ^
+          |
+          -----> x : the direction for going forward along the snake
+  -controller_freq : frequency to run the controller
+  - kp,ki,kd : arrays of constants for pid controll. position is as the same as for the motor_cmd array 
+  */
     void get_parameters(){ 
-      // todo
       this->declare_parameter("max_pwm",0);
       this->declare_parameter("enc_y",0); 
       this->declare_parameter("enc_z",1);  
@@ -185,17 +218,26 @@ private:
       RCLCPP_INFO(this->get_logger(), " %f  \n",kd_[0]);
   }
 
-// =========================[CONSTANTS]=========================================
+
+
+/* =========================[CONSTANTS]=========================================
+enc_axis : in the controller func you need to know witch axis you are getting info from -> enc_y/z
+error: wanted position - current position
+error_sum_: suming the error values for integral controller
+joint_cmd_val: aray of angles to get to
+current_enc_val: array of angle of the cuurent position
+motor_cmd_val: pwm outputs for the motors
+saturation_flag: when saturated we need to stop summing the error  
+*/
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr joint_val_subscriber_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr tension_val_subscriber_;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr joint_cmd_subscriber_;
-    rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher_;
     rclcpp::TimerBase::SharedPtr controller_;
     // int  enc_per_joint_=2;
     // int  linked_joints_=2;
     // int  strings_per_joint_=2;
     int controller_freq_,max_pwm_,enc_z_,enc_y_,enc_axis;
-    float error[strings_per_joint_*(linked_joints_+1)]={0};
+    float error[strings_per_joint_*(linked_joints_+1)]={0}; 
     float last_error[strings_per_joint_*(linked_joints_+1)]={0};
     float joint_cmd_val[enc_per_joint_*linked_joints_]={0}; // [joint*enc_linked] ******* if looking at the arm from the front positive enc val is up and right
     float current_enc_val[enc_per_joint_*linked_joints_]={0};
@@ -211,13 +253,54 @@ private:
 
 };
  
+
+// void shutdown_callback(const std::shared_ptr<Node1> node)
+// {
+//        RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
+//         // rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher1;
+//         // motor_cmd_publisher1 = node->create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10);
+//         // auto message = std_msgs::msg::Int32MultiArray(); 
+//         // message.data={100,10,10,10,0,0,0,0,0,0,0,0};  
+//         // motor_cmd_publisher1->publish(message);
+//         RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
+// } 
 //==========================[MAIN]===========================
 int main(int argc, char **argv)
 {
-    rclcpp::init(argc, argv);
+
+    // rclcpp::init(argc, argv, rclcpp::InitOptions::do_not_prune_arguments);
     auto node = std::make_shared<Node1>(); 
     rclcpp::spin(node);
-    rclcpp::shutdown();
+    // // if(!rclcpp::ok()){
+    // //   rclcpp::init(argc, argv);
+    // //   auto node = std::make_shared<Node1>(); 
+    // //   shutdown_callback(node);
+    // // }
+    // while (rclcpp::ok())
+    // {
+    //   rclcpp::spin(node);
+    // }
+    auto node1 = std::make_shared<Node1>(); 
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
+        rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher1;
+        motor_cmd_publisher1 = node1->create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10);
+        auto message = std_msgs::msg::Int32MultiArray(); 
+        message.data={100,10,10,10,0,0,0,0,0,0,0,0};  
+        motor_cmd_publisher1->publish(message);
+        RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
+    rclcpp::shutdown(); //TODO check for on-shutdown function
+
+    // rclcpp::init(argc, argv, rclcpp::init::do_not_prune_arguments);
+    // auto node1 = std::make_shared<Node1>(); 
+    // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
+    //     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher1;
+    //     motor_cmd_publisher1 = node1->create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10);
+    //     auto message = std_msgs::msg::Int32MultiArray(); 
+    //     message.data={100,10,10,10,0,0,0,0,0,0,0,0};  
+    //     motor_cmd_publisher1->publish(message);
+    //     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Node1 has been stopped.");
+    // rclcpp::shutdown();
+ 
     return 0;
 }
 

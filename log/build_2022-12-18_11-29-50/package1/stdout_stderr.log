@@ -1,0 +1,36 @@
+[35m[1mConsolidate compiler generated dependencies of target node1[0m
+[ 50%] Built target node2
+[ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid shutdown_callback()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:31:82:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcreate_publisher<std_msgs::msg::Int32MultiArray>(const char [16], int)[m[K’
+   31 |   motor_cmd_publisher_ = [01;31m[Krclcpp::create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10)[m[K;
+      |                          [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:41[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:15[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_publisher.hpp:94:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT, class NodeT> std::shared_ptr<PublisherT> rclcpp::create_publisher(NodeT&&, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+   94 | [01;36m[Kcreate_publisher[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_publisher.hpp:94:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:31:82:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 2 provided
+   31 |   motor_cmd_publisher_ = [01;36m[Krclcpp::create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10)[m[K;
+      |                          [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node_impl.hpp:41[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1321[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:15[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_publisher.hpp:113:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::create_publisher(rclcpp::node_interfaces::NodeParametersInterface::SharedPtr&, rclcpp::node_interfaces::NodeTopicsInterface::SharedPtr&, const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  113 | [01;36m[Kcreate_publisher[m[K(
+      | [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/create_publisher.hpp:113:1:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:31:82:[m[K [01;36m[Knote: [m[K  candidate expects 5 arguments, 2 provided
+   31 |   motor_cmd_publisher_ = [01;36m[Krclcpp::create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10)[m[K;
+      |                          [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,14 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:27:24:[m[K [01;35m[Kwarning: [m[Kuse of ‘[01m[Kauto[m[K’ in parameter declaration only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-fconcepts[m[K’
+   27 | void shutdown_callback([01;35m[Kauto[m[K node)
+      |                        [01;35m[K^~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid shutdown_callback(auto:40)[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:31:85:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   31 |         motor_cmd_publisher_ = node->create_publisher<std_msgs::msg::Int32MultiArray[01;31m[K>[m[K("motor_cmd_topic",10);
+      |                                                                                     [01;31m[K^[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:268:24:[m[K [01;31m[Kerror: [m[Kcannot resolve overloaded function ‘[01m[Kshutdown_callback[m[K’ based on conversion to type ‘[01m[Kstd::function<void()>[m[K’
+  268 |     [01;31m[Krclcpp::on_shutdown(shutdown_callback)[m[K;
+      |     [01;31m[K~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

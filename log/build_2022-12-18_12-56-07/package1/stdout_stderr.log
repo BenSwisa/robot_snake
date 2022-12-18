@@ -1,0 +1,10 @@
+[35m[1mConsolidate compiler generated dependencies of target node1[0m
+[ 50%] Built target node2
+[ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:271:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kdo_not_prune_arguments[m[K’ is not a member of ‘[01m[Krclcpp::InitOptions[m[K’
+  271 |     rclcpp::init(argc, argv, rclcpp::InitOptions::[01;31m[Kdo_not_prune_arguments[m[K);
+      |                                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

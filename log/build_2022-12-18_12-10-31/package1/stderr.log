@@ -1,0 +1,33 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid shutdown_callback()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:259:39:[m[K [01;31m[Kerror: [m[K‘[01m[KNode[m[K’ was not declared in this scope; did you mean ‘[01m[Krclcpp::Node[m[K’?
+  259 |          auto node = std::make_shared<[01;31m[KNode[m[K>();
+      |                                       [01;31m[K^~~~[m[K
+      |                                       [32m[Krclcpp::Node[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:15[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:77:7:[m[K [01;36m[Knote: [m[K‘[01m[Krclcpp::Node[m[K’ declared here
+   77 | class [01;36m[KNode[m[K : public std::enable_shared_from_this<Node>
+      |       [01;36m[K^~~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:259:44:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_shared<<expression error> >()[m[K’
+  259 |          auto node = [01;31m[Kstd::make_shared<Node>()[m[K;
+      |                      [01;31m[K~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+                 from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:11[m[K:
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<_Tp> std::make_shared(_Args&& ...)[m[K’
+  875 |     [01;36m[Kmake_shared[m[K(_Args&&... __args)
+      |     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/shared_ptr.h:875:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:259:44:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  259 |          auto node = [01;31m[Kstd::make_shared<Node>()[m[K;
+      |                      [01;31m[K~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:262:85:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+  262 |         motor_cmd_publisher1 = node->create_publisher<std_msgs::msg::Int32MultiArray[01;31m[K>[m[K("motor_cmd_topic",10);
+      |                                                                                     [01;31m[K^[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:262:87:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+  262 |         motor_cmd_publisher1 = node->create_publisher<std_msgs::msg::Int32MultiArray>([01;35m[K"motor_cmd_topic"[m[K,10);
+      |                                                                                       [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,14 @@
+[35m[1mConsolidate compiler generated dependencies of target node1[0m
+[ 50%] Built target node2
+[ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:270:13:[m[K [01;31m[Kerror: [m[K‘[01m[KinitOptions[m[K’ is not a member of ‘[01m[Krclcpp[m[K’; did you mean ‘[01m[KInitOptions[m[K’?
+  270 |     rclcpp::[01;31m[KinitOptions[m[K();
+      |             [01;31m[K^~~~~~~~~~~[m[K
+      |             [32m[KInitOptions[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:271:38:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::initOptions[m[K’ has not been declared
+  271 |     rclcpp::init(argc, argv, rclcpp::[01;31m[KinitOptions[m[K::do_not_prune_arguments);
+      |                                      [01;31m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

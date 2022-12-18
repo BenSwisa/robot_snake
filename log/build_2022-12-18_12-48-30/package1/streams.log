@@ -1,0 +1,12 @@
+[0.023s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[0.094s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[0.122s] [ 50%] Built target node2
+[0.146s] [ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[0.233s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:15:10:[m[K [01;31m[Kfatal error: [m[Kinit_options.hpp: No such file or directory
+[0.233s]    15 | #include [01;31m[K<init_options.hpp>[m[K
+[0.233s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[0.233s] compilation terminated.
+[0.237s] gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+[0.237s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+[0.237s] gmake: *** [Makefile:146: all] Error 2
+[0.239s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3

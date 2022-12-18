@@ -1,0 +1,15 @@
+[0.019s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
+[0.097s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[0.125s] [ 25%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[0.130s] [ 75%] Built target node2
+[2.809s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[2.809s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:282:12:[m[K [01;31m[Kerror: [m[Kconflicting declaration ‘[01m[Kauto node[m[K’
+[2.809s]   282 |       auto [01;31m[Knode[m[K = std::make_shared<Node1>();
+[2.810s]       |            [01;31m[K^~~~[m[K
+[2.810s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:272:10:[m[K [01;36m[Knote: [m[Kprevious declaration as ‘[01m[Kstd::shared_ptr<Node1> node[m[K’
+[2.810s]   272 |     auto [01;36m[Knode[m[K = std::make_shared<Node1>();
+[2.810s]       |          [01;36m[K^~~~[m[K
+[5.355s] gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+[5.356s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+[5.356s] gmake: *** [Makefile:146: all] Error 2
+[5.359s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ben/ros2_ws/install/rqt_gui_py:/home/ben/ros2_ws/install/rqt_gui:/home/ben/microros_ws/install/sensor_msgs_py:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j3 -l3
