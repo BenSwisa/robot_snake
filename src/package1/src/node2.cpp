@@ -1,3 +1,7 @@
+//==============================================================================
+//Ben Swisa
+//bensw@post.bgu.ac.il
+//==============================================================================
 #include <chrono>
 #include <functional>
 #include <memory>
@@ -8,10 +12,7 @@
 #include "std_msgs/msg/float32_multi_array.hpp"
 
 using namespace std::chrono_literals;
-//==============================================================================
-//Ben Swisa
-//bensw@post.bgu.ac.il
-//==============================================================================
+
 
 class Node2 : public rclcpp::Node
 {
@@ -36,7 +37,6 @@ class Node2 : public rclcpp::Node
       for (int i=0;i<6;i++){
         message.data[i]=(float)(joint_angle_cmd_[i]);
       }
-      RCLCPP_INFO(this->get_logger(), "Publishing: '%f'", message.data[1]);
       publisher_->publish(message);
     }
     rclcpp::TimerBase::SharedPtr timer_;

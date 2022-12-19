@@ -15,7 +15,7 @@
 
 #include <std_msgs/msg/int32_multi_array.h>
 //================[DEFINE]================
-#define MAX_TIME_BETWEEN_CALLBACKS 10
+#define MAX_TIME_BETWEEN_CALLBACKS 2
 #define N_links 4
 #define PRINT 0
 #define Direction 0  //  0 for pull or 1 for release
