@@ -3,8 +3,9 @@
 //bensw@post.bgu.ac.il
 //==============================================================================
 /*TODO:
-[ ]check if mirco ros nodes are stiil running , if not ,shut dowm with output
-[ ]check the new motor micro_controller node
+[ ]check if pid on string 2 is working
+[x]check if mirco ros nodes are stiil running , if not ,shut dowm with output
+[x]check the new motor micro_controller node
 */
 #include <chrono>
 #include <functional>
@@ -23,8 +24,10 @@ using namespace std::chrono_literals;
 #define enc_per_joint_ 2 
 #define strings_per_joint_ 3
 #define linked_joints_ 3
-#define LINKED_MOTORS 3 //TODO change to parameters
+//TODO change to parameters
+#define LINKED_MOTORS 3 
 #define MAX_TIME_BETWEEN_CALLBACKS 5 // in seconds
+#define CONSTANT_TENSION_ON_STRING_2 0.4
  
 
 class Node1 : public rclcpp::Node 
@@ -79,7 +82,6 @@ private:
 
   /* =====================[CONTROLLER]===========================
     ***** this function is the pid controller *****
-     
   */
     void controller(){
       
@@ -106,7 +108,7 @@ private:
           error_sum_[i]+=error[i];
         //last_enc_val[enc_axis]=current_enc_val[enc_axis]; //[ ]is this relevant?
         motor_cmd_val[i]=kp_[i]*(error[i])+ // pid controll to publish the right motor cmd
-                        kd_[i]*(error[i]-last_error[i])+ //[ ]check if eror diferential is working
+                        kd_[i]*(error[i]-last_error[i])+ 
                         ki_[i]*error_sum_[i];
         if(motor_cmd_val[i]>max_pwm_){ //motor command limitation
           motor_cmd_val[i]=max_pwm_;
@@ -122,33 +124,47 @@ private:
       }
 
        
-        
+      //TODO collapse string 2 into for
       //--------string 2 -------------
-      error_sum_[1]+=0.4-current_tension_val[1];
-      last_tension_val[1]=current_tension_val[1]; //FIXME current tension same as last tension? mabe error differential
-      motor_cmd_val[1]=kp_[1]*(0.4-current_tension_val[1])+
-                       kd_[1]*(current_tension_val[1]-last_tension_val[1])+
+      last_error[1]=error[1];
+        error[1]=CONSTANT_TENSION_ON_STRING_2-current_tension_val[1];
+        if(isErrorSameSign(error[1],last_error[1])==false) //if error changed sign integrator should be 0 so we wont get windup
+          error_sum_[1]=0;
+        if(saturation_flag[1]==false) //while we are in saturation dont sum the integrator so we wont get windup
+          error_sum_[1]+=error[1];
+      // last_tension_val[1]=current_tension_val[1]; //FIXME current tension same as last tension? mabe error differential
+      motor_cmd_val[1]=kp_[1]*error[1]+
+                       kd_[1]*(error[1]-last_error[1])+
                        ki_[1]*error_sum_[1];  //  control for constant 0.4gram on string 2 
       //  RCLCPP_INFO(this->get_logger(), " %f  \n",motor_cmd_val[0]);
-       if(motor_cmd_val[1]>max_pwm_)
-        motor_cmd_val[1]=max_pwm_;
-       else
-        if(motor_cmd_val[1]<-max_pwm_)
-        motor_cmd_val[1]=-max_pwm_;
+       if(motor_cmd_val[1]>max_pwm_){ //motor command limitation
+          motor_cmd_val[1]=max_pwm_;
+          saturation_flag[1]=1;
+        }
+        else
+          if(motor_cmd_val[1]<-max_pwm_){
+            motor_cmd_val[1]=-max_pwm_;
+            saturation_flag[1]=1;
+          }
+          else // we are not saturated
+            saturation_flag[1]=0;
       
+
       //----- INITIALIZE MSG ------
       auto message = std_msgs::msg::Int32MultiArray(); 
       message.data={0,0,0,0,0,0,0,0,0,0,0,0};  
       for(int i=0;i<3;i++)
        message.data[i]=(int32_t)motor_cmd_val[i];
+       
 
        // -----TENSION CHECK-------
-      for(int i=0;i<3;i++) //FIXME still getting maximum tension
-         if(current_tension_val[i]>5){
-          RCLCPP_ERROR(this->get_logger(), " TENSION TOO HIGH  \n");
+       //TODO convert to a loop
+         if(current_tension_val[0]>4 || current_tension_val[1]>4 || current_tension_val[2]>4){
+          RCLCPP_ERROR(this->get_logger(), " TENSION TOO HIGH %f \n",current_tension_val[0]);
           for(int j=0;j<3;j++)
             message.data[j]=-50;
         }
+      
         
         motor_cmd_publisher_->publish(message); //publish pwm output to motors
 
@@ -165,10 +181,10 @@ private:
   
   /*=====================[TENSION CALLBACK]===========================
     this function gets the tension from the tension_val_topic and inserting them into the
-    array current_tension_val[]
+    array current_tension_val[] 
   */
     void tension_val_callback(const std_msgs::msg::Float32MultiArray msg){ 
-    //  RCLCPP_INFO(this->get_logger(), " %f , %f \n",msg.data[0],msg.data[1]);
+    //  RCLCPP_INFO(this->get_logger(), " %f , %f, %f \n",msg.data[0],msg.data[1],msg.data[2]);
       for(int i=0;i<strings_per_joint_*(linked_joints_+1);i++){
         current_tension_val[i]=msg.data[i];
         }
@@ -205,8 +221,6 @@ private:
       RCLCPP_INFO(this->get_logger(), " %f  \n",kd_[0]);
   }
 
-
-
 /* =========================[CONSTANTS]=========================================
 enc_axis : in the controller func you need to know witch axis you are getting info from -> enc_y/z
 error: wanted position - current position
@@ -221,9 +235,6 @@ saturation_flag: when saturated we need to stop summing the error
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr joint_cmd_subscriber_;
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher_;
     rclcpp::TimerBase::SharedPtr controller_;
-    // int  enc_per_joint_=2;
-    // int  linked_joints_=2;
-    // int  strings_per_joint_=2;
     int controller_freq_,max_pwm_,enc_z_,enc_y_,enc_axis;
     int joint_time_between_callbacks=0;
     int tension_time_between_callbacks=0;
