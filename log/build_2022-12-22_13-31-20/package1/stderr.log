@@ -1,0 +1,14 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid Node1::controller()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:158:7:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kfor[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+  158 |       [01;35m[Kfor[m[K(int i=0;i<3;i++)
+      |       [01;35m[K^~~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:162:8:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kfor[m[K’
+  162 |        [01;36m[K--[m[K---TENSION CHECK-------
+      |        [01;36m[K^~[m[K
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:162:13:[m[K [01;31m[Kerror: [m[K‘[01m[KTENSION[m[K’ was not declared in this scope; did you mean ‘[01m[KENXIO[m[K’?
+  162 |        -----[01;31m[KTENSION[m[K CHECK-------
+      |             [01;31m[K^~~~~~~[m[K
+      |             [32m[KENXIO[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
