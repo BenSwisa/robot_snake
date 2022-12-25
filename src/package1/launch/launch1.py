@@ -58,25 +58,6 @@ def generate_launch_description():
     )
 
 
-
-    # micro_ros_ex1 =launch.actions.ExecuteProcess(
-    #         cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/ttyACM0'],
-    #         output='screen'
-    #     )
-
-    # micro_ros_ex2 =launch.actions.ExecuteProcess(
-    #         cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/ttyACM1'],
-    #         output='screen'
-    #     )
-    
-    # micro_ros_ex3 =launch.actions.ExecuteProcess(
-    #         cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/ttyACM2'],
-    #         output='screen'
-    #     )
-    
-    # ld.add_action(micro_ros_ex1)
-    # ld.add_action(micro_ros_ex2)
-    # ld.add_action(micro_ros_ex3)
     ld.add_action(node1)
     ld.add_action(node2)
     ld.add_action(bag_ex_launch_arg)
