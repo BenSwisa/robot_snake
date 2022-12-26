@@ -13,7 +13,7 @@
 
 //============[ constants ]=================
 #define PPR17 131072.0  //2^17
-#define N_links 2 //as big as the number of slave MC connected (N_links=2 means that one slave is connected and so on)
+#define N_links 2 //as big as the number of slave MC connected +1 (N_links=2 means that one slave is connected and so on)
 #define N_enc_joint  2 // number of encoders for each slave
 #define PRINT 1
 

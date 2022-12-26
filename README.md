@@ -21,5 +21,5 @@ make sure to allow dialout : sudo usermod -a -G dialout $USER
 ARDUINO IDE:
 - install teensyduino : https://www.pjrc.com/teensy/td_download.html
 - install teensy4_i2c : https://github.com/Richard-Gemmell/teensy4_i2c
-- add and include rls_encoder2 library : 
+- add the rls_encoder2 library from the package1/lib folder 
 
