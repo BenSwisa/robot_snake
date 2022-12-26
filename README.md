@@ -22,4 +22,6 @@ ARDUINO IDE:
 - install teensyduino : https://www.pjrc.com/teensy/td_download.html
 - install teensy4_i2c : https://github.com/Richard-Gemmell/teensy4_i2c
 - add the rls_encoder2 library from the package1/lib folder 
+- install micro_ros_arduino : https://github.com/micro-ROS/micro_ros_arduino/releases
+- install hx711_multi : https://github.com/compugician/HX711-multi.git
 

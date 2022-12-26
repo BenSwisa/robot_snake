@@ -3,10 +3,12 @@
 //bensw@post.bgu.ac.il
 //==============================================================================
 /*TODO:
-[ ]check if pid on string 2 is working
+[x]check if pid on string 2 is working
 [x]check if mirco ros nodes are stiil running , if not ,shut dowm with output
 [x]check the new motor micro_controller node
 [ ]change tension vals in mc node
+[ ]כיול מחדש של הקבועים של 
+[ ]
 */
 #include <chrono>
 #include <functional>
@@ -26,10 +28,12 @@ using namespace std::chrono_literals;
 #define strings_per_joint_ 3
 #define linked_joints_ 3
 //TODO change to parameters
-#define LINKED_MOTORS 3 
+#define LINKED_MOTORS 6 
 #define MAX_TIME_BETWEEN_CALLBACKS 5 // in seconds
-#define CONSTANT_TENSION_ON_STRING_2 0.8
+#define CONSTANT_TENSION_ON_STRING_2 0.4
 #define TENSION_MAX_IMPULSE 10
+#define REALSE_STRINGS 0 // 1 if you want to release tension on all the strings
+
  
 
 class Node1 : public rclcpp::Node 
@@ -129,9 +133,10 @@ private:
 
       //----- INITIALIZE MSG ------
       auto message = std_msgs::msg::Int32MultiArray(); 
-      message.data={0,0,0,0,0,0,0,0,0,0,0,0};  
-      for(int i=0;i<3;i++)
-       message.data[i]=(int32_t)motor_cmd_val[i];
+      message.data={-50,-50,-50,-50,-50,-50,0,0,0,0,0,0};  
+      if(!REALSE_STRINGS)
+        for(int i=0;i<LINKED_MOTORS;i++)
+        message.data[i]=(int32_t)motor_cmd_val[i];
        
       //  -----TENSION CHECK-------
        for(int i=0;i<LINKED_MOTORS;i++){
