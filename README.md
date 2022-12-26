@@ -17,3 +17,9 @@ libraries needed : RLSencoder2, teensy4_i2c, micro_ros_arduino
 source /opt/ros/humble/setup.bash
 
 make sure to allow dialout : sudo usermod -a -G dialout $USER
+
+ARDUINO IDE:
+- install teensyduino : https://www.pjrc.com/teensy/td_download.html
+- install teensy4_i2c : https://github.com/Richard-Gemmell/teensy4_i2c
+- add and include rls_encoder2 library : 
+
