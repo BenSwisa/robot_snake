@@ -1,0 +1,3 @@
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

@@ -20,12 +20,11 @@
 #define PRINT 0
 #define Direction 0  //  0 for pull or 1 for release
 #define LED_PIN 13
-#define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
-
+#define ESTABLISH_RECCONECTIONS 0
 //================[FUNC DECLARTIONS]================
-
-
+void destroy_entities();
+bool create_entities();
 void set_motor_pwm(const void * msgin);
 void error_loop();
 
@@ -46,8 +45,7 @@ int time_from_last_callback=0;
 //=========================================
 #include <micro_ros_arduino.h>
 #include <rmw_microros/rmw_microros.h>
-#define LED_PIN 13
-#define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){return false;}}
+#define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
 
 #define EXECUTE_EVERY_N_MS(MS, X)  do { \
   static volatile int64_t init = -1; \
@@ -88,48 +86,83 @@ void setup() {
   digitalWrite(LED_PIN, HIGH);  
   
   state = WAITING_AGENT;
-
   
+  if(!ESTABLISH_RECCONECTIONS){
+      allocator = rcl_get_default_allocator();
+        
+          //create init_options
+          RCCHECK(rclc_support_init(&support, 0, NULL, &allocator));
+        
+          // create node
+          RCCHECK(rclc_node_init_default(&node, "motor_controller_node", "", &support));
+        
+          // create subscriber
+          RCCHECK(rclc_subscription_init_default(
+            &subscriber,
+            &node,
+            ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32MultiArray),
+            "motor_cmd_topic"));
+        
+            // create executor
+//       / executor = rclc_executor_get_zero_initialized_executor();
+        RCCHECK(rclc_executor_init(&executor, &support.context, 1, &allocator));
+        RCCHECK(rclc_executor_add_subscription(&executor, &subscriber, &msg, &set_motor_pwm, ON_NEW_DATA));
+      //  RCCHECK(rclc_executor_add_timer(&executor, &tim/er));
+  }
 }
+
 
 //===========[LOOP]==========================
 void loop() {
-  
-  switch (state) {
-    case WAITING_AGENT:
-      EXECUTE_EVERY_N_MS(500, state = (RMW_RET_OK == rmw_uros_ping_agent(100, 1)) ? AGENT_AVAILABLE : WAITING_AGENT;);
-      break;
-    case AGENT_AVAILABLE:
-      state = (true == create_entities()) ? AGENT_CONNECTED : WAITING_AGENT;
-      if (state == WAITING_AGENT) {
+  if(ESTABLISH_RECCONECTIONS){ //this have not been tested yet 
+    switch (state) {
+      case WAITING_AGENT:
+        EXECUTE_EVERY_N_MS(500, state = (RMW_RET_OK == rmw_uros_ping_agent(100, 1)) ? AGENT_AVAILABLE : WAITING_AGENT;);
+        break;
+      case AGENT_AVAILABLE:
+        state = (true == create_entities()) ? AGENT_CONNECTED : WAITING_AGENT;
+        if (state == WAITING_AGENT) {
+          destroy_entities();
+        };
+        break;
+      case AGENT_CONNECTED:
+        EXECUTE_EVERY_N_MS(200, state = (RMW_RET_OK == rmw_uros_ping_agent(100, 1)) ? AGENT_CONNECTED : AGENT_DISCONNECTED;);
+        if (state == AGENT_CONNECTED) {
+          if(time_from_last_callback>MAX_TIME_BETWEEN_CALLBACKS){ 
+              for (int i=0; i<N_links*3; i++)
+                analogWrite(motors_PWM_pin[i],0);
+            }//if nothing was published to the topic for 1 sec than the controller isnt working->stop motors from spinning
+            time_from_last_callback++; 
+            delay(100);        
+          rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
+        }
+        break;
+      case AGENT_DISCONNECTED:
         destroy_entities();
-      };
-      break;
-    case AGENT_CONNECTED:
-      EXECUTE_EVERY_N_MS(200, state = (RMW_RET_OK == rmw_uros_ping_agent(100, 1)) ? AGENT_CONNECTED : AGENT_DISCONNECTED;);
-      if (state == AGENT_CONNECTED) {
-        if(time_from_last_callback>MAX_TIME_BETWEEN_CALLBACKS){ 
-            for (int i=0; i<N_links*3; i++)
-              analogWrite(motors_PWM_pin[i],0);
-          }//if nothing was published to the topic for 1 sec than the controller isnt working->stop motors from spinning
-          time_from_last_callback++; 
-          delay(100);
-        rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
-      }
-      break;
-    case AGENT_DISCONNECTED:
-      destroy_entities();
-      state = WAITING_AGENT;
-      break;
-    default:
-      break;
+        state = WAITING_AGENT;
+        break;
+      default:
+        break;
+    }
+  
+    if (state == AGENT_CONNECTED) {
+      digitalWrite(LED_PIN, 1);
+    } else {
+      digitalWrite(LED_PIN, 0);
+    }    
   }
 
-  if (state == AGENT_CONNECTED) {
-    digitalWrite(LED_PIN, 1);
-  } else {
-    digitalWrite(LED_PIN, 0);
+
+  if(!ESTABLISH_RECCONECTIONS){
+    if(time_from_last_callback>MAX_TIME_BETWEEN_CALLBACKS){ 
+              for (int i=0; i<N_links*3; i++)
+                analogWrite(motors_PWM_pin[i],0);
+            }//if nothing was published to the topic for 1 sec than the controller isnt working->stop motors from spinning
+            time_from_last_callback++; 
+            delay(100);        
+         RCCHECK( rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));  
   }
+
 }
 
 
@@ -184,7 +217,7 @@ void destroy_entities()
   (void) rmw_uros_set_context_entity_destroy_session_timeout(rmw_context, 0);
 
   rcl_subscription_fini(&subscriber, &node);
-  rcl_timer_fini(&timer);
+//  rcl_timer_fini(&timer);
   rclc_executor_fini(&executor);
   rcl_node_fini(&node);
   rclc_support_fini(&support);

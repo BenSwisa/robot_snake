@@ -8,7 +8,7 @@
 [x]check the new motor micro_controller node
 [ ]change tension vals in mc node
 [ ]כיול מחדש של הקבועים של 
-[ ]
+[ ]make the mc nodes more neat
 */
 #include <chrono>
 #include <functional>
@@ -103,11 +103,11 @@ private:
       for(int i=0;i<LINKED_MOTORS;i++){ //loop for motor 1 & 3
         last_error[i]=error[i];
         switch(i%3){
-          case 0: error[i]=joint_cmd_val[enc_z_]-current_enc_val[enc_z_];
+          case 0: error[i]=joint_cmd_val[enc_y_]-current_enc_val[enc_y_];
                   break;
           case 1: error[i]=CONSTANT_TENSION_ON_STRING_2-current_tension_val[i];
                   break;
-          case 2: error[i]=joint_cmd_val[enc_y_]-current_enc_val[enc_y_];
+          case 2: error[i]=joint_cmd_val[enc_z_]-current_enc_val[enc_z_];
                   break;
           default: break;
         }
@@ -133,14 +133,14 @@ private:
 
       //----- INITIALIZE MSG ------
       auto message = std_msgs::msg::Int32MultiArray(); 
-      message.data={-50,-50,-50,-50,-50,-50,0,0,0,0,0,0};  
+      message.data={-50,-50,-50,-50,0,0,0,0,0,0,0,0};  
       if(!REALSE_STRINGS)
         for(int i=0;i<LINKED_MOTORS;i++)
         message.data[i]=(int32_t)motor_cmd_val[i];
        
       //  -----TENSION CHECK-------
        for(int i=0;i<LINKED_MOTORS;i++){
-         if(current_tension_val[i]>4 ){
+         if(current_tension_val[i]>5 ){
           RCLCPP_ERROR(this->get_logger(), " TENSION TOO HIGH %f \n",current_tension_val[0]);
           for(int j=0;j<LINKED_MOTORS;j++)
             message.data[j]=-50;

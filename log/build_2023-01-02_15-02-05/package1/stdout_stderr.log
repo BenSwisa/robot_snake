@@ -1,0 +1,6 @@
+[35m[1mConsolidate compiler generated dependencies of target node1[0m
+[ 50%] Built target node2
+[ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

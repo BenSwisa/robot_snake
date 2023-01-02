@@ -1,0 +1,8 @@
+[0.014s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j12 -l12
+[0.041s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[0.049s] [ 50%] Built target node2
+[0.055s] [ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[4.640s] gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Interrupt
+[4.640s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Interrupt
+[4.640s] gmake: *** [Makefile:146: all] Interrupt
+[4.658s] Invoked command in '/home/ben/robot_snake/build/package1' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j12 -l12
