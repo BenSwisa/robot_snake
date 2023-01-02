@@ -19,7 +19,31 @@
 #include <std_msgs/msg/multi_array_dimension.h>
 #include <std_msgs/msg/multi_array_layout.h>
 
+//=================RE_ESTABLISH============================
 
+#include <rmw_microros/rmw_microros.h>
+
+#include <std_msgs/msg/int32.h>
+
+#define LED_PIN 13
+#define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){return false;}}
+#define EXECUTE_EVERY_N_MS(MS, X)  do { \
+  static volatile int64_t init = -1; \
+  if (init == -1) { init = uxr_millis();} \
+  if (uxr_millis() - init > MS) { X; init = uxr_millis();} \
+} while (0)\
+
+
+enum states {
+  WAITING_AGENT,
+  AGENT_AVAILABLE,
+  AGENT_CONNECTED,
+  AGENT_DISCONNECTED
+} state;
+
+
+
+//============================================
 
 //=====[ Constants ]========================================
 #define PRINT 0
@@ -84,7 +108,7 @@ HX711MULTI scales(N_joints*3, DOUTS, CLK);
 // ------ corrected while motor 7 and 1 are switched -----------
 
 double P[12][3] =  {{7.5975E-12, 1.3514E-05,1.5 -1.4006},
-                    {9.3052E-12, 1.1501E-05,1.5 -1.8168},
+                    {9.3052E-12, 1.1501E-05,0.1 -1.8168},
                     {8.5654E-12, 1.403E-05,2.5 -2.4273},
                     {-1.0379E-12, 2.3016E-05, -1.3881},
                     {6.8068E-12, 1.5016E-05, 0.4802},
@@ -96,7 +120,9 @@ double P[12][3] =  {{7.5975E-12, 1.3514E-05,1.5 -1.4006},
                     {5.9427E-12, 1.2468E-05, -1.4726},
                     {5.0598E-12, 1.6667E-05, -2.2929}};  
 
-//----------------------------------------------------------------                                                           
+//----------------------------------------------------------------    
+
+bool micro_ros_init_successful;                                                 
 rcl_publisher_t publisher;
 std_msgs__msg__Float32MultiArray msg;
 rclc_executor_t executor;
@@ -107,15 +133,77 @@ rcl_timer_t timer;
 
 //=====[ SETUP ]================================================================
 
-void setup() {
-
-  
+void setup() { 
   set_microros_transports();
-  
   pinMode(LED_PIN, OUTPUT);
-  digitalWrite(LED_PIN, HIGH);  
-  
-  delay(2000);
+
+  state = WAITING_AGENT;
+
+}
+
+//=====[ LOOP ]================================================================
+void loop() {
+
+    switch (state) {
+    case WAITING_AGENT:
+      EXECUTE_EVERY_N_MS(500, state = (RMW_RET_OK == rmw_uros_ping_agent(100, 1)) ? AGENT_AVAILABLE : WAITING_AGENT;);
+      break;
+    case AGENT_AVAILABLE:
+      state = (true == create_entities()) ? AGENT_CONNECTED : WAITING_AGENT;
+      if (state == WAITING_AGENT) {
+        destroy_entities();
+      };
+      break;
+    case AGENT_CONNECTED:
+      EXECUTE_EVERY_N_MS(200, state = (RMW_RET_OK == rmw_uros_ping_agent(100, 1)) ? AGENT_CONNECTED : AGENT_DISCONNECTED;);
+      if (state == AGENT_CONNECTED) {
+        publish_msg();
+        rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
+      }
+      break;
+    case AGENT_DISCONNECTED:
+      destroy_entities();
+      state = WAITING_AGENT;
+      break;
+    default:
+      break;
+    }
+
+  if (state == AGENT_CONNECTED) {
+    digitalWrite(LED_PIN, 1);
+  } else {
+    digitalWrite(LED_PIN, 0);
+  }
+}
+
+//=====[ FUNCTIONS ]================================================================
+void publish_msg()
+{  
+ 
+    scales.readRaw(result);             // Read raw data from all the tension-meters
+    
+  for (int i=0; i<(N_joints*3); i++)  // --  Convert RAW data to Kg
+    msg.data.data[i] = P[i][0]*pow(result[i],2) + P[i][1]*result[i] + P[i][2];
+
+   //----- publish the msg -------
+
+   RCSOFTCHECK(rcl_publish(&publisher, &msg, NULL)); 
+}
+
+void destroy_entities()
+{
+  rmw_context_t * rmw_context = rcl_context_get_rmw_context(&support.context);
+  (void) rmw_uros_set_context_entity_destroy_session_timeout(rmw_context, 0);
+
+  rcl_publisher_fini(&publisher, &node);
+  rcl_timer_fini(&timer);
+  rclc_executor_fini(&executor);
+  rcl_node_fini(&node);
+  rclc_support_fini(&support);
+}
+
+bool create_entities()
+{
 
   allocator = rcl_get_default_allocator();
 
@@ -139,35 +227,13 @@ void setup() {
    msg.data.size = N_tensions;
 
  
-
   // create executor
+  executor = rclc_executor_get_zero_initialized_executor();
   RCCHECK(rclc_executor_init(&executor, &support.context, 1, &allocator));
   RCCHECK(rclc_executor_add_timer(&executor, &timer));
 
+  return true;
 }
-
-//=====[ LOOP ]================================================================
-void loop() {
-  delay(1);
-  publish_msg();
-  RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
-}
-
-//=====[ FUNCTIONS ]================================================================
-void publish_msg()
-{  
- 
-    scales.readRaw(result);             // Read raw data from all the tension-meters
-    
-  for (int i=0; i<(N_joints*3); i++)  // --  Convert RAW data to Kg
-    msg.data.data[i] = P[i][0]*pow(result[i],2) + P[i][1]*result[i] + P[i][2];
-
-   //----- publish the msg -------
-
-   RCSOFTCHECK(rcl_publish(&publisher, &msg, NULL)); 
-}
-
-
 
 void error_loop(){
   while(1){
