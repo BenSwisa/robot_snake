@@ -25,3 +25,7 @@ ARDUINO IDE:
 - install micro_ros_arduino : https://github.com/micro-ROS/micro_ros_arduino/releases
 - install hx711_multi : https://github.com/compugician/HX711-multi.git
 
+TOPIC CRASHING(This happens when some node unexpectedly crashed previously)-> 
+restart daemon:
+- ros2 daeomon stop
+- ros2 daemon start

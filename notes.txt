@@ -1,0 +1,10 @@
+- after restart of the red button joint val is working properly
+
+
+- moving 1st joing is afecting the secornd
+
+- ros2 daemon ?
+ 
+ - after topics are working reinitialize rqt , why?
+ 
+- open note to ask about ssuperuser

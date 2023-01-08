@@ -1,0 +1,284 @@
+[0.015s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j12 -l12
+[0.045s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[0.055s] [ 50%] Built target node2
+[0.060s] [ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[2.205s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In constructor ‘[01m[KNode1::Node1()[m[K’:
+[2.205s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:44:21:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KNode1::get_parameters()[m[K’
+[2.205s]    44 |       [01;31m[Kget_parameters()[m[K; // set and get the parameters
+[2.205s]       |       [01;31m[K~~~~~~~~~~~~~~^~[m[K
+[2.205s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[2.205s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[2.205s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.205s]                  from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:19[m[K:
+[2.205s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:786:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ParameterT> bool rclcpp::Node::get_parameters(const string&, std::map<std::__cxx11::basic_string<char>, ParameterT>&) const[m[K’
+[2.206s]   786 |   [01;36m[Kget_parameters[m[K(
+[2.206s]       |   [01;36m[K^~~~~~~~~~~~~~[m[K
+[2.206s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:786:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.210s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:44:21:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[2.210s]    44 |       [01;36m[Kget_parameters()[m[K; // set and get the parameters
+[2.210s]       |       [01;36m[K~~~~~~~~~~~~~~^~[m[K
+[2.210s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[2.210s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[2.210s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.210s]                  from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:19[m[K:
+[2.210s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:745:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::vector<rclcpp::Parameter> rclcpp::Node::get_parameters(const std::vector<std::__cxx11::basic_string<char> >&) const[m[K’
+[2.210s]   745 |   [01;36m[Kget_parameters[m[K(const std::vector<std::string> & names) const;
+[2.210s]       |   [01;36m[K^~~~~~~~~~~~~~[m[K
+[2.210s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:745:3:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[2.219s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:47:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_val_subscriber_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcount_subscribers[m[K’?
+[2.219s]    47 |      [01;31m[Kjoint_val_subscriber_[m[K = this->create_subscription<std_msgs::msg::Float32MultiArray>(
+[2.219s]       |      [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[2.219s]       |      [32m[Kcount_subscribers[m[K
+[2.277s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:50:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktension_val_subscriber_[m[K’ was not declared in this scope
+[2.277s]    50 |     [01;31m[Ktension_val_subscriber_[m[K = this->create_subscription<std_msgs::msg::Float32MultiArray>(
+[2.277s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.277s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:51:50:[m[K [01;31m[Kerror: [m[K‘[01m[Ktension_val_callback[m[K’ is not a member of ‘[01m[KNode1[m[K’
+[2.278s]    51 |       "tension_val_topic", 10, std::bind(&Node1::[01;31m[Ktension_val_callback[m[K, this, _1));
+[2.278s]       |                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[2.286s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:53:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_cmd_subscriber_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcount_subscribers[m[K’?
+[2.286s]    53 |     [01;31m[Kjoint_cmd_subscriber_[m[K = this->create_subscription<std_msgs::msg::Float32MultiArray>(
+[2.286s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[2.286s]       |     [32m[Kcount_subscribers[m[K
+[2.295s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:56:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_cmd_publisher_[m[K’ was not declared in this scope
+[2.295s]    56 |      [01;31m[Kmotor_cmd_publisher_[m[K = this->create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10);
+[2.296s]       |      [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[2.302s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:57:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontroller_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcontroller[m[K’?
+[2.302s]    57 |     [01;31m[Kcontroller_[m[K = this->create_wall_timer(std::chrono::milliseconds((int)(1/controller_freq_*1000)), std::bind(&Node1::controller, this)); //publish motor cmd every second
+[2.302s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[2.302s]       |     [32m[Kcontroller[m[K
+[2.309s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:57:77:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontroller_freq_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcontroller[m[K’?
+[2.309s]    57 |     controller_ = this->create_wall_timer(std::chrono::milliseconds((int)(1/[01;31m[Kcontroller_freq_[m[K*1000)), std::bind(&Node1::controller, this)); //publish motor cmd every second
+[2.309s]       |                                                                             [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.310s]       |                                                                             [32m[Kcontroller[m[K
+[2.321s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid Node1::joint_val_callback(std_msgs::msg::Float32MultiArray)[m[K’:
+[2.321s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:72:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_enc_val[m[K’ was not declared in this scope
+[2.322s]    72 |         if(abs(msg.data[i]-[01;31m[Kcurrent_enc_val[m[K[i])<TENSION_MAX_IMPULSE) // tension gauge has some errors and and can return a big impulse
+[2.322s]       |                            [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.333s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:75:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_time_between_callbacks[m[K’ was not declared in this scope
+[2.333s]    75 |         [01;31m[Kjoint_time_between_callbacks[m[K=0;
+[2.333s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.340s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid Node1::joint_cmd_callback(std_msgs::msg::Float32MultiArray)[m[K’:
+[2.340s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:85:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_cmd_val[m[K’ was not declared in this scope; did you mean ‘[01m[Kjoint_cmd_callback[m[K’?
+[2.340s]    85 |         [01;31m[Kjoint_cmd_val[m[K[i]=msg.data[i];
+[2.340s]       |         [01;31m[K^~~~~~~~~~~~~[m[K
+[2.340s]       |         [32m[Kjoint_cmd_callback[m[K
+[2.352s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid Node1::controller()[m[K’:
+[2.352s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:96:12:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_time_between_callbacks[m[K’ was not declared in this scope
+[2.352s]    96 |         if([01;31m[Kjoint_time_between_callbacks[m[K>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_||
+[2.352s]       |            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.360s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:96:73:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontroller_freq_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcontroller[m[K’?
+[2.360s]    96 |         if(joint_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*[01;31m[Kcontroller_freq_[m[K||
+[2.360s]       |                                                                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.360s]       |                                                                         [32m[Kcontroller[m[K
+[2.371s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:97:12:[m[K [01;31m[Kerror: [m[K‘[01m[Ktension_time_between_callbacks[m[K’ was not declared in this scope
+[2.371s]    97 |            [01;31m[Ktension_time_between_callbacks[m[K>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_){
+[2.372s]       |            [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.383s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:101:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_time_between_callbacks[m[K’ was not declared in this scope
+[2.383s]   101 |         [01;31m[Kjoint_time_between_callbacks[m[K++;
+[2.383s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.395s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:102:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktension_time_between_callbacks[m[K’ was not declared in this scope
+[2.396s]   102 |         [01;31m[Ktension_time_between_callbacks[m[K++;
+[2.396s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.402s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:105:9:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_error[m[K’ was not declared in this scope; did you mean ‘[01m[Kstrerror[m[K’?
+[2.402s]   105 |         [01;31m[Klast_error[m[K[i]=error[i];
+[2.402s]       |         [01;31m[K^~~~~~~~~~[m[K
+[2.402s]       |         [32m[Kstrerror[m[K
+[2.406s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:105:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kerror[m[K’ was not declared in this scope; did you mean ‘[01m[Kperror[m[K’?
+[2.406s]   105 |         last_error[i]=[01;31m[Kerror[m[K[i];
+[2.406s]       |                       [01;31m[K^~~~~[m[K
+[2.406s]       |                       [32m[Kperror[m[K
+[2.413s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:107:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_cmd_val[m[K’ was not declared in this scope; did you mean ‘[01m[Kjoint_cmd_callback[m[K’?
+[2.413s]   107 |           case 0: error[i]=[01;31m[Kjoint_cmd_val[m[K[enc_z_]-current_enc_val[enc_z_];
+[2.413s]       |                            [01;31m[K^~~~~~~~~~~~~[m[K
+[2.413s]       |                            [32m[Kjoint_cmd_callback[m[K
+[2.418s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:107:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kenc_z_[m[K’ was not declared in this scope
+[2.418s]   107 |           case 0: error[i]=joint_cmd_val[[01;31m[Kenc_z_[m[K]-current_enc_val[enc_z_];
+[2.418s]       |                                          [01;31m[K^~~~~~[m[K
+[2.426s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:107:50:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_enc_val[m[K’ was not declared in this scope
+[2.426s]   107 |           case 0: error[i]=joint_cmd_val[enc_z_]-[01;31m[Kcurrent_enc_val[m[K[enc_z_];
+[2.426s]       |                                                  [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.438s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:110:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_tension_val[m[K’ was not declared in this scope
+[2.438s]   110 |           case 1: error[i]=CONSTANT_TENSION_ON_STRING_2-[01;31m[Kcurrent_tension_val[m[K[i];
+[2.438s]       |                                                         [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.443s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:112:42:[m[K [01;31m[Kerror: [m[K‘[01m[Kenc_y_[m[K’ was not declared in this scope
+[2.443s]   112 |           case 2: error[i]=joint_cmd_val[[01;31m[Kenc_y_[m[K]-current_enc_val[enc_y_];
+[2.443s]       |                                          [01;31m[K^~~~~~[m[K
+[2.453s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:116:12:[m[K [01;31m[Kerror: [m[K‘[01m[KisErrorSameSign[m[K’ was not declared in this scope
+[2.453s]   116 |         if([01;31m[KisErrorSameSign[m[K(error[i],last_error[i])==false) //if error changed sign integrator should be 0 so we wont get windup
+[2.453s]       |            [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.458s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:117:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kerror_sum_[m[K’ was not declared in this scope; did you mean ‘[01m[Kerror_t[m[K’?
+[2.458s]   117 |           [01;31m[Kerror_sum_[m[K[i]=0;
+[2.459s]       |           [01;31m[K^~~~~~~~~~[m[K
+[2.459s]       |           [32m[Kerror_t[m[K
+[2.467s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:118:12:[m[K [01;31m[Kerror: [m[K‘[01m[Ksaturation_flag[m[K’ was not declared in this scope
+[2.467s]   118 |         if([01;31m[Ksaturation_flag[m[K[i]==false) //while we are in saturation dont sum the integrator so we wont get windup
+[2.467s]       |            [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.473s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:119:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kerror_sum_[m[K’ was not declared in this scope; did you mean ‘[01m[Kerror_t[m[K’?
+[2.473s]   119 |           [01;31m[Kerror_sum_[m[K[i]+=error[i];
+[2.473s]       |           [01;31m[K^~~~~~~~~~[m[K
+[2.473s]       |           [32m[Kerror_t[m[K
+[2.481s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:120:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_cmd_val[m[K’ was not declared in this scope
+[2.481s]   120 |         [01;31m[Kmotor_cmd_val[m[K[i]=kp_[i]*(error[i])+ // pid controll to publish the right motor cmd
+[2.481s]       |         [01;31m[K^~~~~~~~~~~~~[m[K
+[2.486s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:120:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kkp_[m[K’ was not declared in this scope
+[2.486s]   120 |         motor_cmd_val[i]=[01;31m[Kkp_[m[K[i]*(error[i])+ // pid controll to publish the right motor cmd
+[2.486s]       |                          [01;31m[K^~~[m[K
+[2.490s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:121:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kkd_[m[K’ was not declared in this scope
+[2.490s]   121 |                         [01;31m[Kkd_[m[K[i]*(error[i]-last_error[i])+
+[2.490s]       |                         [01;31m[K^~~[m[K
+[2.494s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:122:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kki_[m[K’ was not declared in this scope
+[2.494s]   122 |                         [01;31m[Kki_[m[K[i]*error_sum_[i];
+[2.494s]       |                         [01;31m[K^~~[m[K
+[2.499s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:122:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kerror_sum_[m[K’ was not declared in this scope; did you mean ‘[01m[Kerror_t[m[K’?
+[2.499s]   122 |                         ki_[i]*[01;31m[Kerror_sum_[m[K[i];
+[2.499s]       |                                [01;31m[K^~~~~~~~~~[m[K
+[2.499s]       |                                [32m[Kerror_t[m[K
+[2.504s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:123:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kmax_pwm_[m[K’ was not declared in this scope
+[2.504s]   123 |         if(motor_cmd_val[i]>[01;31m[Kmax_pwm_[m[K){ //motor command limitation
+[2.504s]       |                             [01;31m[K^~~~~~~~[m[K
+[2.511s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:125:11:[m[K [01;31m[Kerror: [m[K‘[01m[Ksaturation_flag[m[K’ was not declared in this scope
+[2.511s]   125 |           [01;31m[Ksaturation_flag[m[K[i]=1;
+[2.511s]       |           [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.519s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:130:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ksaturation_flag[m[K’ was not declared in this scope
+[2.519s]   130 |             [01;31m[Ksaturation_flag[m[K[i]=1;
+[2.519s]       |             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.527s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:133:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ksaturation_flag[m[K’ was not declared in this scope
+[2.527s]   133 |             [01;31m[Ksaturation_flag[m[K[i]=0;
+[2.527s]       |             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.534s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:141:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_cmd_val[m[K’ was not declared in this scope
+[2.534s]   141 |         message.data[i]=(int32_t)[01;31m[Kmotor_cmd_val[m[K[i];
+[2.534s]       |                                  [01;31m[K^~~~~~~~~~~~~[m[K
+[2.535s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K At global scope:
+[2.535s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:152:29:[m[K [01;31m[Kerror: [m[Kexpected initializer before ‘[01m[K->[m[K’ token
+[2.535s]   152 |         motor_cmd_publisher_[01;31m[K->[m[Kpublish(message); //publish pwm output to motors
+[2.535s]       |                             [01;31m[K^~[m[K
+[2.535s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:154:5:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.535s]   154 |     [01;31m[K}[m[K
+[2.535s]       |     [01;31m[K^[m[K
+[2.541s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid tension_val_callback(std_msgs::msg::Float32MultiArray)[m[K’:
+[2.541s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:175:28:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_tension_val[m[K’ was not declared in this scope
+[2.541s]   175 |         if(abs(msg.data[i]-[01;31m[Kcurrent_tension_val[m[K[i])<TENSION_MAX_IMPULSE) // tension gauge has some errors and and can return a big impulse
+[2.541s]       |                            [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.548s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:178:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ktension_time_between_callbacks[m[K’ was not declared in this scope
+[2.548s]   178 |         [01;31m[Ktension_time_between_callbacks[m[K=0;
+[2.548s]       |         [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.548s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In function ‘[01m[Kvoid get_parameters()[m[K’:
+[2.548s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:194:7:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.548s]   194 |       [01;31m[Kthis[m[K->declare_parameter("max_pwm",0);
+[2.548s]       |       [01;31m[K^~~~[m[K
+[2.548s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:195:7:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.549s]   195 |       [01;31m[Kthis[m[K->declare_parameter("enc_y",0);
+[2.549s]       |       [01;31m[K^~~~[m[K
+[2.549s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:196:7:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.549s]   196 |       [01;31m[Kthis[m[K->declare_parameter("enc_z",1);
+[2.549s]       |       [01;31m[K^~~~[m[K
+[2.549s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:197:7:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.549s]   197 |       [01;31m[Kthis[m[K->declare_parameter("controller_freq",100);
+[2.549s]       |       [01;31m[K^~~~[m[K
+[2.549s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:198:7:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.549s]   198 |       [01;31m[Kthis[m[K->declare_parameter("kp",std::vector<double>({0.0}));
+[2.549s]       |       [01;31m[K^~~~[m[K
+[2.549s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:199:7:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.549s]   199 |       [01;31m[Kthis[m[K->declare_parameter("ki",std::vector<double>({0.0}));
+[2.549s]       |       [01;31m[K^~~~[m[K
+[2.549s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:200:7:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.549s]   200 |       [01;31m[Kthis[m[K->declare_parameter("kd",std::vector<double>({0.0}));
+[2.550s]       |       [01;31m[K^~~~[m[K
+[2.553s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:201:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kcontroller_freq_[m[K’ was not declared in this scope
+[2.553s]   201 |       [01;31m[Kcontroller_freq_[m[K = this->get_parameter("controller_freq").as_int();
+[2.554s]       |       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.554s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:201:26:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.554s]   201 |       controller_freq_ = [01;31m[Kthis[m[K->get_parameter("controller_freq").as_int();
+[2.554s]       |                          [01;31m[K^~~~[m[K
+[2.557s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:202:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kenc_y_[m[K’ was not declared in this scope
+[2.557s]   202 |       [01;31m[Kenc_y_[m[K = this->get_parameter("enc_y" ).as_int();
+[2.557s]       |       [01;31m[K^~~~~~[m[K
+[2.558s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:202:16:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.558s]   202 |       enc_y_ = [01;31m[Kthis[m[K->get_parameter("enc_y" ).as_int();
+[2.558s]       |                [01;31m[K^~~~[m[K
+[2.560s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:203:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kenc_z_[m[K’ was not declared in this scope
+[2.560s]   203 |       [01;31m[Kenc_z_[m[K = this->get_parameter("enc_z" ).as_int();
+[2.560s]       |       [01;31m[K^~~~~~[m[K
+[2.561s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:203:16:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.561s]   203 |       enc_z_ = [01;31m[Kthis[m[K->get_parameter("enc_z" ).as_int();
+[2.561s]       |                [01;31m[K^~~~[m[K
+[2.564s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:204:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kmax_pwm_[m[K’ was not declared in this scope
+[2.564s]   204 |       [01;31m[Kmax_pwm_[m[K = this->get_parameter("max_pwm").as_int();
+[2.564s]       |       [01;31m[K^~~~~~~~[m[K
+[2.564s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:204:18:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.564s]   204 |       max_pwm_ = [01;31m[Kthis[m[K->get_parameter("max_pwm").as_int();
+[2.564s]       |                  [01;31m[K^~~~[m[K
+[2.566s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:205:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kkp_[m[K’ was not declared in this scope
+[2.566s]   205 |       [01;31m[Kkp_[m[K = this->get_parameter("kp").as_double_array();
+[2.566s]       |       [01;31m[K^~~[m[K
+[2.566s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:205:13:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.566s]   205 |       kp_ = [01;31m[Kthis[m[K->get_parameter("kp").as_double_array();
+[2.566s]       |             [01;31m[K^~~~[m[K
+[2.568s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:206:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kki_[m[K’ was not declared in this scope
+[2.569s]   206 |       [01;31m[Kki_[m[K = this->get_parameter("ki").as_double_array();
+[2.569s]       |       [01;31m[K^~~[m[K
+[2.569s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:206:13:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.569s]   206 |       ki_ = [01;31m[Kthis[m[K->get_parameter("ki").as_double_array();
+[2.569s]       |             [01;31m[K^~~~[m[K
+[2.571s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:207:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kkd_[m[K’ was not declared in this scope
+[2.571s]   207 |       [01;31m[Kkd_[m[K = this->get_parameter("kd").as_double_array();
+[2.571s]       |       [01;31m[K^~~[m[K
+[2.571s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:207:13:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.571s]   207 |       kd_ = [01;31m[Kthis[m[K->get_parameter("kd").as_double_array();
+[2.571s]       |             [01;31m[K^~~~[m[K
+[2.571s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.571s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:23[m[K,
+[2.571s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.571s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.571s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.571s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.571s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.571s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.571s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.571s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.572s]                  from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:19[m[K:
+[2.572s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:19:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.572s]   208 |       RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), " %f  \n",kd_[0]);
+[2.572s]       |                   [01;31m[K^~~~[m[K
+[2.572s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:19:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.572s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.572s]   208 |       [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), " %f  \n",kd_[0]);
+[2.572s]       |       [01;31m[K^~~~~~~~~~~[m[K
+[2.576s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:[m[K [01;31m[Kerror: [m[K‘[01m[K<declaration error>[m[K’ is not a template [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[2.576s]   208 |       [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), " %f  \n",kd_[0]);
+[2.576s]       |       [01;31m[K^~~~~~~~~~~[m[K
+[2.576s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.576s]   208 |       [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), " %f  \n",kd_[0]);
+[2.576s]       |       [01;31m[K^~~~~~~~~~~[m[K
+[2.576s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:[m[K [01;31m[Kerror: [m[K‘[01m[K<declaration error>[m[K’ is not a template [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[2.576s]   208 |       [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), " %f  \n",kd_[0]);
+[2.576s]       |       [01;31m[K^~~~~~~~~~~[m[K
+[2.576s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.576s]   208 |       [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), " %f  \n",kd_[0]);
+[2.576s]       |       [01;31m[K^~~~~~~~~~~[m[K
+[2.577s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.577s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.577s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:23[m[K,
+[2.577s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.577s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.577s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.577s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.577s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.577s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.577s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.577s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.577s]                  from [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:19[m[K:
+[2.577s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:19:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.577s]   208 |       RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), " %f  \n",kd_[0]);
+[2.577s]       |                   [01;31m[K^~~~[m[K
+[2.577s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:19:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.578s]   208 |       RCLCPP_INFO([01;31m[Kthis[m[K->get_logger(), " %f  \n",kd_[0]);
+[2.578s]       |                   [01;31m[K^~~~[m[K
+[2.579s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K At global scope:
+[2.579s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:242:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.579s]   242 | [01;31m[K}[m[K;
+[2.579s]       | [01;31m[K^[m[K
+[4.912s] gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+[4.912s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+[4.912s] gmake: *** [Makefile:146: all] Error 2
+[4.914s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j12 -l12

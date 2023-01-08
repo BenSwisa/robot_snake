@@ -1,0 +1,340 @@
+[0.000000] (-) TimerEvent: {}
+[0.000225] (package1) JobQueued: {'identifier': 'package1', 'dependencies': OrderedDict()}
+[0.000425] (package1) JobStarted: {'identifier': 'package1'}
+[0.011852] (package1) JobProgress: {'identifier': 'package1', 'progress': 'cmake'}
+[0.012357] (package1) JobProgress: {'identifier': 'package1', 'progress': 'build'}
+[0.013072] (package1) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ben/robot_snake/build/package1', '--', '-j12', '-l12'], 'cwd': '/home/ben/robot_snake/build/package1', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IL:en'), ('USER', 'ben'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ben/microros_ws/install/micro_ros_agent/lib:/home/ben/microros_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ben'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1930'), ('SYSTEMD_EXEC_PID', '2145'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3946'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ben/robot_snake/install:/home/ben/microros_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ben'), ('JOURNAL_STREAM', '8:35231'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ben'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/bensw:@/tmp/.ICE-unix/2126,unix/bensw:/tmp/.ICE-unix/2126'), ('INVOCATION_ID', '28f45bb64e3146e39fa711cb6883de7b'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.KAUFY1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/ben/robot_snake/install/package1:/home/ben/robot_snake/install/nodes_pkg:/home/ben/microros_ws/install/micro_ros_setup:/home/ben/microros_ws/install/micro_ros_agent:/home/ben/microros_ws/install/micro_ros_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:53489f23-1572-44b4-bfc3-3587406a7178'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ben/robot_snake/build/package1'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ben/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ben/robot_snake/install/package1:/home/ben/robot_snake/install/nodes_pkg:/home/ben/microros_ws/install/micro_ros_setup:/home/ben/microros_ws/install/micro_ros_agent:/home/ben/microros_ws/install/micro_ros_msgs:/opt/ros/humble')]), 'shell': False}
+[0.045732] (package1) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target node1\x1b[0m\n'}
+[0.055816] (package1) StdoutLine: {'line': b'[ 50%] Built target node2\n'}
+[0.060701] (package1) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o\x1b[0m\n'}
+[0.099811] (-) TimerEvent: {}
+[0.200024] (-) TimerEvent: {}
+[0.300249] (-) TimerEvent: {}
+[0.400466] (-) TimerEvent: {}
+[0.500681] (-) TimerEvent: {}
+[0.600912] (-) TimerEvent: {}
+[0.701183] (-) TimerEvent: {}
+[0.801527] (-) TimerEvent: {}
+[0.901747] (-) TimerEvent: {}
+[1.001989] (-) TimerEvent: {}
+[1.102223] (-) TimerEvent: {}
+[1.202433] (-) TimerEvent: {}
+[1.302650] (-) TimerEvent: {}
+[1.402873] (-) TimerEvent: {}
+[1.503101] (-) TimerEvent: {}
+[1.603324] (-) TimerEvent: {}
+[1.703574] (-) TimerEvent: {}
+[1.803820] (-) TimerEvent: {}
+[1.904079] (-) TimerEvent: {}
+[2.004319] (-) TimerEvent: {}
+[2.104557] (-) TimerEvent: {}
+[2.204905] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KNode1::Node1()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.205115] (-) TimerEvent: {}
+[2.205214] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:44:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KNode1::get_parameters()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.205321] (package1) StderrLine: {'line': b'   44 |       \x1b[01;31m\x1b[Kget_parameters()\x1b[m\x1b[K; // set and get the parameters\n'}
+[2.205415] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.205520] (package1) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[2.205629] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[2.205737] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.205843] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:19\x1b[m\x1b[K:\n'}
+[2.205936] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:786:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class ParameterT> bool rclcpp::Node::get_parameters(const string&, std::map<std::__cxx11::basic_string<char>, ParameterT>&) const\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.206002] (package1) StderrLine: {'line': b'  786 |   \x1b[01;36m\x1b[Kget_parameters\x1b[m\x1b[K(\n'}
+[2.206071] (package1) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.206129] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:786:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.210045] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:44:21:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[2.210169] (package1) StderrLine: {'line': b'   44 |       \x1b[01;36m\x1b[Kget_parameters()\x1b[m\x1b[K; // set and get the parameters\n'}
+[2.210264] (package1) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.210353] (package1) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[2.210442] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[2.210531] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.210619] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:19\x1b[m\x1b[K:\n'}
+[2.210706] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:745:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Kstd::vector<rclcpp::Parameter> rclcpp::Node::get_parameters(const std::vector<std::__cxx11::basic_string<char> >&) const\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.210796] (package1) StderrLine: {'line': b'  745 |   \x1b[01;36m\x1b[Kget_parameters\x1b[m\x1b[K(const std::vector<std::string> & names) const;\n'}
+[2.210883] (package1) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.210969] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:745:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 1 argument, 0 provided\n'}
+[2.219389] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:47:6:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_val_subscriber_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcount_subscribers\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.219556] (package1) StderrLine: {'line': b'   47 |      \x1b[01;31m\x1b[Kjoint_val_subscriber_\x1b[m\x1b[K = this->create_subscription<std_msgs::msg::Float32MultiArray>(\n'}
+[2.219655] (package1) StderrLine: {'line': b'      |      \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.219720] (package1) StderrLine: {'line': b'      |      \x1b[32m\x1b[Kcount_subscribers\x1b[m\x1b[K\n'}
+[2.277615] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:50:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktension_val_subscriber_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.277794] (package1) StderrLine: {'line': b'   50 |     \x1b[01;31m\x1b[Ktension_val_subscriber_\x1b[m\x1b[K = this->create_subscription<std_msgs::msg::Float32MultiArray>(\n'}
+[2.277866] (package1) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.277929] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:51:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktension_val_callback\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[KNode1\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.277991] (package1) StderrLine: {'line': b'   51 |       "tension_val_topic", 10, std::bind(&Node1::\x1b[01;31m\x1b[Ktension_val_callback\x1b[m\x1b[K, this, _1));\n'}
+[2.278061] (package1) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.286617] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:53:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_cmd_subscriber_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcount_subscribers\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.286743] (package1) StderrLine: {'line': b'   53 |     \x1b[01;31m\x1b[Kjoint_cmd_subscriber_\x1b[m\x1b[K = this->create_subscription<std_msgs::msg::Float32MultiArray>(\n'}
+[2.286825] (package1) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.286889] (package1) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kcount_subscribers\x1b[m\x1b[K\n'}
+[2.295802] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:56:6:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmotor_cmd_publisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.295958] (package1) StderrLine: {'line': b'   56 |      \x1b[01;31m\x1b[Kmotor_cmd_publisher_\x1b[m\x1b[K = this->create_publisher<std_msgs::msg::Int32MultiArray>("motor_cmd_topic",10);\n'}
+[2.296036] (package1) StderrLine: {'line': b'      |      \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.302471] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:57:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcontroller_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcontroller\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.302625] (package1) StderrLine: {'line': b'   57 |     \x1b[01;31m\x1b[Kcontroller_\x1b[m\x1b[K = this->create_wall_timer(std::chrono::milliseconds((int)(1/controller_freq_*1000)), std::bind(&Node1::controller, this)); //publish motor cmd every second\n'}
+[2.302696] (package1) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.302756] (package1) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kcontroller\x1b[m\x1b[K\n'}
+[2.305146] (-) TimerEvent: {}
+[2.309713] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:57:77:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcontroller_freq_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcontroller\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.309828] (package1) StderrLine: {'line': b'   57 |     controller_ = this->create_wall_timer(std::chrono::milliseconds((int)(1/\x1b[01;31m\x1b[Kcontroller_freq_\x1b[m\x1b[K*1000)), std::bind(&Node1::controller, this)); //publish motor cmd every second\n'}
+[2.309933] (package1) StderrLine: {'line': b'      |                                                                             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.310043] (package1) StderrLine: {'line': b'      |                                                                             \x1b[32m\x1b[Kcontroller\x1b[m\x1b[K\n'}
+[2.321665] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Node1::joint_val_callback(std_msgs::msg::Float32MultiArray)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.321912] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:72:28:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_enc_val\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.322015] (package1) StderrLine: {'line': b'   72 |         if(abs(msg.data[i]-\x1b[01;31m\x1b[Kcurrent_enc_val\x1b[m\x1b[K[i])<TENSION_MAX_IMPULSE) // tension gauge has some errors and and can return a big impulse\n'}
+[2.322125] (package1) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.332960] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:75:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_time_between_callbacks\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.333139] (package1) StderrLine: {'line': b'   75 |         \x1b[01;31m\x1b[Kjoint_time_between_callbacks\x1b[m\x1b[K=0;\n'}
+[2.333217] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.340036] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Node1::joint_cmd_callback(std_msgs::msg::Float32MultiArray)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.340234] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:85:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_cmd_val\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kjoint_cmd_callback\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.340361] (package1) StderrLine: {'line': b'   85 |         \x1b[01;31m\x1b[Kjoint_cmd_val\x1b[m\x1b[K[i]=msg.data[i];\n'}
+[2.340471] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.340564] (package1) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kjoint_cmd_callback\x1b[m\x1b[K\n'}
+[2.351641] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid Node1::controller()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.352305] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:96:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_time_between_callbacks\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.352395] (package1) StderrLine: {'line': b'   96 |         if(\x1b[01;31m\x1b[Kjoint_time_between_callbacks\x1b[m\x1b[K>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_||\n'}
+[2.352472] (package1) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.360319] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:96:73:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcontroller_freq_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kcontroller\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.360530] (package1) StderrLine: {'line': b'   96 |         if(joint_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*\x1b[01;31m\x1b[Kcontroller_freq_\x1b[m\x1b[K||\n'}
+[2.360665] (package1) StderrLine: {'line': b'      |                                                                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.360776] (package1) StderrLine: {'line': b'      |                                                                         \x1b[32m\x1b[Kcontroller\x1b[m\x1b[K\n'}
+[2.371694] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:97:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktension_time_between_callbacks\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.371856] (package1) StderrLine: {'line': b'   97 |            \x1b[01;31m\x1b[Ktension_time_between_callbacks\x1b[m\x1b[K>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_){\n'}
+[2.371981] (package1) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.383076] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:101:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_time_between_callbacks\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.383227] (package1) StderrLine: {'line': b'  101 |         \x1b[01;31m\x1b[Kjoint_time_between_callbacks\x1b[m\x1b[K++;\n'}
+[2.383309] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.395827] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:102:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktension_time_between_callbacks\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.396007] (package1) StderrLine: {'line': b'  102 |         \x1b[01;31m\x1b[Ktension_time_between_callbacks\x1b[m\x1b[K++;\n'}
+[2.396081] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.402445] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:105:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Klast_error\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kstrerror\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.402599] (package1) StderrLine: {'line': b'  105 |         \x1b[01;31m\x1b[Klast_error\x1b[m\x1b[K[i]=error[i];\n'}
+[2.402696] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.402787] (package1) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kstrerror\x1b[m\x1b[K\n'}
+[2.405224] (-) TimerEvent: {}
+[2.406411] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:105:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kerror\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kperror\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.406539] (package1) StderrLine: {'line': b'  105 |         last_error[i]=\x1b[01;31m\x1b[Kerror\x1b[m\x1b[K[i];\n'}
+[2.406637] (package1) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[2.406729] (package1) StderrLine: {'line': b'      |                       \x1b[32m\x1b[Kperror\x1b[m\x1b[K\n'}
+[2.413406] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:107:28:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoint_cmd_val\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kjoint_cmd_callback\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.413564] (package1) StderrLine: {'line': b'  107 |           case 0: error[i]=\x1b[01;31m\x1b[Kjoint_cmd_val\x1b[m\x1b[K[enc_z_]-current_enc_val[enc_z_];\n'}
+[2.413681] (package1) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.413794] (package1) StderrLine: {'line': b'      |                            \x1b[32m\x1b[Kjoint_cmd_callback\x1b[m\x1b[K\n'}
+[2.418163] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:107:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kenc_z_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.418299] (package1) StderrLine: {'line': b'  107 |           case 0: error[i]=joint_cmd_val[\x1b[01;31m\x1b[Kenc_z_\x1b[m\x1b[K]-current_enc_val[enc_z_];\n'}
+[2.418398] (package1) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[2.426590] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:107:50:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_enc_val\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.426724] (package1) StderrLine: {'line': b'  107 |           case 0: error[i]=joint_cmd_val[enc_z_]-\x1b[01;31m\x1b[Kcurrent_enc_val\x1b[m\x1b[K[enc_z_];\n'}
+[2.426835] (package1) StderrLine: {'line': b'      |                                                  \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.438128] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:110:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_tension_val\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.438337] (package1) StderrLine: {'line': b'  110 |           case 1: error[i]=CONSTANT_TENSION_ON_STRING_2-\x1b[01;31m\x1b[Kcurrent_tension_val\x1b[m\x1b[K[i];\n'}
+[2.438436] (package1) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.443682] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:112:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kenc_y_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.443814] (package1) StderrLine: {'line': b'  112 |           case 2: error[i]=joint_cmd_val[\x1b[01;31m\x1b[Kenc_y_\x1b[m\x1b[K]-current_enc_val[enc_y_];\n'}
+[2.443911] (package1) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[2.452936] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:116:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KisErrorSameSign\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.453076] (package1) StderrLine: {'line': b'  116 |         if(\x1b[01;31m\x1b[KisErrorSameSign\x1b[m\x1b[K(error[i],last_error[i])==false) //if error changed sign integrator should be 0 so we wont get windup\n'}
+[2.453187] (package1) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.458765] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:117:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kerror_sum_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kerror_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.458876] (package1) StderrLine: {'line': b'  117 |           \x1b[01;31m\x1b[Kerror_sum_\x1b[m\x1b[K[i]=0;\n'}
+[2.458969] (package1) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.459058] (package1) StderrLine: {'line': b'      |           \x1b[32m\x1b[Kerror_t\x1b[m\x1b[K\n'}
+[2.467216] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:118:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksaturation_flag\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.467384] (package1) StderrLine: {'line': b'  118 |         if(\x1b[01;31m\x1b[Ksaturation_flag\x1b[m\x1b[K[i]==false) //while we are in saturation dont sum the integrator so we wont get windup\n'}
+[2.467488] (package1) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.473284] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:119:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kerror_sum_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kerror_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.473428] (package1) StderrLine: {'line': b'  119 |           \x1b[01;31m\x1b[Kerror_sum_\x1b[m\x1b[K[i]+=error[i];\n'}
+[2.473524] (package1) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.473611] (package1) StderrLine: {'line': b'      |           \x1b[32m\x1b[Kerror_t\x1b[m\x1b[K\n'}
+[2.481088] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:120:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmotor_cmd_val\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.481296] (package1) StderrLine: {'line': b'  120 |         \x1b[01;31m\x1b[Kmotor_cmd_val\x1b[m\x1b[K[i]=kp_[i]*(error[i])+ // pid controll to publish the right motor cmd\n'}
+[2.481368] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.485937] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:120:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kkp_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.486071] (package1) StderrLine: {'line': b'  120 |         motor_cmd_val[i]=\x1b[01;31m\x1b[Kkp_\x1b[m\x1b[K[i]*(error[i])+ // pid controll to publish the right motor cmd\n'}
+[2.486140] (package1) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[2.490197] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:121:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kkd_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.490304] (package1) StderrLine: {'line': b'  121 |                         \x1b[01;31m\x1b[Kkd_\x1b[m\x1b[K[i]*(error[i]-last_error[i])+\n'}
+[2.490378] (package1) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[2.494056] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:122:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kki_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.494157] (package1) StderrLine: {'line': b'  122 |                         \x1b[01;31m\x1b[Kki_\x1b[m\x1b[K[i]*error_sum_[i];\n'}
+[2.494225] (package1) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[2.499397] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:122:32:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kerror_sum_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kerror_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.499506] (package1) StderrLine: {'line': b'  122 |                         ki_[i]*\x1b[01;31m\x1b[Kerror_sum_\x1b[m\x1b[K[i];\n'}
+[2.499573] (package1) StderrLine: {'line': b'      |                                \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.499634] (package1) StderrLine: {'line': b'      |                                \x1b[32m\x1b[Kerror_t\x1b[m\x1b[K\n'}
+[2.504244] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:123:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmax_pwm_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.504348] (package1) StderrLine: {'line': b'  123 |         if(motor_cmd_val[i]>\x1b[01;31m\x1b[Kmax_pwm_\x1b[m\x1b[K){ //motor command limitation\n'}
+[2.504415] (package1) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[2.505293] (-) TimerEvent: {}
+[2.511457] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:125:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksaturation_flag\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.511595] (package1) StderrLine: {'line': b'  125 |           \x1b[01;31m\x1b[Ksaturation_flag\x1b[m\x1b[K[i]=1;\n'}
+[2.511662] (package1) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.519121] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:130:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksaturation_flag\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.519333] (package1) StderrLine: {'line': b'  130 |             \x1b[01;31m\x1b[Ksaturation_flag\x1b[m\x1b[K[i]=1;\n'}
+[2.519403] (package1) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.527131] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:133:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksaturation_flag\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.527300] (package1) StderrLine: {'line': b'  133 |             \x1b[01;31m\x1b[Ksaturation_flag\x1b[m\x1b[K[i]=0;\n'}
+[2.527378] (package1) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.534586] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:141:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmotor_cmd_val\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.534829] (package1) StderrLine: {'line': b'  141 |         message.data[i]=(int32_t)\x1b[01;31m\x1b[Kmotor_cmd_val\x1b[m\x1b[K[i];\n'}
+[2.534948] (package1) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.535012] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K At global scope:\n'}
+[2.535074] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:152:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected initializer before \xe2\x80\x98\x1b[01m\x1b[K->\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[2.535135] (package1) StderrLine: {'line': b'  152 |         motor_cmd_publisher_\x1b[01;31m\x1b[K->\x1b[m\x1b[Kpublish(message); //publish pwm output to motors\n'}
+[2.535195] (package1) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[2.535285] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:154:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected declaration before \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[2.535345] (package1) StderrLine: {'line': b'  154 |     \x1b[01;31m\x1b[K}\x1b[m\x1b[K\n'}
+[2.535411] (package1) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[2.541276] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid tension_val_callback(std_msgs::msg::Float32MultiArray)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.541403] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:175:28:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcurrent_tension_val\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.541470] (package1) StderrLine: {'line': b'  175 |         if(abs(msg.data[i]-\x1b[01;31m\x1b[Kcurrent_tension_val\x1b[m\x1b[K[i])<TENSION_MAX_IMPULSE) // tension gauge has some errors and and can return a big impulse\n'}
+[2.541532] (package1) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.548312] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:178:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktension_time_between_callbacks\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.548441] (package1) StderrLine: {'line': b'  178 |         \x1b[01;31m\x1b[Ktension_time_between_callbacks\x1b[m\x1b[K=0;\n'}
+[2.548553] (package1) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.548691] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid get_parameters()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.548780] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:194:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.548844] (package1) StderrLine: {'line': b'  194 |       \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->declare_parameter("max_pwm",0);\n'}
+[2.548904] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.548963] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:195:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.549033] (package1) StderrLine: {'line': b'  195 |       \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->declare_parameter("enc_y",0);\n'}
+[2.549093] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.549167] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:196:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.549229] (package1) StderrLine: {'line': b'  196 |       \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->declare_parameter("enc_z",1);\n'}
+[2.549288] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.549346] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:197:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.549404] (package1) StderrLine: {'line': b'  197 |       \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->declare_parameter("controller_freq",100);\n'}
+[2.549463] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.549523] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:198:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.549587] (package1) StderrLine: {'line': b'  198 |       \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->declare_parameter("kp",std::vector<double>({0.0}));\n'}
+[2.549646] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.549704] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:199:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.549763] (package1) StderrLine: {'line': b'  199 |       \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->declare_parameter("ki",std::vector<double>({0.0}));\n'}
+[2.549820] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.549878] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:200:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.549936] (package1) StderrLine: {'line': b'  200 |       \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->declare_parameter("kd",std::vector<double>({0.0}));\n'}
+[2.549994] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.553814] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:201:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcontroller_freq_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.553926] (package1) StderrLine: {'line': b'  201 |       \x1b[01;31m\x1b[Kcontroller_freq_\x1b[m\x1b[K = this->get_parameter("controller_freq").as_int();\n'}
+[2.553994] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.554056] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:201:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.554117] (package1) StderrLine: {'line': b'  201 |       controller_freq_ = \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_parameter("controller_freq").as_int();\n'}
+[2.554176] (package1) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.557659] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:202:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kenc_y_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.557842] (package1) StderrLine: {'line': b'  202 |       \x1b[01;31m\x1b[Kenc_y_\x1b[m\x1b[K = this->get_parameter("enc_y" ).as_int();\n'}
+[2.557926] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[2.557988] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:202:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.558056] (package1) StderrLine: {'line': b'  202 |       enc_y_ = \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_parameter("enc_y" ).as_int();\n'}
+[2.558116] (package1) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.560782] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:203:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kenc_z_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.560890] (package1) StderrLine: {'line': b'  203 |       \x1b[01;31m\x1b[Kenc_z_\x1b[m\x1b[K = this->get_parameter("enc_z" ).as_int();\n'}
+[2.560971] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[2.561042] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:203:16:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.561108] (package1) StderrLine: {'line': b'  203 |       enc_z_ = \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_parameter("enc_z" ).as_int();\n'}
+[2.561181] (package1) StderrLine: {'line': b'      |                \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.563948] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:204:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmax_pwm_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.564065] (package1) StderrLine: {'line': b'  204 |       \x1b[01;31m\x1b[Kmax_pwm_\x1b[m\x1b[K = this->get_parameter("max_pwm").as_int();\n'}
+[2.564134] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[2.564195] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:204:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.564256] (package1) StderrLine: {'line': b'  204 |       max_pwm_ = \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_parameter("max_pwm").as_int();\n'}
+[2.564316] (package1) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.566552] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:205:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kkp_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.566657] (package1) StderrLine: {'line': b'  205 |       \x1b[01;31m\x1b[Kkp_\x1b[m\x1b[K = this->get_parameter("kp").as_double_array();\n'}
+[2.566726] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[2.566788] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:205:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.566850] (package1) StderrLine: {'line': b'  205 |       kp_ = \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_parameter("kp").as_double_array();\n'}
+[2.566909] (package1) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.568770] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:206:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kki_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.569049] (package1) StderrLine: {'line': b'  206 |       \x1b[01;31m\x1b[Kki_\x1b[m\x1b[K = this->get_parameter("ki").as_double_array();\n'}
+[2.569135] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[2.569203] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:206:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.569272] (package1) StderrLine: {'line': b'  206 |       ki_ = \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_parameter("ki").as_double_array();\n'}
+[2.569332] (package1) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.570985] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:207:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kkd_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[2.571157] (package1) StderrLine: {'line': b'  207 |       \x1b[01;31m\x1b[Kkd_\x1b[m\x1b[K = this->get_parameter("kd").as_double_array();\n'}
+[2.571224] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[2.571285] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:207:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.571346] (package1) StderrLine: {'line': b'  207 |       kd_ = \x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_parameter("kd").as_double_array();\n'}
+[2.571404] (package1) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.571462] (package1) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.571520] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:23\x1b[m\x1b[K,\n'}
+[2.571578] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.571635] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.571692] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.571749] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.571806] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.571863] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.571920] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.571983] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.572047] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:19\x1b[m\x1b[K:\n'}
+[2.572105] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.572170] (package1) StderrLine: {'line': b'  208 |       RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), " %f  \\n",kd_[0]);\n'}
+[2.572228] (package1) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.572291] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.572354] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.572412] (package1) StderrLine: {'line': b'  208 |       \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), " %f  \\n",kd_[0]);\n'}
+[2.572468] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.576155] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K<declaration error>\x1b[m\x1b[K\xe2\x80\x99 is not a template [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.576288] (package1) StderrLine: {'line': b'  208 |       \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), " %f  \\n",kd_[0]);\n'}
+[2.576362] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.576426] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.576548] (package1) StderrLine: {'line': b'  208 |       \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), " %f  \\n",kd_[0]);\n'}
+[2.576607] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.576666] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K<declaration error>\x1b[m\x1b[K\xe2\x80\x99 is not a template [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.576726] (package1) StderrLine: {'line': b'  208 |       \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), " %f  \\n",kd_[0]);\n'}
+[2.576785] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.576856] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.576915] (package1) StderrLine: {'line': b'  208 |       \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(this->get_logger(), " %f  \\n",kd_[0]);\n'}
+[2.576973] (package1) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.577031] (package1) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[2.577096] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[2.577169] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:23\x1b[m\x1b[K,\n'}
+[2.577228] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[2.577292] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[2.577352] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[2.577411] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[2.577475] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[2.577534] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[2.577598] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[2.577655] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[2.577713] (package1) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:19\x1b[m\x1b[K:\n'}
+[2.577771] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.577830] (package1) StderrLine: {'line': b'  208 |       RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), " %f  \\n",kd_[0]);\n'}
+[2.577887] (package1) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.577945] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid use of \xe2\x80\x98\x1b[01m\x1b[Kthis\x1b[m\x1b[K\xe2\x80\x99 in non-member function\n'}
+[2.578004] (package1) StderrLine: {'line': b'  208 |       RCLCPP_INFO(\x1b[01;31m\x1b[Kthis\x1b[m\x1b[K->get_logger(), " %f  \\n",kd_[0]);\n'}
+[2.578061] (package1) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[2.579530] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:\x1b[m\x1b[K At global scope:\n'}
+[2.579597] (package1) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ben/robot_snake/src/package1/src/node1.cpp:242:1:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected declaration before \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[2.579657] (package1) StderrLine: {'line': b'  242 | \x1b[01;31m\x1b[K}\x1b[m\x1b[K;\n'}
+[2.579714] (package1) StderrLine: {'line': b'      | \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[2.605380] (-) TimerEvent: {}
+[2.705598] (-) TimerEvent: {}
+[2.805811] (-) TimerEvent: {}
+[2.906031] (-) TimerEvent: {}
+[3.006260] (-) TimerEvent: {}
+[3.106474] (-) TimerEvent: {}
+[3.206693] (-) TimerEvent: {}
+[3.306936] (-) TimerEvent: {}
+[3.407149] (-) TimerEvent: {}
+[3.507420] (-) TimerEvent: {}
+[3.607644] (-) TimerEvent: {}
+[3.707873] (-) TimerEvent: {}
+[3.808104] (-) TimerEvent: {}
+[3.908323] (-) TimerEvent: {}
+[4.008548] (-) TimerEvent: {}
+[4.108774] (-) TimerEvent: {}
+[4.208994] (-) TimerEvent: {}
+[4.309262] (-) TimerEvent: {}
+[4.409488] (-) TimerEvent: {}
+[4.509710] (-) TimerEvent: {}
+[4.609971] (-) TimerEvent: {}
+[4.710246] (-) TimerEvent: {}
+[4.810417] (-) TimerEvent: {}
+[4.910649] (-) TimerEvent: {}
+[4.912192] (package1) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1\n'}
+[4.912409] (package1) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2\n'}
+[4.912540] (package1) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[4.914257] (package1) CommandEnded: {'returncode': 2}
+[4.947593] (package1) JobEnded: {'identifier': 'package1', 'rc': 2}
+[4.958191] (-) EventReactorShutdown: {}
