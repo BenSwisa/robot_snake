@@ -1,0 +1,97 @@
+Script started on 2023-01-09 14:13:07+02:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="118" LINES="64"]
+[?2004h]0;ben@bensw: ~/robot_snake[01;32mben@bensw[00m:[01;34m~/robot_snake[00m$ [7mros2 launch package1 m_r_launch.py [27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cros2 launch package1 m_r_launch.py 
+[?2004l[INFO] [launch]: All log files can be found below /home/ben/.ros/log/2023-01-09-14-13-31-288409-bensw-25560
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [ros2-1]: process started with pid [25561]
+[INFO] [ros2-2]: process started with pid [25563]
+[INFO] [ros2-3]: process started with pid [25565]
+[ros2-1] [35m[1673266411.474651][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM0, error 2, waiting for connection...
+[ros2-2] [35m[1673266411.474716][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM1, error 2, waiting for connection...
+[ros2-3] [35m[1673266411.480083][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM2, error 2, waiting for connection...
+[ros2-2] [35m[1673266412.476157][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM1, error 2, waiting for connection...
+[ros2-1] [35m[1673266412.476204][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM0, error 2, waiting for connection...
+[ros2-3] [35m[1673266412.481818][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM2, error 2, waiting for connection...
+[ros2-2] [35m[1673266413.477611][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM1, error 2, waiting for connection...
+[ros2-1] [35m[1673266413.477611][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM0, error 2, waiting for connection...
+[ros2-3] [35m[1673266413.483467][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM2, error 2, waiting for connection...
+[ros2-2] [35m[1673266414.479306][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM1, error 2, waiting for connection...
+[ros2-1] [35m[1673266414.479306][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM0, error 2, waiting for connection...
+[ros2-3] [35m[1673266414.485570][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM2, error 2, waiting for connection...
+[ros2-2] [35m[1673266415.480934][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM1, error 2, waiting for connection...
+[ros2-1] [35m[1673266415.480934][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM0, error 2, waiting for connection...
+[ros2-3] [35m[1673266415.487865][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM2, error 2, waiting for connection...
+[ros2-2] [35m[1673266416.482099][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM1, error 2, waiting for connection...
+[ros2-1] [35m[1673266416.482099][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM0, error 2, waiting for connection...
+[ros2-3] [35m[1673266416.489291][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [33mSerial port not found.[m | device: /dev/ttyACM2, error 2, waiting for connection...
+[ros2-1] [35m[1673266416.967082][m error    | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [31mopen device error[m      | device: /dev/ttyACM0, errno: 13. Please re-run with superuser privileges.
+[ros2-1] Error while starting serial agent!
+[INFO] [ros2-1]: process has finished cleanly [pid 25561]
+[ros2-2] [35m[1673266417.159073][m error    | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [31mopen device error[m      | device: /dev/ttyACM1, errno: 13. Please re-run with superuser privileges.
+[ros2-2] Error while starting serial agent!
+[INFO] [ros2-2]: process has finished cleanly [pid 25563]
+[ros2-3] [35m[1673266417.257755][m info     | [34mTermiosAgentLinux.cpp[m | [37minit                    [m | [32mrunning...[m             | fd: 3
+[ros2-3] [35m[1673266417.257875][m info     | [34mRoot.cpp          [m | [37mset_verbose_level       [m | [32mlogger setup[m           | verbose_level: 6
+[ros2-3] [35m[1673266417.600720][m info     | [34mRoot.cpp          [m | [37mcreate_client           [m | [32mcreate[m                 | client_key: 0x5011EF32, session_id: 0x81
+[ros2-3] [35m[1673266417.600818][m info     | [34mSessionManager.hpp[m | [37mestablish_session       [m | [32msession established[m    | client_key: 0x5011EF32, address: 0
+[ros2-3] [35m[1673266417.601031][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 19, data: 
+[ros2-3] 0000: 81 00 00 00 04 01 0B 00 00 00 58 52 43 45 01 00 01 0F 00
+[ros2-3] [35m[1673266417.606190][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 52, data: 
+[ros2-3] 0000: 81 80 00 00 01 07 2C 00 00 0A 00 01 01 03 00 00 1E 00 00 00 00 01 17 5C 16 00 00 00 6D 6F 74 6F
+[ros2-3] 0020: 72 5F 63 6F 6E 74 72 6F 6C 6C 65 72 5F 6E 6F 64 65 00 00 00
+[ros2-3] [35m[1673266417.633357][m info     | [34mProxyClient.cpp   [m | [37mcreate_participant      [m | [32mparticipant created[m    | client_key: 0x5011EF32, participant_id: 0x000(1)
+[ros2-3] [35m[1673266417.633551][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 14, data: 
+[ros2-3] 0000: 81 80 00 00 05 01 06 00 00 0A 00 01 00 00
+[ros2-3] [35m[1673266417.633583][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 01 00 00 00 80
+[ros2-3] [35m[1673266417.639031][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 01 00 00 00 80
+[ros2-3] [35m[1673266417.639049][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 92, data: 
+[ros2-3] 0000: 81 80 01 00 01 07 54 00 00 0B 00 02 02 03 00 00 46 00 00 00 13 00 00 00 72 74 2F 6D 6F 74 6F 72
+[ros2-3] 0020: 5F 63 6D 64 5F 74 6F 70 69 63 00 00 01 4F 01 00 26 00 00 00 73 74 64 5F 6D 73 67 73 3A 3A 6D 73
+[ros2-3] 0040: 67 3A 3A 64 64 73 5F 3A 3A 49 6E 74 33 32 4D 75 6C 74 69 41 72 72 61 79 5F 00 00 01
+[ros2-3] [35m[1673266417.639125][m info     | [34mProxyClient.cpp   [m | [37mcreate_topic            [m | [32mtopic created[m          | client_key: 0x5011EF32, topic_id: 0x000(2), participant_id: 0x000(1)
+[ros2-3] [35m[1673266417.639164][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 14, data: 
+[ros2-3] 0000: 81 80 01 00 05 01 06 00 00 0B 00 02 00 00
+[ros2-3] [35m[1673266417.639180][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 02 00 00 00 80
+[ros2-3] [35m[1673266417.643968][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 02 00 00 00 80
+[ros2-3] [35m[1673266417.643978][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 24, data: 
+[ros2-3] 0000: 81 80 02 00 01 07 10 00 00 0C 00 04 04 03 00 00 02 00 00 00 00 00 00 01
+[ros2-3] [35m[1673266417.644033][m info     | [34mProxyClient.cpp   [m | [37mcreate_subscriber       [m | [32msubscriber created[m     | client_key: 0x5011EF32, subscriber_id: 0x000(4), participant_id: 0x000(1)
+[ros2-3] [35m[1673266417.644059][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 14, data: 
+[ros2-3] 0000: 81 80 02 00 05 01 06 00 00 0C 00 04 00 00
+[ros2-3] [35m[1673266417.644073][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 03 00 00 00 80
+[ros2-3] [35m[1673266417.648985][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 03 00 00 00 80
+[ros2-3] [35m[1673266417.648996][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 40, data: 
+[ros2-3] 0000: 81 80 03 00 01 07 1D 00 00 0D 00 06 06 03 00 00 0F 00 00 00 00 02 01 01 03 00 01 00 0A 00 00 00
+[ros2-3] 0020: 00 00 00 00 04 00 00 00
+[ros2-3] [35m[1673266417.649259][m info     | [34mProxyClient.cpp   [m | [37mcreate_datareader       [m | [32mdatareader created[m     | client_key: 0x5011EF32, datareader_id: 0x000(6), subscriber_id: 0x000(4)
+[ros2-3] [35m[1673266417.649286][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 14, data: 
+[ros2-3] 0000: 81 80 03 00 05 01 06 00 00 0D 00 06 00 00
+[ros2-3] [35m[1673266417.649300][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 04 00 00 00 80
+[ros2-3] [35m[1673266417.653965][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 04 00 00 00 80
+[ros2-3] [35m[1673266417.754145][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 24, data: 
+[ros2-3] 0000: 81 80 04 00 08 01 10 00 00 0E 00 06 80 00 00 01 FF FF 00 00 00 00 00 00
+[ros2-3] [35m[1673266417.754198][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0B 01 05 00 03 00 04 00 80
+[ros2-3] [35m[1673266417.754416][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 04 00 00 01 80
+[ros2-3] [35m[1673266417.754668][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 05 00 00 00 80
+[ros2-3] [35m[1673266417.759114][m debug    | [34mSerialAgentLinux.cpp[m | [37mrecv_message            [m | [33m[==>> SER <<==][m        | client_key: 0x5011EF32, len: 24, data: 
+[ros2-3] 0000: 81 80 04 00 08 01 10 00 00 0E 00 06 80 00 00 01 FF FF 00 00 00 00 00 00
+[ros2-3] [35m[1673266417.759343][m debug    | [34mSerialAgentLinux.cpp[m | [37msend_message            [m | [33m[** <<SER>> **][m        | client_key: 0x5011EF32, len: 13, data: 
+[ros2-3] 0000: 81 00 00 00 0A 01 05 00 05 00 00 00 80
+^C[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[ros2-3] [ros2run]: Interrupt
+[ERROR] [ros2-3]: process has died [pid 25565, exit code 254, cmd 'ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM2 -v6'].
+[?2004h]0;ben@bensw: ~/robot_snake[01;32mben@bensw[00m:[01;34m~/robot_snake[00m$ ^C[?2004l[?2004h[?2004l
+[?2004h]0;ben@bensw: ~/robot_snake[01;32mben@bensw[00m:[01;34m~/robot_snake[00m$ [?2004l
+exit
+
+Script done on 2023-01-09 14:17:40+02:00 [COMMAND_EXIT_CODE="130"]

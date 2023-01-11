@@ -33,7 +33,7 @@ using namespace std::chrono_literals;
 #define MAX_TIME_BETWEEN_CALLBACKS 5 // in seconds
 #define CONSTANT_TENSION_ON_STRING_2 0.4
 #define TENSION_MAX_IMPULSE 10
-#define REALSE_STRINGS 0 // 1 if you want to release tension on all the strings
+#define REALSE_STRINGS 1 // 1 if you want to release tension on all the strings
 
  
 
@@ -135,7 +135,7 @@ private:
     }
       //----- INITIALIZE MSG ------
       auto message = std_msgs::msg::Int32MultiArray(); 
-      message.data={0,0,0,0,0,0,0,0,0,0,0,0};  
+      message.data={-50,-50,-50,-50,-50,-50,0,0,0,0,0,0};  
       if(!REALSE_STRINGS)
         for(int i=0;i<CURRENT_LINKED_JOINTS*MOTORS_PER_JOINT;i++)
         message.data[i]=(int32_t)motor_cmd_val[i]; 

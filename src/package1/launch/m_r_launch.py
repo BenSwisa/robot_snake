@@ -16,12 +16,12 @@ def generate_launch_description():
 
 
     micro_ros_ex1 =launch.actions.ExecuteProcess(
-            cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/ttyACM0'],
+            cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/serial/by-id/usb-Teensyduino_USB_Serial_7637910-if00'],
             output='screen'
         )
 
     micro_ros_ex2 =launch.actions.ExecuteProcess(
-            cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/ttyACM1'],
+            cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/serial/by-id/usb-Teensyduino_USB_Serial_7556350-if00'],
             output='screen'
         )
     
