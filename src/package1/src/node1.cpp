@@ -33,7 +33,7 @@ using namespace std::chrono_literals;
 #define MAX_TIME_BETWEEN_CALLBACKS 5 // in seconds
 #define CONSTANT_TENSION_ON_STRING_2 0.4
 #define TENSION_MAX_IMPULSE 10
-#define REALSE_STRINGS 1 // 1 if you want to release tension on all the strings
+//#define REALSE_STRINGS 1 // 1 if you want to release tension on all the strings
 
  
 
@@ -94,11 +94,11 @@ private:
     void controller(){
       
       // checking for response from encoder values and tension values if no response for some time than stop the node
-        if(joint_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_||
-           tension_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_){
-            RCLCPP_ERROR(this->get_logger(), "NO REPONSE FROM MICRO CONTROLLERS");
-            rclcpp::shutdown();
-        } // FIXME not working properly   
+        // if(joint_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_||
+        //    tension_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_){
+        //     RCLCPP_ERROR(this->get_logger(), "NO REPONSE FROM MICRO CONTROLLERS");
+        //     rclcpp::shutdown();
+        // } // FIXME not working properly   
         joint_time_between_callbacks++;
         tension_time_between_callbacks++;     
     for(int j=0;j<CURRENT_LINKED_JOINTS;j++){
@@ -135,10 +135,13 @@ private:
     }
       //----- INITIALIZE MSG ------
       auto message = std_msgs::msg::Int32MultiArray(); 
-      message.data={-50,-50,-50,-50,-50,-50,0,0,0,0,0,0};  
-      if(!REALSE_STRINGS)
+      message.data={0,0,0,0,0,0,0,0,0,0,0,0};  
+      if(!manual_control)
         for(int i=0;i<CURRENT_LINKED_JOINTS*MOTORS_PER_JOINT;i++)
-        message.data[i]=(int32_t)motor_cmd_val[i]; 
+          message.data[i]=(int32_t)motor_cmd_val[i]; 
+      else
+        for(int i=0;i<12;i++) //FIXME 12-> CURRENT_LINKED_JOINTS*MOTORS_PER_JOINT
+          message.data[i]=(int32_t)manual_motor_pwm[i];
        
       //  -----TENSION CHECK-------
        for(int i=0;i<CURRENT_LINKED_JOINTS*MOTORS_PER_JOINT;i++){
@@ -195,13 +198,17 @@ private:
       this->declare_parameter("enc_y",0); 
       this->declare_parameter("enc_z",1);  
       this->declare_parameter("controller_freq",100); 
+      this->declare_parameter("manual_control",1);
+      this->declare_parameter("manual_motor_pwm",std::vector<int64_t>({0})); 
       this->declare_parameter("kp",std::vector<double>({0.0})); 
       this->declare_parameter("ki",std::vector<double>({0.0})); 
       this->declare_parameter("kd",std::vector<double>({0.0})); 
       controller_freq_ = this->get_parameter("controller_freq").as_int();
+      manual_control = this->get_parameter("manual_control").as_int();
       enc_y_ = this->get_parameter("enc_y" ).as_int();
       enc_z_ = this->get_parameter("enc_z" ).as_int();
       max_pwm_ = this->get_parameter("max_pwm").as_int();
+      manual_motor_pwm = this->get_parameter("manual_motor_pwm").as_integer_array();
       kp_ = this->get_parameter("kp").as_double_array();
       ki_ = this->get_parameter("ki").as_double_array();
       kd_ = this->get_parameter("kd").as_double_array();
@@ -222,7 +229,7 @@ saturation_flag: when saturated we need to stop summing the error
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr joint_cmd_subscriber_;
     rclcpp::Publisher<std_msgs::msg::Int32MultiArray>::SharedPtr motor_cmd_publisher_;
     rclcpp::TimerBase::SharedPtr controller_;
-    int controller_freq_,max_pwm_,enc_z_,enc_y_,enc_axis;
+    int controller_freq_,max_pwm_,enc_z_,enc_y_,enc_axis,manual_control;
     int joint_time_between_callbacks=0;
     int tension_time_between_callbacks=0;
     float error[strings_per_joint_*(linked_joints_+1)]={0}; 
@@ -235,6 +242,7 @@ saturation_flag: when saturated we need to stop summing the error
     float motor_cmd_val[strings_per_joint_*(linked_joints_+1)]={0};// adding 1 for now need to be corrected
     float error_sum_[strings_per_joint_*(linked_joints_+1)]={0};
     int saturation_flag[strings_per_joint_*(linked_joints_+1)]={0};
+    std::vector<int64_t> manual_motor_pwm;
     std::vector<double>  kp_;
     std::vector<double>  ki_;
     std::vector<double> kd_;

@@ -1,0 +1,14 @@
+[0.012s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j12 -l12
+[0.049s] [ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[0.049s] [ 75%] Built target node2
+[2.278s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid Node1::get_parameters()[m[K’:
+[2.279s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:204:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kmanual_control[m[K’ was not declared in this scope
+[2.279s]   204 |       [01;31m[Kmanual_control[m[K = this->get_parameter("manual_control").as_int();
+[2.279s]       |       [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.286s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:208:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kmanual_motor_pwm[m[K’ was not declared in this scope
+[2.286s]   208 |       [01;31m[Kmanual_motor_pwm[m[K = this->get_parameter("manual_motor_pwm").as_integer_array();
+[2.286s]       |       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[4.769s] gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+[4.770s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+[4.770s] gmake: *** [Makefile:146: all] Error 2
+[4.771s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j12 -l12

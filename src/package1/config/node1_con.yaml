@@ -6,6 +6,11 @@ node1:
     enc_z : 1
     max_pwm : 200 # upper bound for motor pwm
     controller_freq : 100
+    manual_control : 1
+    manual_motor_pwm:  [0,0,0,
+                        0,0,0,
+                        0,0,0,
+                        0,0,0]
 #     kp : [12.0000000,100.000000,10.0000000,
 #           35.0000000,0.0000000,0.0000000,
 #           0.0000000,0.0000000,0.0000000,
