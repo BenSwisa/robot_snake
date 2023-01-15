@@ -31,6 +31,6 @@ restart daemon:
 - ros2 daemon start
 
 MICRO-ROS:
- ...
+ ```
  finding teensey id : ls -l /dev/serial/by-id/
- ...
+ ```
