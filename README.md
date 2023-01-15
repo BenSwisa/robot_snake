@@ -29,3 +29,8 @@ TOPIC CRASHING(This happens when some node unexpectedly crashed previously)->
 restart daemon:
 - ros2 daeomon stop
 - ros2 daemon start
+
+MICRO-ROS:
+ ...
+ finding teensey id : ls -l /dev/serial/by-id/
+ ...

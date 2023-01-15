@@ -26,7 +26,7 @@ def generate_launch_description():
         )
     
     micro_ros_ex3 =launch.actions.ExecuteProcess(
-            cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev/ttyACM2'],
+            cmd=['ros2', 'run', 'micro_ros_agent', 'micro_ros_agent', 'serial', '--dev', '/dev//serial/usb-Teensyduino_USB_Serial_7555460-if00'],
             output='screen'
         )
     
