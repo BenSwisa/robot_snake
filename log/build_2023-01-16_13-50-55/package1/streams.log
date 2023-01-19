@@ -1,0 +1,31 @@
+[0.016s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ben/robot_snake/src/package1 -DCMAKE_INSTALL_PREFIX=/home/ben/robot_snake/install/package1
+[0.054s] -- Found ament_cmake: 1.3.3 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.180s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.196s] -- Found rclcpp: 16.0.2 (/opt/ros/humble/share/rclcpp/cmake)
+[0.236s] -- Found rosidl_generator_c: 3.1.4 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.239s] -- Found rosidl_adapter: 3.1.4 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.247s] -- Found rosidl_generator_cpp: 3.1.4 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.260s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.278s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.344s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.347s] -- Found rmw_fastrtps_cpp: 6.2.2 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.457s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.689s] -- Configuring done
+[0.700s] -- Generating done
+[0.702s] -- Build files have been written to: /home/ben/robot_snake/build/package1
+[0.708s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/ben/robot_snake/src/package1 -DCMAKE_INSTALL_PREFIX=/home/ben/robot_snake/install/package1
+[0.710s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j12 -l12
+[0.740s] [35m[1mConsolidate compiler generated dependencies of target node2[0m
+[0.740s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[0.764s] [ 50%] [32mBuilding CXX object CMakeFiles/node2.dir/src/node2.cpp.o[0m
+[0.764s] [ 50%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[3.167s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid Node1::controller()[m[K’:
+[3.168s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:96:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kchecking[m[K’ was not declared in this scope
+[3.168s]    96 |       [01;31m[Kchecking[m[K for response from encoder values and tension values if no response for some time than stop the node
+[3.168s]       |       [01;31m[K^~~~~~~~[m[K
+[5.306s] [ 75%] [32m[1mLinking CXX executable node2[0m
+[5.508s] [ 75%] Built target node2
+[5.986s] gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+[5.986s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+[5.986s] gmake: *** [Makefile:146: all] Error 2
+[5.988s] Invoked command in '/home/ben/robot_snake/build/package1' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j12 -l12

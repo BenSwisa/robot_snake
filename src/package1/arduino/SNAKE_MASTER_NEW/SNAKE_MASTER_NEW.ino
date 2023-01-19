@@ -24,7 +24,7 @@
 #define PPR17 131072.0  //2^17
 #define N_links 3 //as big as the number of slave MC connected + master (N_links=2 means that one slave is connected and so on)
 #define N_enc_joint  2 // number of encoders for each slave/master
-#define PRINT 0
+#define PRINT 1
 #define LED_PIN 13
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
@@ -58,8 +58,8 @@ int T;
 int count=0;
 
 float arr[N_links*N_enc_joint] = {0};
-uint8_t slave_add[N_links] = {00,100}; //
-float joint_offset[N_links*N_enc_joint] = {166.772,289.385,-34.900,100.68,0,0}; //determined at test, each joint will have a different offset
+uint8_t slave_add[N_links] = {00,100,101}; //
+float joint_offset[N_links*N_enc_joint] = {289.162,169.555,101.27,323.42,0,0}; //determined at test, each joint will have a different offset
 int test;
 union u_tag {
   byte b[4];
@@ -171,7 +171,7 @@ void Request_Event(){
   arr[0] = enc.AllowAccess_Y(); //placing it at the begining of the array
   arr[1] = enc.AllowAccess_Z();
   arr[0] = wrapTo180(joint_offset[0]-arr[0]); //manually decreceasing the offset values
-  arr[1] = joint_offset[1]-arr[1]; 
+  arr[1] = -1*(joint_offset[1]-arr[1]); 
   //---------- getting data from slaves ----------
   for (int joint_i = 1; joint_i < N_links; joint_i++) {
     int counter=0;
@@ -195,7 +195,11 @@ void Request_Event(){
     for(int j=0 ; j<N_enc_joint ;j++){ //this loop takes in two, 4 byte data streams from slaves
       for(int i=0 ; i<4 ;i++)
         u.b[i]=Wire.read();
-      arr[joint_i*2+j] = (joint_offset[joint_i*2+j]- u.fval  );      //^^ adding values from 'u' into arr[] at appropriate location, plus decreacing the appropriate Offset    
+      if(abs((joint_offset[joint_i*2+j]- u.fval)-arr[joint_i*2+j])<15) //noise filter
+       if(!j)
+         arr[joint_i*2+j] = (joint_offset[joint_i*2+j]- u.fval);  //^^ adding values from 'u' into arr[] at appropriate location, plus decreacing the appropriate Offset    
+       else 
+         arr[joint_i*2+j] = -1*(joint_offset[joint_i*2+j]- u.fval);  //^^ adding values from 'u' into arr[] at appropriate location, plus decreacing the appropriate Offset    
       }
   }
   //-----------PRINT--------------

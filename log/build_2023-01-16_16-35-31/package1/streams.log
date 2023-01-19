@@ -1,0 +1,38 @@
+[0.012s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j12 -l12
+[0.042s] [35m[1mConsolidate compiler generated dependencies of target node1[0m
+[0.052s] [ 50%] Built target node2
+[0.055s] [ 75%] [32mBuilding CXX object CMakeFiles/node1.dir/src/node1.cpp.o[0m
+[2.187s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid Node1::controller()[m[K’:
+[2.188s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:154:7:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kelse[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+[2.188s]   154 |       [01;35m[Kelse[m[K
+[2.188s]       |       [01;35m[K^~~~[m[K
+[2.188s] [01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:160:9:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kelse[m[K’
+[2.188s]   160 |         [01;36m[Kmotor_cmd_publisher_[m[K->publish(message); //publish pwm output to motors
+[2.188s]       |         [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[8.515s] [100%] [32m[1mLinking CXX executable node1[0m
+[8.868s] [100%] Built target node1
+[8.877s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/ben/robot_snake/build/package1 -- -j12 -l12
+[8.901s] Invoking command in '/home/ben/robot_snake/build/package1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/package1
+[8.905s] -- Install configuration: ""
+[8.906s] -- Execute custom install script
+[8.906s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/lib/package1/node1
+[8.906s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/lib/package1/node2
+[8.906s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1//launch/launch1.py
+[8.907s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1//launch/m_r_launch.py
+[8.907s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1//config/node1_con.yaml
+[8.907s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/package_run_dependencies/package1
+[8.907s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/parent_prefix_path/package1
+[8.907s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.sh
+[8.907s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/ament_prefix_path.dsv
+[8.908s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/path.sh
+[8.908s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/environment/path.dsv
+[8.908s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.bash
+[8.908s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.sh
+[8.908s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.zsh
+[8.908s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/local_setup.dsv
+[8.908s] -- Symlinking: /home/ben/robot_snake/install/package1/share/package1/package.dsv
+[8.915s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/ament_index/resource_index/packages/package1
+[8.915s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config.cmake
+[8.916s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/cmake/package1Config-version.cmake
+[8.916s] -- Up-to-date symlink: /home/ben/robot_snake/install/package1/share/package1/package.xml
+[8.917s] Invoked command in '/home/ben/robot_snake/build/package1' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/ben/robot_snake/build/package1

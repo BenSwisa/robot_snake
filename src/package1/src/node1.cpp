@@ -70,9 +70,10 @@ private:
   */
     void joint_val_callback(const std_msgs::msg::Float32MultiArray msg){
       for(int i=0;i<enc_per_joint_*linked_joints_;i++){
-        if(abs(msg.data[i]-current_enc_val[i])<TENSION_MAX_IMPULSE) // tension gauge has some errors and and can return a big impulse
+        if(abs(msg.data[i]-current_enc_val[i])<TENSION_MAX_IMPULSE) //FIXME tension gauge has some errors and and can return a big impulse
           current_enc_val[i]=msg.data[i];
         }
+     //  RCLCPP_INFO(this->get_logger(), " enc{3}: %f \n",current_enc_val[3]);
         joint_time_between_callbacks=0;
     }
   
@@ -93,64 +94,68 @@ private:
   */
     void controller(){
       
-      // checking for response from encoder values and tension values if no response for some time than stop the node
-        // if(joint_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_||
-        //    tension_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_){
-        //     RCLCPP_ERROR(this->get_logger(), "NO REPONSE FROM MICRO CONTROLLERS");
-        //     rclcpp::shutdown();
-        // } // FIXME not working properly   
+      //checking for response from encoder values and tension values if no response for some time than stop the node
+        if(joint_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_||
+           tension_time_between_callbacks>1000*MAX_TIME_BETWEEN_CALLBACKS*controller_freq_){
+            RCLCPP_ERROR(this->get_logger(), "NO REPONSE FROM MICRO CONTROLLERS");
+            rclcpp::shutdown();
+        } // FIXME not working properly   
         joint_time_between_callbacks++;
         tension_time_between_callbacks++;     
     for(int j=0;j<CURRENT_LINKED_JOINTS;j++){
       for(int i=0;i<MOTORS_PER_JOINT;i++){ //loop for motor 1 & 3
-        last_error[j*3+i]=error[j*3+i];
-        switch(i%3){
-          case 0: error[j*3+i]=joint_cmd_val[j*3+enc_z_]-current_enc_val[j*3+enc_z_];
+        last_error[j*MOTORS_PER_JOINT+i]=error[j*MOTORS_PER_JOINT+i];
+        switch(i){
+          case 0: error[j*MOTORS_PER_JOINT+i]=joint_cmd_val[j*enc_per_joint_+enc_z_]-current_enc_val[j*enc_per_joint_+enc_z_];
+                //  RCLCPP_INFO(this->get_logger(), " error{%d}: %f \n",j*MOTORS_PER_JOINT+i,error[j*MOTORS_PER_JOINT+enc_z_]);
                   break;
-          case 1: error[j*3+i]=CONSTANT_TENSION_ON_STRING_2-current_tension_val[i];
+          case 1: error[j*MOTORS_PER_JOINT+i]=CONSTANT_TENSION_ON_STRING_2-current_tension_val[j*MOTORS_PER_JOINT+i];
                   break;
-          case 2: error[j*3+i]=joint_cmd_val[j*3+enc_y_]-current_enc_val[j*3+enc_y_];
+          case 2: error[j*MOTORS_PER_JOINT+i]=joint_cmd_val[j*enc_per_joint_+enc_y_]-current_enc_val[j*enc_per_joint_+enc_y_];
                   break;
           default: break;
         }
-        if(isErrorSameSign(error[j*3+i],last_error[j*3+i])==false) //if error changed sign integrator should be 0 so we wont get windup
-          error_sum_[j*3+i]=0;
-        if(saturation_flag[j*3+i]==false) //while we are in saturation dont sum the integrator so we wont get windup
-          error_sum_[j*3+i]+=error[j*3+i];
-        motor_cmd_val[j*3+i]=kp_[j*3+i]*(error[j*3+i])+ // pid controll to publish the right motor cmd
-                        kd_[j*3+i]*(error[j*3+i]-last_error[j*3+i])+ 
-                        ki_[j*3+i]*error_sum_[j*3+i];
-        if(motor_cmd_val[j*3+i]>max_pwm_){ //motor command limitation
-          motor_cmd_val[j*3+i]=max_pwm_;
-          saturation_flag[j*3+i]=1;
+        if(isErrorSameSign(error[j*MOTORS_PER_JOINT+i],last_error[j*MOTORS_PER_JOINT+i])==false) //if error changed sign integrator should be 0 so we wont get windup
+          error_sum_[j*MOTORS_PER_JOINT+i]=0;
+        if(saturation_flag[j*MOTORS_PER_JOINT+i]==false) //while we are in saturation dont sum the integrator so we wont get windup
+          error_sum_[j*MOTORS_PER_JOINT+i]+=error[j*MOTORS_PER_JOINT+i];
+        motor_cmd_val[j*MOTORS_PER_JOINT+i]=kp_[j*MOTORS_PER_JOINT+i]*(error[j*MOTORS_PER_JOINT+i])+ // pid controll to publish the right motor cmd
+                        kd_[j*MOTORS_PER_JOINT+i]*(error[j*MOTORS_PER_JOINT+i]-last_error[j*MOTORS_PER_JOINT+i])+ 
+                        ki_[j*MOTORS_PER_JOINT+i]*error_sum_[j*MOTORS_PER_JOINT+i];
+        if(motor_cmd_val[j*MOTORS_PER_JOINT+i]>max_pwm_){ //motor command limitation
+          motor_cmd_val[j*MOTORS_PER_JOINT+i]=max_pwm_;
+          saturation_flag[j*MOTORS_PER_JOINT+i]=1;
         }
         else
-          if(motor_cmd_val[j*3+i]<-max_pwm_){
-            motor_cmd_val[j*3+i]=-max_pwm_;
-            saturation_flag[j*3+i]=1;
+          if(motor_cmd_val[j*MOTORS_PER_JOINT+i]<-max_pwm_){
+            motor_cmd_val[j*MOTORS_PER_JOINT+i]=-max_pwm_;
+            saturation_flag[j*MOTORS_PER_JOINT+i]=1;
           }
           else // we are not saturated
-            saturation_flag[j*3+i]=0;
+            saturation_flag[j*MOTORS_PER_JOINT+i]=0;
       }
     }
+
       //----- INITIALIZE MSG ------
       auto message = std_msgs::msg::Int32MultiArray(); 
       message.data={0,0,0,0,0,0,0,0,0,0,0,0};  
-      if(!manual_control)
+      if(!manual_control){
         for(int i=0;i<CURRENT_LINKED_JOINTS*MOTORS_PER_JOINT;i++)
           message.data[i]=(int32_t)motor_cmd_val[i]; 
-      else
-        for(int i=0;i<12;i++) //FIXME 12-> CURRENT_LINKED_JOINTS*MOTORS_PER_JOINT
-          message.data[i]=(int32_t)manual_motor_pwm[i];
-       
       //  -----TENSION CHECK-------
        for(int i=0;i<CURRENT_LINKED_JOINTS*MOTORS_PER_JOINT;i++){
          if(current_tension_val[i]>5 ){
-          RCLCPP_ERROR(this->get_logger(), " TENSION TOO HIGH %f \n",current_tension_val[0]);
+          RCLCPP_ERROR(this->get_logger(), " TENSION TOO HIGH %f \n",current_tension_val[i]);
           for(int j=0;j<CURRENT_LINKED_JOINTS*MOTORS_PER_JOINT;j++)
             message.data[j]=-50;
         }
-       }  
+       } 
+      }
+      else{
+        for(int i=0;i<CURRENT_LINKED_JOINTS*MOTORS_PER_JOINT;i++) 
+          message.data[i]=(int32_t)manual_motor_pwm[i];
+      } 
+ 
       
         motor_cmd_publisher_->publish(message); //publish pwm output to motors
 
@@ -190,6 +195,7 @@ private:
           ^
           |
           -----> x : the direction for going forward along the snake
+      (positive angle for moving aruond positive axis direction)
   -controller_freq : frequency to run the controller
   - kp,ki,kd : arrays of constants for pid controll. position is as the same as for the motor_cmd array 
   */

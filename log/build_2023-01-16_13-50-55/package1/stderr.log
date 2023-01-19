@@ -1,0 +1,7 @@
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:[m[K In member function ‘[01m[Kvoid Node1::controller()[m[K’:
+[01m[K/home/ben/robot_snake/src/package1/src/node1.cpp:96:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kchecking[m[K’ was not declared in this scope
+   96 |       [01;31m[Kchecking[m[K for response from encoder values and tension values if no response for some time than stop the node
+      |       [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/node1.dir/build.make:76: CMakeFiles/node1.dir/src/node1.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/node1.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

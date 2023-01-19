@@ -7,7 +7,15 @@
  
  - after topics are working reinitialize rqt , why?
  
-
+ daemon crashes after closing launch1.py
+ enc_y in joint 2 not working
 
 wich ports not working followup->
 9/1 13:46 -> subscriber working publishers  not
+
+https://github.com/ros2/rmw_fastrtps/issues/509
+https://github.com/ros2/ros2cli/issues/582
+
+RMW_IMPLEMENTATION=rmw_connext_cpp maby helped with daemon crash
+
+each controller works seperatly but together they are going to infintely
