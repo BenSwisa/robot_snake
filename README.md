@@ -3,7 +3,7 @@
 to use this library you need to install [ros2 humble](https://docs.ros.org/en/humble/Installation.html), and [micro ros](https://micro.ros.org/docs/tutorials/core/first_application_linux/)
 
 ## ros2
-to run the program:
+RUNNING THE PROGRAM:
 
 first make sure nothing is connected.
 
@@ -61,6 +61,7 @@ RMW_IMPLEMENTATION=rmw_connext_cpp
 or look for an answer in one of the following topics: https://github.com/ros2/rmw_fastrtps/issues/509 , https://github.com/ros2/ros2cli/issues/582
 
 - if joint_val is not publishing correctly try rebooting the robot using the big red button
+
 - if rqt not responding acuuratly try re-oprnig rqt
 ## MICRO-ROS:
  - finding teensey id : 
@@ -68,5 +69,5 @@ or look for an answer in one of the following topics: https://github.com/ros2/rm
  ls -l /dev/serial/by-id/
  ```
  
-github* Starting the ssh-agent: eval "$(ssh-agent -s)" ssh-add ~/.ssh/robot_snake
+### github Starting the ssh-agent: eval "$(ssh-agent -s)" ssh-add ~/.ssh/robot_snake
  
