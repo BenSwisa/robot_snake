@@ -2,6 +2,8 @@
 
 to use this library you need to install [ros2 humble](https://docs.ros.org/en/humble/Installation.html), and [micro ros](https://micro.ros.org/docs/tutorials/core/first_application_linux/)
 
+
+
 make sure to source for ros2 and for microros : source install/local_setup.bash
 either source or add in ~/.bashrc : source ~/microros_ws/install/local_setup.bash 
 
@@ -16,7 +18,8 @@ source /opt/ros/humble/setup.bash
 make sure to allow dialout : sudo usermod -a -G dialout $USER
 
 
-ARDUINO IDE: (to change the arduino nodes you need to set up your arudino ide) 
+#ARDUINO IDE: 
+(to change the arduino nodes you need to set up your arudino ide) 
 - install [teensyduino]( https://www.pjrc.com/teensy/td_download.html)
 - install [teensy4_i2c](https://github.com/Richard-Gemmell/teensy4_i2c)
 - add the rls_encoder2 library from the package1/lib folder 
@@ -31,7 +34,7 @@ ros2 daeomon stop
 ros2 daemon start
 ```
 
-MICRO-ROS:
+#MICRO-ROS:
  - finding teensey id : 
  ```
  ls -l /dev/serial/by-id/
