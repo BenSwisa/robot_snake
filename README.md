@@ -4,6 +4,7 @@ to use this library you need to install [ros2 humble](https://docs.ros.org/en/hu
 
 ## ros2
 to run the program:
+
 first make sure nothing is connected.
 
 now source ros2 workspace and microros workspace:
@@ -29,6 +30,7 @@ if you want to record add record argument:
 
 ## ARDUINO IDE: 
 (to change the arduino nodes you need to set up your arudino ide) 
+
 first follow the step in the [arduino website](https://docs.arduino.cc/software/ide-v1/tutorials/Linux) 
 make sure to allow dialout : (if you havent done while setting your arduino ide)
 ```
@@ -43,14 +45,21 @@ now
 
 ## KNOWN ISSUSES
 
-TOPIC CRASHING(This happens when some node unexpectedly crashed previously)-> 
+TOPIC CRASHING (This happens when some node unexpectedly crashed previously)-> 
 restart daemon:
 ```
 ros2 daeomon stop 
 
 ros2 daemon start
 ```
+- if daemon crashes frequently try:
+```
+RMW_IMPLEMENTATION=rmw_connext_cpp
+```
+or look for an answerin one of the following topics: https://github.com/ros2/rmw_fastrtps/issues/509 , https://github.com/ros2/ros2cli/issues/582
 
+- if joint_val is not publishing correctly try rebooting the robot using the big red button
+- if rqt not responding acuuratly try re-oprnig rqt
 ## MICRO-ROS:
  - finding teensey id : 
  ```
