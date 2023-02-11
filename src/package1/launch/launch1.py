@@ -1,3 +1,6 @@
+#----------------------------------------------------------------------------------------
+#          this is the launch file for my nodes
+#----------------------------------------------------------------------------------------
 import os
 from ament_index_python.packages import get_package_share_directory
 from concurrent.futures import Executor
@@ -18,7 +21,7 @@ def generate_launch_description():
     record = LaunchConfiguration('record')
     ld = LaunchDescription()
 
-    config = os.path.join(
+    config = os.path.join( # join the my config files so that package1 can acess
         get_package_share_directory('package1'),
         'config',
         'node1_con.yaml'
@@ -41,12 +44,12 @@ def generate_launch_description():
 
 
 # ////////////////////////////////////////////////////////////////////////
+# this is for the bag files to be stored with the current time & date
     now = datetime.now()
     dt_string = "bag_files/"+now.strftime("%d_%m_%Y %H:%M:%S")
-
-
 # //////////////////////////////////////////////////////////////////
 
+# bag file recording : to record add an argument "record:=True" when using the launch file
     bag_ex =launch.actions.ExecuteProcess(
         condition=IfCondition(
             PythonExpression([

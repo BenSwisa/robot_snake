@@ -2,6 +2,8 @@
 //Ben Swisa
 //bensw@post.bgu.ac.il
 //==============================================================================
+// this node publishes the dersired joint angles 
+//============================================================================
 #include <chrono>
 #include <functional>
 #include <memory>
@@ -21,10 +23,9 @@ class Node2 : public rclcpp::Node
     : Node("node2"), count_(0)
     { // servo_cmd_topic
       this->declare_parameter("joint_angle_cmd",std::vector<double>({0.0})); 
-      // joint_angle_cmd_ = this->get_parameter("joint_angle_cmd").as_double_array();
-      publisher_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("joint_cmd_topic", 10);
+      publisher_ = this->create_publisher<std_msgs::msg::Float32MultiArray>("joint_cmd_topic", 10); //publisher to joint_cmd_topic
       timer_ = this->create_wall_timer(
-      500ms, std::bind(&Node2::timer_callback, this));
+      500ms, std::bind(&Node2::timer_callback, this)); //timer to publish the message
       
     }
 
@@ -33,12 +34,14 @@ class Node2 : public rclcpp::Node
     {
       joint_angle_cmd_ = this->get_parameter("joint_angle_cmd").as_double_array();
       auto message = std_msgs::msg::Float32MultiArray();
-      message.data = {0,-10,0,0,0,0};
+      message.data = {0,0,0,0,0,0}; //random data to innitialize msg size
       for (int i=0;i<6;i++){
         message.data[i]=(float)(joint_angle_cmd_[i]);
       }
       publisher_->publish(message);
     }
+
+    // ---------- constants ------------------
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr publisher_;
     size_t count_;
@@ -46,7 +49,7 @@ class Node2 : public rclcpp::Node
 
 };
 
-int main(int argc, char * argv[])
+int main(int argc, char * argv[]) // main function to spin the node
 {
   rclcpp::init(argc, argv);
   rclcpp::spin(std::make_shared<Node2>());

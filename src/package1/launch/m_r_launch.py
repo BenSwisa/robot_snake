@@ -1,3 +1,9 @@
+#----------------------------------------------------------------------------------------
+#================]  this is the launch file for micro ros nodes  [============================
+#----------------------------------------------------------------------------------------
+# run this node before connecting all the micro-controllers
+#------------------------------------------------------------
+
 import os
 from ament_index_python.packages import get_package_share_directory
 from concurrent.futures import Executor

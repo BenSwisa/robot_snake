@@ -38,3 +38,9 @@ MICRO-ROS:
  ```
  ls -l /dev/serial/by-id/
  ```
+ 
+ 
+ to record : 
+ ```
+  ros2 launch package1 launch1.py 'record:=True'
+ ```

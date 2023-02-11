@@ -1,8 +1,20 @@
 
 # Author : BEN SWISA
-node1:
+node1: #controller node parameters
   ros__parameters:
-    enc_y : 1
+#---------------------------------------------------------------------------------------------
+# max pwm: is the pwm limit to send to the motors
+#  - enc_y/z: spot in the array that represents enc values rotating around y/z axis
+#  --   axes are :
+#           y
+#           ^
+#           |
+#           -----> x : the direction for going forward along the snake
+#       (positive angle for moving aruond positive axis direction)
+#   -controller_freq : frequency to run the controller
+#   - kp,ki,kd : arrays of constants for pid controll. position is as the same as for the motor_cmd array
+#------------------------------------------------------------------------------
+    enc_y : 1 # enc place in the array
     enc_z : 0
     max_pwm : 200 # upper bound for motor pwm
     controller_freq : 100
@@ -14,31 +26,21 @@ node1:
     kp : [12.0000000,100.000000,10.0000000,
           12.0000000,100.000000,10.0000000,
           0.0000000,0.0000000,0.0000000,
-          0.0000000,0.0000000,0.0000000] # controller constants
+          0.0000000,0.0000000,0.0000000] # proportional controller constants
+
     ki : [0.00003010,0.0006000,0.00003010,
           0.00003010,0.0006000,0.00003010,
           0.0000000,0.0000000,0.0000000,
-          0.0000000,0.0000000,0.0000000]  
+          0.0000000,0.0000000,0.0000000]  # integrator controller constants
+
     kd : [2.000000,50.000000,10.0000000,
           2.0000000,50.000000,2.0000000,
           0.0000000,0.0000000,0.0000000,
-          0.0000000,0.0000000,0.0000000]
+          0.0000000,0.0000000,0.0000000] # derivative controller contants
 
-#     kp : [0.0000000,0.000000,0.0000000,
-#           12.0000000,100.000000,10.0000000,
-#           0.0000000,0.0000000,0.0000000,
-#           0.0000000,0.0000000,0.0000000] # controller constants
-#     ki : [0.0000000,0.000000,0.0000000,
-#           0.00003010,0.0006000,0.00003010,
-#           0.0000000,0.0000000,0.0000000,
-#           0.0000000,0.0000000,0.0000000]  
-#     kd : [0.0000000,0.000000,0.0000000,
-#           2.000000,50.000000,2.0000000,
-#           0.0000000,0.0000000,0.0000000,
-#           0.0000000,0.0000000,0.0000000]
 
-node2:
+node2: #joint command node parameters 
   ros__parameters:
-    joint_angle_cmd :  [0.000000,0.000000,
+    joint_angle_cmd :  [0.000000,0.000000, # desired joint angles
                         0.0000000,0.0000000,
                         0.0000000,0.0000000]
