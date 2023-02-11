@@ -27,7 +27,7 @@ if you want to record add record argument:
   ros2 launch package1 launch1.py 'record:=True'
 ```
 
-to plot a joint value in position 0 in real time use rqt->visualize->plot and add "joint_val_topic/data[0]"
+to plot a joint value in position 0 in real time use rqt than go to->plugins->visualization->plot and add "joint_val_topic/data[0]"
  
 
 ## Arduino IDE: 
@@ -58,7 +58,7 @@ ros2 daemon start
 ```
 RMW_IMPLEMENTATION=rmw_connext_cpp
 ```
-or look for an answer in one of the following topics: https://github.com/ros2/rmw_fastrtps/issues/509 , https://github.com/ros2/ros2cli/issues/582
+	or look for an answer in one of the following topics: https://github.com/ros2/rmw_fastrtps/issues/509 , https://github.com/ros2/ros2cli/issues/582
 
 - if joint_val is not publishing correctly try rebooting the robot using the big red button
 
@@ -69,5 +69,6 @@ or look for an answer in one of the following topics: https://github.com/ros2/rm
  ls -l /dev/serial/by-id/
  ```
  
-### github Starting the ssh-agent: eval "$(ssh-agent -s)" ssh-add ~/.ssh/robot_snake
+### github 
+Starting the ssh-agent: eval "$(ssh-agent -s)" ssh-add ~/.ssh/robot_snake
  
