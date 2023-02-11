@@ -91,13 +91,15 @@ long int result[N_tensions];
 float arr[N_tensions]={0};
 HX711MULTI scales(N_joints*3, DOUTS, CLK);
 
-   double P[12][3] =  {{1.726E-11, 5.0222E-06,-0.68+ 0.71137},
+
+// scale values : 
+double P[12][3] =  {{1.726E-11, 5.0222E-06,-0.68+ 0.71137},
                     {9.3052E-12, 1.1501E-05,1.1 -1.2368},
                     {8.5654E-12, 1.403E-05,1.67 -2.1273},
                     {-1.0379E-12, 2.3016E-05,4.88 -6.1681},
                     {6.8068E-12, 1.5016E-05,1.38 -1.0202},
                     {5.4685E-12, 1.6701E-05,2.37 -2.0988},
-                    {7.5975E-12, 1.3514E-05, -1.5006}, //corrected until here
+                    {7.5975E-12, 1.3514E-05, -1.5006}, //corrected until here add or substarct a value in the third colmub to correct the values
                     {1.814E-11, 1.3612E-05, 1.1696},
                     {6.8773E-12, 1.1903E-05, -1.2288},
                     {7.8529E-12, 1.2574E-05, -1.9809},
@@ -165,7 +167,7 @@ void loop() {
 void publish_msg()
 {  
  
-    scales.readRaw(result);             // Read raw data from all the tension-meters
+    scales.readRaw(result); // Read raw data from all the tension-meters
     
   for (int i=0; i<(N_joints*3); i++)  // --  Convert RAW data to Kg
     msg.data.data[i] = P[i][0]*pow(result[i],2) + P[i][1]*result[i] + P[i][2];

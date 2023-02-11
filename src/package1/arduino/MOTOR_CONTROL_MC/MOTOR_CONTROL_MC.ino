@@ -49,11 +49,12 @@ int time_from_last_callback=0;
 
 void setup() {
 
+  // --------- initialize msg memory -------- 
   static int32_t memory[N_links*3]; 
   msg.data.capacity = N_links*3;
   msg.data.data = memory;
   msg.data.size = N_links*3;
-  
+  // --------------------------------------
   
   for (int i=0; i<N_links*3; i++)
   {

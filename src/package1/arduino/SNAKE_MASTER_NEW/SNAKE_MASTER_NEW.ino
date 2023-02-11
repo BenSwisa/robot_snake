@@ -58,7 +58,7 @@ int T;
 int count=0;
 
 float arr[N_links*N_enc_joint] = {0};
-uint8_t slave_add[N_links] = {00,100,101}; //
+uint8_t slave_add[N_links] = {00,100,101}; //slave addresses 00 is the master and than 100 is the first slave and so on...
 float joint_offset[N_links*N_enc_joint] = {289.162,169.555,101.27,323.42,0,0}; //determined at test, each joint will have a different offset
 int test;
 union u_tag {
@@ -100,7 +100,7 @@ void setup() {
 //=====[ LOOP ]================================================================
 void loop() {
 
-  switch (state) {
+  switch (state) { // this is to establish reconnection with the micro ros agent
     case WAITING_AGENT:
       EXECUTE_EVERY_N_MS(500, state = (RMW_RET_OK == rmw_uros_ping_agent(100, 1)) ? AGENT_AVAILABLE : WAITING_AGENT;);
       break;
@@ -135,9 +135,7 @@ void loop() {
 
 
   delay(1);
-//  Request_Event(); // get the data from the encs and insert to arr[]
-//  publish_msg();
-//  RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
+
 }
 
 //=====================================================================
@@ -189,8 +187,6 @@ void Request_Event(){
       counter =0;
     }
       
-//    Serial.print("Available bytes: ");
-//    Serial.println(Wire.available());
   if (Wire.available()==8)
     for(int j=0 ; j<N_enc_joint ;j++){ //this loop takes in two, 4 byte data streams from slaves
       for(int i=0 ; i<4 ;i++)
