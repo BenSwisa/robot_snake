@@ -1,9 +1,6 @@
 # robot_snake
-using teensey 4.0 as MC
 
-code for masters in micro_ros
-
-make sure to launch the program in the SNAKE/SOURCE/ros2 when you record
+to use this library you need to install ros2 humble, and [micro ros](https://micro.ros.org/docs/tutorials/core/first_application_linux/)
 
 make sure to source for ros2 and for microros : source install/local_setup.bash
 either source or add in ~/.bashrc : source ~/microros_ws/install/local_setup.bash 
