@@ -18,7 +18,7 @@ source /opt/ros/humble/setup.bash
 make sure to allow dialout : sudo usermod -a -G dialout $USER
 
 
-#ARDUINO IDE: 
+# ARDUINO IDE: 
 (to change the arduino nodes you need to set up your arudino ide) 
 - install [teensyduino]( https://www.pjrc.com/teensy/td_download.html)
 - install [teensy4_i2c](https://github.com/Richard-Gemmell/teensy4_i2c)
