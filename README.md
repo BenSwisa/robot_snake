@@ -26,9 +26,11 @@ if you want to record add record argument:
 ```
   ros2 launch package1 launch1.py 'record:=True'
 ```
+
+to plot a joint value in position 0 in real time use rqt->visualize->plot and add "joint_val_topic/data[0]"
  
 
-## ARDUINO IDE: 
+## Arduino IDE: 
 (to change the arduino nodes you need to set up your arudino ide) 
 
 first follow the step in the [arduino website](https://docs.arduino.cc/software/ide-v1/tutorials/Linux) 
@@ -43,7 +45,7 @@ now
 - install [micro_ros_arduino](https://github.com/micro-ROS/micro_ros_arduino/releases)
 - install [hx711_multi](https://github.com/compugician/HX711-multi.git)
 
-## KNOWN ISSUSES
+## known issues
 
 TOPIC CRASHING (This happens when some node unexpectedly crashed previously)-> 
 restart daemon:
@@ -56,7 +58,7 @@ ros2 daemon start
 ```
 RMW_IMPLEMENTATION=rmw_connext_cpp
 ```
-or look for an answerin one of the following topics: https://github.com/ros2/rmw_fastrtps/issues/509 , https://github.com/ros2/ros2cli/issues/582
+or look for an answer in one of the following topics: https://github.com/ros2/rmw_fastrtps/issues/509 , https://github.com/ros2/ros2cli/issues/582
 
 - if joint_val is not publishing correctly try rebooting the robot using the big red button
 - if rqt not responding acuuratly try re-oprnig rqt
